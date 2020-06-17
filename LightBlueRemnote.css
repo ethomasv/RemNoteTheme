@@ -1,0 +1,1627 @@
+/*
+### Light Blue Theme for RemNote ###
+Edits by Eva Thomas 
+Last Update: June 17th, 2020 
+*/
+
+/* CUSTOMIZE: */
+
+/* ## Toggle logo visibility in the left side bar: * NOTE: this will hide log-out button
+
+#sidebarTopLogoAndUser {
+    display: none;
+}
+*/
+
+
+/* ## Outline search keyword in the search results: 
+
+.inlineQuanta.button.inlineQuantaLink.searchKeywordHighlight {
+    padding: 0px 4px;
+    border: thin solid #add8e6;
+    border-radius: 4px;
+}
+*/
+
+/* ## Custom colors for highlighting:  */
+
+.quantaColorRed {
+    background-color: rgba(255, 173, 171, .5)!important;
+}
+
+.quantaColorOrange {
+    background-color: rgba(255, 218, 150, .5)!important;
+}
+
+.quantaColorYellow {
+    background-color: rgba(252, 255, 143, .5)!important;
+}
+
+.quantaColorGreen {
+    background-color: rgba(181, 233, 166, .5)!important;
+}
+
+.quantaColorPurple {
+    background-color: rgba(231, 183, 255, .5)!important;
+}
+
+
+/* Main */
+
+body {
+    font-size: 13px;
+    letter-spacing: 0.01em;
+    color: #555;
+}
+
+:focus {
+    outline: none;
+}
+
+.bold {
+    font-weight: 500;
+    letter-spacing: 0.03em;
+}
+
+h1 {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 17px;
+    font-weight: 400;
+}
+
+h3 {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+a {
+    color: #555;
+    text-shadow: none!important;
+}
+
+#BoldNode {
+    font-weight: 700;
+}
+
+#HierarchyEditor .elementContainFocused {
+    background-color: transparent;
+}
+
+#QuoteNode {
+    background-color: transparent;
+    border: none;
+    color: #8ca7b0;
+}
+
+#HierarchyEditor .elementHeader1 {
+    font-size: 18px;
+    font-weight: 500;
+    background-color: transparent;
+    letter-spacing: 0.02em;
+}
+
+/* Icons */
+
+i.file.small.icon,
+i.folder.small.icon,
+.folderFloatButtons {
+    opacity: 0.6;
+}
+
+i.book.icon,
+i.chart.line.icon,
+i.hand.paper.icon,
+i.info.circle.icon,
+i.setting.fitted.icon {
+    opacity: 0.6;
+}
+
+i.file.text.large.icon {
+    opacity: 0.8;
+}
+
+i.file.text.large.icon:hover {
+    opacity: 0.9;
+    transition-duration: 0.4s;
+}
+
+/* Left Sidebar */
+
+#homepage #content #DocumentSidebar #GuestModeWarning,
+#main #content #DocumentSidebar #GuestModeWarning {
+    background-color: rgba(173, 216, 230, .5)!important;
+    border: none;
+    border-radius: 3px;
+    padding: 4px;
+    margin-left: -1px;
+    margin-top: -2px;
+    font-size: 11px;
+    letter-spacing: 0.02em;
+    color: white;
+}
+
+#homepage #content #DocumentSidebar #GuestModeWarning,
+#main #content #DocumentSidebar #GuestModeWarning b {
+    font-weight: 600;
+}
+
+#homepage #content #DocumentSidebar,
+#main #content #DocumentSidebar {
+    border-right: thin #eee solid;
+    box-shadow: 1px 0px 5px -2px #ccc;
+    background-color: #fbfbfb;
+    color: #787878;
+}
+
+#homepage #content #DocumentSidebar .DocumentSidebarLinkQueue,
+#main #content #DocumentSidebar .DocumentSidebarLinkQueue {
+    margin-top: 5px;
+}
+
+#homepage #content #DocumentSidebar #DocumentSidebarLink,
+#main #content #DocumentSidebar #DocumentSidebarLink {
+    padding: 5px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
+
+#homepage #content #DocumentSidebar .DocumentSidebarLinkIconContainer,
+#main #content #DocumentSidebar .DocumentSidebarLinkIconContainer {
+    opacity: 0.5;
+}
+
+#main #content #DocumentSidebar #documentListMenuButtons .button {
+    opacity: 0.5;
+}
+
+#homepage #content #DocumentSidebar #DocumentationList,
+#homepage #content #DocumentSidebar #documentList,
+#main #content #DocumentSidebar #DocumentationList,
+#main #content #DocumentSidebar #documentList {
+    margin-top: 5px;
+    letter-spacing: 0.02em;
+}
+
+#homepage #content #DocumentSidebar #DocumentationList .documentListHeader:hover,
+#homepage #content #DocumentSidebar #DocumentationList .documentListItem:hover,
+#homepage #content #DocumentSidebar #documentList .documentListHeader:hover,
+#homepage #content #DocumentSidebar #documentList .documentListItem:hover,
+#main #content #DocumentSidebar #DocumentationList .documentListHeader:hover,
+#main #content #DocumentSidebar #DocumentationList .documentListItem:hover,
+#main #content #DocumentSidebar #documentList .documentListHeader:hover,
+#main #content #DocumentSidebar #documentList .documentListItem:hover {
+    font-weight: 500;
+    background: rgba(173, 216, 230, .5);
+}
+
+#homepage #content #DocumentSidebar #DocumentationList .documentListItemOpened,
+#homepage #content #DocumentSidebar #documentList .documentListItemOpened,
+#main #content #DocumentSidebar #DocumentationList .documentListItemOpened,
+#main #content #DocumentSidebar #documentList .documentListItemOpened {
+    font-weight: 400;
+    background: rgba(173, 216, 230, .5);
+}
+
+#homepage #content #DocumentSidebar .DocumentSidebarLinkOpen,
+#main #content #DocumentSidebar .DocumentSidebarLinkOpen {
+    font-weight: 400;
+    background: rgba(173, 216, 230, .5)!important;
+    padding-left: 9px !important;
+}
+
+#homepage #content #DocumentSidebar #DocumentSidebarBottomMenu,
+#main #content #DocumentSidebar #DocumentSidebarBottomMenu {
+    padding-top: 8px;
+    font-size: 11px;
+    font-weight: 400;
+    border-top: 1px solid #eee;
+    color: #787878 !important;
+    box-shadow: 1px 0px 5px -2px #ccc;
+    padding-bottom: 5px;
+}
+
+#homepage #content #DocumentSidebar #DocumentSidebarLink:hover,
+#main #content #DocumentSidebar #DocumentSidebarLink:hover {
+    font-weight: 500;
+    background: rgba(173, 216, 230, .5);
+}
+
+#homepage #content #DocumentSidebar #DocumentSidebarBottomMenu .DocumentSidebarCurrentRoute,
+#main #content #DocumentSidebar #DocumentSidebarBottomMenu .DocumentSidebarCurrentRoute {
+    border: 1px solid #fbfbfb !important;
+    background: rgba(173, 216, 230, .5)!important;
+    color: #787878 !important;
+}
+
+#DocumentationList #DocumentationListSectionTitle {
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
+
+#DocumentationList #DocumentationListSection {
+    border-left: thin solid #eee;
+    border-color: #eee;
+}
+
+#DocumentationList {
+    border-left: transparent;
+}
+
+/* Documents List */
+
+.ReactVirtualized__Table__headerRow {
+    text-align: center;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    font-size: 12px;
+    color: #aaa;
+    padding-bottom: 5px;
+}
+
+.ReactVirtualized__Table__headerTruncatedText:hover {
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    font-size: 12px;
+    color: #888;
+}
+
+.ReactVirtualized__Grid__innerScrollContainer .ReactVirtualized__Table__row[style*="background-color: rgba(1, 1, 1, 0.1);"] {
+    background-color: white!important;
+}
+
+.ReactVirtualized__Grid__innerScrollContainer .ReactVirtualized__Table__row {
+    border-top: 1px solid #eee;
+    opacity: 0.75;
+}
+
+#DocumentTable .DocumentLink:hover {
+    background-color: transparent;
+}
+
+#DocumentTable .DocumentLink {
+    padding: 8px;
+}
+
+#DocumentTable a:hover,
+#DocumentTable .blackLinks a:hover {
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+#DocumentTable .ui.checkbox {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 17px;
+}
+
+#DocumentTable .ui.checkbox input:checked ~ .box:before,
+#DocumentTable .ui.checkbox input:checked ~ label:before {
+    background: #add8e6;
+    border-radius: 3px;
+}
+
+#DocumentTable .ui.checkbox input:checked ~ .box:after,
+#DocumentTable .ui.checkbox input:checked ~ label:after {
+    font-size: 12px;
+    padding: 1px 1px;
+    color: white;
+    background: #add8e6;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px 1px #eee;
+}
+
+/* Sticky Top */
+
+#HierarchyEditor #HierarchyEditorListStickyTopContainer {
+    min-height: 30px;
+}
+
+#HierarchyEditor #HierarchyEditorListStickyTopContainer #HierarchyEditorListStickyTop {
+    border: none;
+}
+
+#HierarchyEditor .elementContainerStickyDocumentTitle {
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: #888;
+    box-shadow: -4px 1px 5px -2px #ccc;
+}
+
+#HierarchyEditor .elementContainerStickyDocumentTitle .elementText {
+    padding-top: 5px;
+}
+#HierarchyEditor #HierarchyEditorListStickyTopContainer #HierarchyEditorListStickyTop #HierarchyEditorListStickyTopBottom {
+    border-bottom: thin white solid;
+    box-shadow: 1px 0px 5px -2px #ccc;
+}
+
+#documentParents .parentLink {
+    color: #aaa;
+    opacity: 0.65;
+}
+
+#documentParents i.icon {
+    display: none;
+}
+
+#documentParents .joinArrow {
+    font-size: 12px;
+    color: #bbb;
+    opacity: 0.65;
+}
+
+#ArticleViewer #ArticleContent #ArticleViewerTitle {
+    letter-spacing: 0.05em;
+    color: #555;
+    padding-top: 5px;
+}
+
+#ArticleViewer #ArticleContent #ArticleViewerSource {
+    color: #aaa;
+    font-size: 12px;
+    letter-spacing: 0.03em;
+}
+
+#ArticleViewer #ArticleContent #ArticleViewerAuthor {
+    font-style: italic;
+    margin-left: 10px;
+    padding-top: 4px;
+    color: #bbb;
+    font-size: 12px;
+    letter-spacing: 0.03em;
+}
+
+#ArticleViewer #ArticleContent #ArticleViewerAuthor b {
+    color: #aaa;
+    font-weight: 500;
+}
+
+#ArticleViewer #ArticleContent #ArticleViewerReadingTime {
+    margin-left: 10px;
+    padding-top: 4px;
+    color: #aaa;
+    font-size: 12px;
+    letter-spacing: 0.03em;
+}
+
+#HierarchyEditor .elementHeader3 {
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
+
+#HierarchyEditor .elementHeader,
+#HierarchyEditor .elementHeader1,
+#HierarchyEditor .elementHeader2,
+#HierarchyEditor .elementHeader3 {
+    color: #555;
+}
+
+#HierarchyEditor .elementHeader2 {
+    font-weight: 500;
+    font-size: 17px;
+}
+
+#HierarchyEditor .TreeNode {
+    border-color: #eee;
+}
+
+#HierarchyEditor .indentedHierarchyEditorElement {
+    border-color: #eee;
+}
+
+/* Document Window */
+
+/* Trail History */
+
+#ThinkingTrailHistory {
+    margin-left: 10px;
+    opacity: 0.6;
+}
+
+#ThinkingTrailHistory .button .grey.close.icon {
+    color: #add8e6!important;
+    padding-top: 4px;
+}
+
+#ThinkingTrailHistory .ThinkingTrailHistoryDocument .ThinkingTrailHistoryDocumentDot {
+    border-radius: 2.5px;
+    background-color: #add8e6;
+    border: thin solid #add8e6;
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+}
+
+#ThinkingTrailHistory .ThinkingTrailHistoryDocument .ThinkingTrailHistoryDocumentDot:hover {
+    background-color: #add8e6;
+    border: 1px solid #add8e6;
+    box-shadow: 0px 0px 0px 1px #add8e6;
+    border-radius: 2px;
+}
+
+#DocumentTopRow i.content.icon {
+    opacity: 0.4;
+}
+
+#DocumentTopRow i.content.icon:hover {
+    opacity: 0.8;
+    transition-duration: 0.4s;
+}
+
+/* Title */
+
+#document #DocumentTopRow {
+    margin-top: 10px;
+}
+
+#document #actionRequiredDocumentTitle,
+#document .documentTitle {
+    font-size: 20px;
+    letter-spacing: 0.02em;
+    color: #555;
+}
+
+.documentSource {
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+/* Bullets */
+
+.elementBulletContainer .elementBullet {
+    background-color: #888;
+}
+
+/* References */
+
+#ShowEmbeddedSearchButton {
+    padding: 4px;
+    margin-right: 0;
+    margin-top: 4px;
+    margin-left: -6px;
+    border: none;
+    color: #555;
+}
+
+#ShowEmbeddedSearchButton i.caret.down.icon {
+    opacity: 0.5;
+}
+
+#HierarchyEditor .portalElement {
+    background-color: #fbfcfc;
+    border-top-color: #fbfcfc;
+    border-right-color: #fbfcfc;
+    border-bottom-color: #fbfcfc;
+    border-left: 1px solid #add8e6;
+}
+
+#HierarchyEditor .portalElement .portalElementTopEmbeddedSearch {
+    border: none;
+}
+
+i.refresh.icon {
+    opacity: 0.5;
+    margin-top: 0.2em;
+}
+
+i.refresh.icon:hover {
+    opacity: 0.85;
+}
+
+.embeddedSearch {
+    border-radius: 0.4em;
+    border: 1px solid #dfdfdf80;
+    text-decoration: none;
+    padding: 7px 5px 5px 5px;
+    color: #5b5b5b;
+    letter-spacing: 0.045em;
+    background-color: white;
+    margin-left: 9px;
+}
+
+#HierarchyEditor .SearchPortalTreeNode {
+    border-bottom-width: 1px;
+    border-top-width: 1px;
+    border-left: 1px solid #add8e6;
+    border-bottom-color: #fbfcfc;
+    border-right: 1px solid #fbfcfc;
+    border-top-color: #fbfcfc;
+    background-color: #fbfcfc;
+}
+
+HierarchyEditor .HierarchyEditorAfterPortal {
+    background-color: #fbfcfc;
+    border-top-color: #fbfcfc;
+    border-right-color: #fbfcfc;
+    border-bottom-color: #fbfcfc;
+    border-left: 1px solid #add8e6;
+}
+#HierarchyEditor .HierarchyEditorAfterPortalEmbeddedSearch {
+    background-color: #fbfcfc;
+    border-top-color: #fbfcfc;
+    border-right-color: #fbfcfc;
+    border-bottom-color: #fbfcfc;
+    border-left: 1px solid #add8e6;
+}
+
+#HierarchyEditor .notIncludedInDocumentScope .notIncludedAncestorClickable {
+    text-decoration: none;
+}
+
+.notIncludedInDocumentScope.elementContainerDefault.elementContainer.elementContainerNotInArticle.elementArticleViewNotImportable .joinArrow {
+    font-size: 11px;
+    color: #bbb;
+}
+
+.notIncludedInDocumentScope.elementContainerDefault.elementContainer.elementContainerNotInArticle.elementArticleViewNotImportable i.file.text.small.icon {
+    display: none;
+}
+
+#HierarchyEditor .isSearchResult {
+    background-color: transparent;
+}
+
+.searchKeywordHighlight {
+    background-color: transparent;
+}
+
+#HierarchyEditor .portalElementBlue {
+    background-color: #fbfcfc;
+    border-top-color: #fbfcfc;
+    border-right-color: #fbfcfc;
+    border-bottom-color: #fbfcfc;
+    border-left: 1px solid #add8e6;
+}
+
+.element.portalElementBlue.portalElement .portalElementTop {
+    border: none!important;
+}
+
+.PortalTreeNode {
+    background-color: #fbfcfc;
+    letter-spacing: 0.05em;
+    border-top-color: #fbfcfc!important;
+    border-right-color: #fbfcfc!important;
+    border-bottom-color: #fbfcfc!important;
+    border-left: 1px solid #add8e6 !important;
+}
+
+.elementInPortalBlue.elementInPortal {
+    background-color: #fbfcfc;
+    border: none;
+}
+
+.indentedHierarchyEditorElementPortal {
+    background-color: #fbfcfc;
+    border-top-color: #fbfcfc!important;
+    border-right-color: #fbfcfc!important;
+    border-bottom-color: #fbfcfc!important;
+    border-left: 1px solid #add8e6 !important;
+}
+
+#HierarchyEditor .HierarchyEditorAfterPortalBlue {
+    background-color: #fbfcfc;
+    border-top-color: #fbfcfc;
+    border-right-color: #fbfcfc;
+    border-bottom-color: #fbfcfc;
+    border-left: 1px solid #add8e6;
+}
+
+.ImportAllContentsButton {
+    padding-top: 2px;
+    opacity: 0.5;
+}
+
+.ImportAllContentsButton:hover {
+    color: grey;
+    opacity: 0.8;
+    font-weight: 500;
+}
+
+/* List Item */
+
+#HierarchyEditor .TreeNodeListItems {
+    border-left: solid;
+    border-width: 1px;
+    border-color: #eee;
+}
+
+#HierarchyEditor .elementArticleViewImportable .elementBulletPlus {
+    color: #aaa;
+}
+
+#HierarchyEditor .elementArticleViewImportable .elementBulletPlus:hover {
+    color: #aaa;
+    text-shadow: none;
+}
+
+/* Tags */
+
+#HierarchyEditorTagBar #HierarchyEditorTagBarTag {
+    border-radius: 4px;
+    color: #888;
+    padding: 1px 5px;
+    letter-spacing: 0.02em;
+    opacity: 1;
+    margin-top: 5px; 
+}
+
+#HierarchyEditorTagBarTag .RemIndentedIndicator {
+    display: none;
+}
+
+#HierarchyEditorTagBar #HierarchyEditorTagBarTag span.RichTextViewer {
+    padding-left: 0px;
+}
+
+#HierarchyEditorTagBar #HierarchyEditorTagBarTag #HierarchyEditorTagBarTagDelete {
+    padding: 7px;
+    margin-left: -3px;
+    color: #ccc;
+    font-size: 12px;
+    top: 0.8px;
+}
+
+#HierarchyEditorTagBar #HierarchyEditorTagBarTag #HierarchyEditorTagBarTagDelete:hover {
+    color: #aaa;
+}
+
+/* Links */
+
+.inlineQuantaLink {
+    color: #8ca7b0;
+}
+
+.inlineQuantaLink:hover {
+    background-color: transparent;
+    border: none;
+    font-weight: 500;
+}
+
+.inlineQuantaFocused {
+    border: none;
+    font-weight: 500;
+}
+
+.inlineQuantaHighlighted {
+    border: none;
+    box-shadow: none;
+    font-weight: 500;
+}
+
+.inlineQuanta {
+    border-radius: 5px;
+    transition: none;
+}
+
+.inlineQuanta.inlineQuantaLink .file.text.small.icon {
+    display: none;
+}
+
+.RemIndentedIndicator {
+    color: #8ca7b0;
+    font-size: 0.75em;
+    opacity: 0.6;
+}
+
+#QuantaReferenceNodeExcludeTypeParent {
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-bottom: 4px;
+    padding-top: 0px;
+    margin-right: 3px;
+    top: -3px;
+    border-radius: 4px;
+    color: #8ca7b0;
+    font-size: 11px;
+    opacity: 1;
+    border: 1px solid #eee;
+    background-color: white;
+}
+
+.LinkNode {
+    text-decoration: none;
+    color: #8ca7b0;
+}
+
+.linkFocused {
+    color: #8ca7b0;
+    font-weight: 500;
+}
+
+.workInProgressQuanta {
+    padding: 0px;
+    background-color: rgba(173, 216, 230, .5);
+}
+.workInProgressQuanta > span::first-letter {
+    visibility: hidden;
+}
+
+/* Flash Highlight */
+
+.flash {
+    background-color: transparent !important;
+    box-shadow: 0px 0px 3px 1px rgba(173, 216, 230, .5);
+}
+
+/* Queue Cards */
+
+.actionQueueDesktop {
+    box-shadow: 0px 0px 1px 10px white;
+}
+
+.actionQueue {
+    background-color: #fbfcfc;
+    border: thin solid rgba(173, 216, 230, .5);
+}
+
+.actionQueue #actionQueueTitle {
+    background-color: #fbfcfc;
+    box-shadow: 0px 1px 8px -2px #ccc;
+    letter-spacing: 0.05em;
+    color: #8ca7b0;
+}
+
+.actionQueue #actionQueueBadge {
+    color: #add8e6;
+    padding: 2px 4px;
+    border-radius: 4px;
+    letter-spacing: 0.03em;
+    background-color: white;
+    border: 1px solid rgba(173, 216, 230, .3);
+    box-shadow: 0px 0px 4px 1px #eee;
+    font-size: 12px;
+}
+
+.actionQueue #actionQueueTitle #actionQueueStreakIndicator {
+    color: #add8e6;
+    letter-spacing: 0.03em;
+}
+
+.actionQueue #actionQueueProgressBar[style*="background-color: darkgrey;"],
+.actionQueue #actionQueueProgressBar[style*="background-color: green;"] {
+    background-color: #8ca7b0!important;
+}
+
+.spacedRepetition .spacedRepetitionKey .indentedQuanta .elementBulletDocument {
+    color: #8ca7b0;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    margin-bottom: 5px;
+    font-weight: 500;
+    background-color: #fbfcfc;
+}
+
+.spacedRepetition .fillInBlank {
+    color: #add8e6;
+    border: none;
+}
+
+.spacedRepetition .spacedRepetitionBottom {
+    background-color: #fbfcfc;
+    letter-spacing: 0.06em;
+    color: #8ca7b0;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.spacedRepetition .spacedRepetitionReveal {
+    background-color: #fbfcfc;
+}
+
+.spacedRepetition .spacedRepetitionKey .indentedQuanta .elementBulletDocument i.icon {
+    display: none;
+}
+
+.spacedRepetition .fillInBlank {
+    color: #8ca7b0;
+}
+
+.accuracyButtons {
+    background-color: #fbfcfc;
+}
+
+.spacedRepetition .accuracyButtonBig[data-tip="I don't know this (press K)"]:after {
+    content: '☹️';
+}
+
+.spacedRepetition .accuracyButtonBig[data-tip="I know this! (press L)"]:after {
+    content: '😊';
+}
+
+.spacedRepetition .accuracyButtonBig[data-tip="Accidentally pressed 'Show Answer' too early - try again in an hour. (press H)"]:after {
+    content: '😶';
+}
+
+.spacedRepetition .accuracyButtonBig[data-tip="Knew it, but not well. (press ,)"]:after {
+    content: '😕';
+}
+
+.spacedRepetition .accuracyButtonBig i.icon {
+    display: none;
+}
+
+#LeechCard #LeechCardHeader i.frown.outline.icon {
+    color: #fbfcfc;
+}
+
+#LeechCard #LeechCardHeader i.frown.outline.icon:after {
+    content: '☹️';
+}
+
+#LeechCard #LeechCardHeader {
+    margin: 20px;
+    font-weight: 500;
+}
+
+#LeechCard #LeechCardContents {
+    border: 1px solid rgba(173, 216, 230, .5);
+    box-shadow: 0px 0px 4px 1px #eee;
+}
+
+#LeechCard #LeechCardFixes .LeechAction,
+#LeechCard #LeechCardFixes ul li {
+    text-decoration: none;
+    color: #8ca7b0;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+}
+
+#LeechCard #LeechCardFixes .LeechAction:hover {
+    text-decoration: none;
+    color: #8ca7b0;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+#LeechCard .leechCardBottom {
+    background-color: #fbfcfc;
+    letter-spacing: 0.06em;
+    color: #8ca7b0;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.accuracyButton:hover {
+    background-color: #fbfcfc;
+    color: #8ca7b0;
+    font-weight: 700;
+}
+
+#milestone .dailyCheckpoint {
+    color: #8ca7b0!important;
+}
+
+#milestone .badge {
+    border: 1px solid rgba(173, 216, 230, .5);
+    box-shadow: 0px 0px 4px 1px #eee;
+}
+
+.accuracyButton,
+.accuracyItem {
+    background-color: #fbfcfc;
+    color: #8ca7b0;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+}
+
+.accuracyButton:hover,
+.accuracyItem:hover {
+    background-color: #fbfcfc;
+    color: #8ca7b0;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+}
+
+#milestone h1 {
+    color: #8ca7b0;
+    font-weight: 600;
+}
+
+.actionQueue .actionQueueNoItems .success {
+    font-weight: 600;
+    color: #8ca7b0;
+    padding-bottom: 20px;
+    font-size: 15px;
+    letter-spacing: 0.05em;
+}
+
+#DocumentSidebarQueueIndicator {
+    font-size: 12px;
+}
+
+.blackOutEnable {
+    background-color: transparent; 
+}
+
+
+
+/* Checkboxes */
+
+.elementCheckbox {
+    opacity: 0.65;
+}
+
+#HierarchyEditor .elementTodoFinished{
+    text-decoration: none;
+    color: #555;
+}
+
+/* Popups */
+
+/* Preview */
+
+#DocumentHoverPreviewPopup {
+    background-color: #fbfcfc;
+    border: thin solid #add8e6;
+    padding: 10px 0 10px 20px;
+    font-weight: 400;
+    color: #555;
+}
+
+/* Search links */
+.SearchResults {
+    color: #555;
+    border: thin solid #eee;
+    padding: 5px;
+}
+
+.SearchResults #SearchResultsList #SearchResultsResult {
+    border-color: #eee;
+}
+
+.selectedResult {
+    background-color: rgba(173, 216, 230, .5); /* ??? darker? */
+}
+
+.SearchResults #SearchResultsList #SearchResultsResult div span#QuoteNode {
+    /*
+    color: #888;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    font-style: italic;
+    */
+    visibility: hidden;
+    display: none;
+}
+
+/* Menu */
+
+.react-contextmenu--visible {
+    background-color: #fff;
+    box-shadow: none;
+    border: thin solid #ddd;
+    border-radius: 1px;
+}
+
+.react-contextmenu--visible .HierarchyEditorElementMenu {
+    color: #555;
+}
+
+.react-contextmenu--visible .HierarchyEditorElementMenu,
+.react-contextmenu--visible .MenuItem {
+    padding: 5px;
+    border: none;
+    /*border-bottom: thin solid #ddd;*/
+}
+
+.react-contextmenu--visible #MenuDivider {
+    border: none;
+    box-shadow: 1px 0px 5px -2px #ccc !important;
+}
+
+.react-contextmenu-item.react-contextmenu-submenu {
+    padding: 5px;
+}
+
+.react-contextmenu-item.react-contextmenu-submenu:hover {
+    background-color: #add8e6;
+}
+
+.react-contextmenu--visible i.icon {
+    opacity: 0.6;
+}
+
+.RichTextEditorSelectedMenu {
+    background-color: #fff;
+    box-shadow: none;
+    border: thin solid #ddd;
+    border-radius: 1px;
+}
+
+.RichTextEditorSelectedMenuButtons {
+    opacity: 0.8;
+}
+
+.RichTextEditorSelectedMenu .RichTextEditorSelectedMenuSearch {
+    border-color: #ddd;
+    border-top: solid #ddd;
+    border-width: thin;
+}
+
+/* Link Popup */
+
+.linkPopup {
+    text-decoration: none !important;
+}
+
+.linkPopup .content {
+    text-decoration: none !important;
+}
+
+.ui.popup {
+    border: 1px solid #ddd !important;
+    color: #555;
+    border-radius: 0px;
+}
+
+.linkPopup {
+    box-shadow: none!important;
+}
+
+.linkPopup a:-webkit-any-link {
+    text-decoration: none!important;
+}
+
+/* Note Popup */
+
+.__floater__container[style*="border-color: green;"] {
+    border-color: #add8e6 !important;
+}
+
+.__floater.__floater__open[style*="filter: drop-shadow(rgb(0, 125, 0) 0px 0px 5px);"] {
+    filter: drop-shadow(#add8e6 0px 0px 5px) !important;
+}
+
+
+/* Buttons */
+
+.ui.green.button,
+.ui.green.buttons .button {
+    color: white;
+    padding: 10px 10px;
+    border-radius: 5px;
+    letter-spacing: 0.04em;
+    background-color: #add8e6;
+    border: 1px solid #add8e6;
+}
+
+.ui.green.button:hover,
+.ui.green.buttons .button:hover {
+    color: #add8e6;
+    padding: 10px 10px;
+    border-radius: 5px;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    background-color: white;
+    border: 1px solid rgba(173, 216, 230, .3);
+    box-shadow: 0px 0px 4px 1px #eee;
+    transition-duration: 0.3s;
+}
+
+.ui.green.button:focus,
+.ui.green.buttons .button:focus {
+    color: white;
+    padding: 10px 10px;
+    border-radius: 5px;
+    letter-spacing: 0.04em;
+    background-color: #add8e6;
+    border: 1px solid #add8e6;
+    box-shadow: none;
+}
+
+.ui.green.button:active,
+.ui.green.buttons .button:active {
+    color: white;
+    padding: 10px 10px;
+    border-radius: 5px;
+    letter-spacing: 0.04em;
+    background-color: #add8e6;
+    border: 1px solid #add8e6;
+    box-shadow: none;
+}
+
+#ArticleDocumentButton {
+    opacity: 0.3;
+}
+
+#ArticleDocumentButton:hover {
+    opacity: 0.6;
+}
+
+/* KnowledgeBaseButtons */
+
+.ui.button {
+    color: white;
+    padding: 10px 11px;
+    border-radius: 5px;
+    letter-spacing: 0.04em;
+    background-color: #add8e6;
+    border: 1px solid #add8e6;
+}
+
+.ui.button:hover {
+    color: #add8e6;
+    padding: 10px 10px;
+    border-radius: 5px;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    background-color: white;
+    border: 1px solid rgba(173, 216, 230, .3);
+    box-shadow: 0px 0px 4px 1px #eee;
+    transition-duration: 0.3s;
+}
+
+.ui.button:focus {
+    color: white;
+    padding: 10px 10px;
+    border-radius: 5px;
+    letter-spacing: 0.04em;
+    background-color: #add8e6;
+    border: 1px solid #add8e6;
+    box-shadow: none;
+}
+
+.ui.button:active {
+    color: white;
+    padding: 10px 10px;
+    border-radius: 5px;
+    letter-spacing: 0.04em;
+    background-color: #add8e6;
+    border: 1px solid #add8e6;
+    box-shadow: none;
+}
+
+/* Changing all colors to fit the blue-ish style */
+
+#HierarchyEditor .elementArticleViewImportable .elementBulletPlus {
+    color: #add8e6;
+}
+
+#HierarchyEditor .elementArticleViewImportable .elementBulletMinus {
+    color: #add8e6;
+}
+
+#HierarchyEditor .elementArticleViewImportable .elementBulletPlus:hover {
+    color: #add8e6;
+    ;
+    text-shadow: none;
+}
+
+#HierarchyEditor .elementArticleViewImportable .elementBulletMinus:hover {
+    color: #add8e6;
+    ;
+    text-shadow: none;
+}
+
+.green {
+    color: #add8e6;
+}
+
+#homepage #content #DocumentSidebar #DocumentationList .documentListItemContainer .documentListHeader .folder:hover,
+#homepage #content #DocumentSidebar #DocumentationList .documentListItemContainer .documentListItem .folder:hover,
+#homepage #content #DocumentSidebar #documentList .documentListItemContainer .documentListHeader .folder:hover,
+#homepage #content #DocumentSidebar #documentList .documentListItemContainer .documentListItem .folder:hover,
+#main #content #DocumentSidebar #DocumentationList .documentListItemContainer .documentListHeader .folder:hover,
+#main #content #DocumentSidebar #DocumentationList .documentListItemContainer .documentListItem .folder:hover,
+#main #content #DocumentSidebar #documentList .documentListItemContainer .documentListHeader .folder:hover,
+#main #content #DocumentSidebar #documentList .documentListItemContainer .documentListItem .folder:hover {
+    text-shadow: none !important;
+}
+
+#HierarchyEditorTagBar #HierarchyEditorTagBarTag #HierarchyEditorTagBarTagDelete:hover {
+    text-shadow: none !important;
+}
+
+#HierarchyEditor .elementArticleViewImportable .elementBulletPlus:hover {
+    text-shadow: none !important;
+}
+
+#HierarchyEditor .elementArticleViewImportable .elementBulletMinus:hover {
+    text-shadow: none !important;
+}
+
+#HierarchyEditor .elementContainFocused .elementBulletIcon,
+#HierarchyEditor .elementContainFocused .elementListNumber {
+    text-shadow: none !important;
+}
+
+#UpdateIndicator #UpdateIndicatorClose:hover {
+    text-shadow: none !important;
+}
+
+#ActionQueueDefaultDocumentContainer #ActionQueueDefaultDocument ul #homepage #content #DocumentSidebar #documentListMenuButtons li:hover,
+#ActionQueueDefaultDocumentContainer #ActionQueueDefaultDocument ul #main #content #DocumentSidebar #documentListMenuButtons li:hover,
+#ArticleViewer #ArticleViewerStartTakingNotes #homepage #content #DocumentSidebar #documentListMenuButtons #ArticleViewerStartTakingNotesButton:hover,
+#ArticleViewer #ArticleViewerStartTakingNotes #main #content #DocumentSidebar #documentListMenuButtons #ArticleViewerStartTakingNotesButton:hover,
+#connectionStatus #homepage #content #DocumentSidebar #documentListMenuButtons #HidePrivateRemButton:hover,
+#connectionStatus #homepage #content #DocumentSidebar #documentListMenuButtons .signUpLink:hover,
+#connectionStatus #main #content #DocumentSidebar #documentListMenuButtons #HidePrivateRemButton:hover,
+#connectionStatus #main #content #DocumentSidebar #documentListMenuButtons .signUpLink:hover,
+#document #homepage #content #DocumentSidebar #documentListMenuButtons #AddNewDocumentButtonLarge:hover,
+#document #homepage #content #DocumentSidebar #documentListMenuButtons #AddNewDocumentButtonSmall:hover,
+#document #main #content #DocumentSidebar #documentListMenuButtons #AddNewDocumentButtonLarge:hover,
+#document #main #content #DocumentSidebar #documentListMenuButtons #AddNewDocumentButtonSmall:hover,
+#document .documentMenu #homepage #content #DocumentSidebar #documentListMenuButtons #selectFolder:hover,
+#document .documentMenu #homepage #content #DocumentSidebar #documentListMenuButtons .documentOptions:hover,
+#document .documentMenu #main #content #DocumentSidebar #documentListMenuButtons #selectFolder:hover,
+#document .documentMenu #main #content #DocumentSidebar #documentListMenuButtons .documentOptions:hover,
+#DocumentHoverPreviewPopup #homepage #content #DocumentSidebar #documentListMenuButtons #QuantaReferencePreview:hover,
+#DocumentHoverPreviewPopup #main #content #DocumentSidebar #documentListMenuButtons #QuantaReferencePreview:hover,
+#documentParents #homepage #content #DocumentSidebar #documentListMenuButtons .parentLink:hover,
+#documentParents #main #content #DocumentSidebar #documentListMenuButtons .parentLink:hover,
+#DocumentTable #homepage #content #DocumentSidebar #documentListMenuButtons .DocumentLink:hover,
+#DocumentTable #main #content #DocumentSidebar #documentListMenuButtons .DocumentLink:hover,
+#GlobalNameHierarchyViewer #homepage #content #DocumentSidebar #documentListMenuButtons #collapsedButton:hover,
+#GlobalNameHierarchyViewer #main #content #DocumentSidebar #documentListMenuButtons #collapsedButton:hover,
+#HierarchyEditor #homepage #content #DocumentSidebar #documentListMenuButtons #HierarchyEditorAddButton:hover,
+#HierarchyEditor #homepage #content #DocumentSidebar #documentListMenuButtons #HierarchyEditorEmbeddedQueueModeToggle:hover,
+#HierarchyEditor #homepage #content #DocumentSidebar #documentListMenuButtons .elementArticleLink:hover,
+#HierarchyEditor #homepage #content #DocumentSidebar #documentListMenuButtons .elementListNumber:hover,
+#HierarchyEditor #homepage #content #DocumentSidebar #documentListMenuButtons .HierarchyEditorChildrenList:hover,
+#HierarchyEditor #main #content #DocumentSidebar #documentListMenuButtons #HierarchyEditorAddButton:hover,
+#HierarchyEditor #main #content #DocumentSidebar #documentListMenuButtons #HierarchyEditorEmbeddedQueueModeToggle:hover,
+#HierarchyEditor #main #content #DocumentSidebar #documentListMenuButtons .elementArticleLink:hover,
+#HierarchyEditor #main #content #DocumentSidebar #documentListMenuButtons .elementListNumber:hover,
+#HierarchyEditor #main #content #DocumentSidebar #documentListMenuButtons .HierarchyEditorChildrenList:hover,
+#HierarchyEditor .elementContainer #homepage #content #DocumentSidebar #documentListMenuButtons .elementHamburger:hover,
+#HierarchyEditor .elementContainer #homepage #content #DocumentSidebar #documentListMenuButtons .toggleCollapseButton:hover,
+#HierarchyEditor .elementContainer #main #content #DocumentSidebar #documentListMenuButtons .elementHamburger:hover,
+#HierarchyEditor .elementContainer #main #content #DocumentSidebar #documentListMenuButtons .toggleCollapseButton:hover,
+#HierarchyEditor .elementContainer .portalElementHamburger #homepage #content #DocumentSidebar #documentListMenuButtons span:hover,
+#HierarchyEditor .elementContainer .portalElementHamburger #main #content #DocumentSidebar #documentListMenuButtons span:hover,
+#HierarchyEditor .elementContainer .portalElementHamburgerEmbeddedSearch #homepage #content #DocumentSidebar #documentListMenuButtons span:hover,
+#HierarchyEditor .elementContainer .portalElementHamburgerEmbeddedSearch #main #content #DocumentSidebar #documentListMenuButtons span:hover,
+#HierarchyEditor .elementPotentialProperties #homepage #content #DocumentSidebar #documentListMenuButtons .potentialProperty:hover,
+#HierarchyEditor .elementPotentialProperties #main #content #DocumentSidebar #documentListMenuButtons .potentialProperty:hover,
+#HierarchyEditor .notIncludedInDocumentScope #homepage #content #DocumentSidebar #documentListMenuButtons .notIncludedAncestorClickable:hover,
+#HierarchyEditor .notIncludedInDocumentScope #main #content #DocumentSidebar #documentListMenuButtons .notIncludedAncestorClickable:hover,
+#HierarchyEditorCtrlF #homepage #content #DocumentSidebar #documentListMenuButtons .icon:hover,
+#HierarchyEditorCtrlF #main #content #DocumentSidebar #documentListMenuButtons .icon:hover,
+#hierarchyEditorGlobalInsertContainer #homepage #content #DocumentSidebar #documentListMenuButtons #HierarchyEditorGlobalInsertToggleVisibility:hover,
+#hierarchyEditorGlobalInsertContainer #main #content #DocumentSidebar #documentListMenuButtons #HierarchyEditorGlobalInsertToggleVisibility:hover,
+#HierarchyEditorTagBar #HierarchyEditorTagBarTag #homepage #content #DocumentSidebar #documentListMenuButtons #HierarchyEditorTagBarTagDelete:hover,
+#HierarchyEditorTagBar #HierarchyEditorTagBarTag #main #content #DocumentSidebar #documentListMenuButtons #HierarchyEditorTagBarTagDelete:hover,
+#homepage #callToActionButtons #content #DocumentSidebar #documentListMenuButtons a:hover,
+#homepage #callToActionButtons #main #content #DocumentSidebar #documentListMenuButtons a:hover,
+#homepage #content #DocumentSidebar #DocumentationList #documentListMenuButtons .actionRequiredDocumentLink:hover,
+#homepage #content #DocumentSidebar #DocumentationList #documentListMenuButtons .documentListHeader:hover,
+#homepage #content #DocumentSidebar #DocumentationList #documentListMenuButtons .documentListItem:hover,
+#homepage #content #DocumentSidebar #DocumentationList .documentListItemContainer .documentListHeader #documentListMenuButtons .folder:hover,
+#homepage #content #DocumentSidebar #DocumentationList .documentListItemContainer .documentListItem #documentListMenuButtons .folder:hover,
+#homepage #content #DocumentSidebar #documentList #documentListMenuButtons .actionRequiredDocumentLink:hover,
+#homepage #content #DocumentSidebar #documentList #documentListMenuButtons .documentListHeader:hover,
+#homepage #content #DocumentSidebar #documentList #documentListMenuButtons .documentListItem:hover,
+#homepage #content #DocumentSidebar #documentList #documentListMenuButtons .folderFloatButton:hover,
+#homepage #content #DocumentSidebar #documentList .documentListItemContainer .documentListHeader #documentListMenuButtons .folder:hover,
+#homepage #content #DocumentSidebar #documentList .documentListItemContainer .documentListItem #documentListMenuButtons .folder:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #ActionQueueDefaultDocumentContainer #ActionQueueDefaultDocument ul li:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #ArticleDocumentButton:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #ArticleViewer #ArticleViewerStartTakingNotes #ArticleViewerStartTakingNotesButton:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #callToActionButtons a:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #connectionStatus #HidePrivateRemButton:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #connectionStatus .signUpLink:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #document #AddNewDocumentButtonLarge:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #document #AddNewDocumentButtonSmall:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #document .documentMenu #selectFolder:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #document .documentMenu .documentOptions:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #DocumentationList .actionRequiredDocumentLink:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #DocumentationList .documentListHeader:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #DocumentationList .documentListItem:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #DocumentationList .documentListItemContainer .documentListHeader .folder:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #DocumentationList .documentListItemContainer .documentListItem .folder:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #DocumentationList .folderFloatButton:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #DocumentHoverPreviewPopup #QuantaReferencePreview:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #documentList .actionRequiredDocumentLink:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #documentList .documentListHeader:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #documentList .documentListItem:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #documentList .documentListItemContainer .documentListHeader .folder:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #documentList .documentListItemContainer .documentListItem .folder:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #documentList .folderFloatButton:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #documentParents .parentLink:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #DocumentSidebarHiddenLinkContainer:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #DocumentSidebarLink:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #DocumentSidebarLinkSignUp:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #DocumentTable .DocumentLink:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #EmbeddedSearchRefresh:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #GlobalNameHierarchyViewer #collapsedButton:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #HideWalkthroughLinkButton:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #HierarchyEditor #HierarchyEditorAddButton:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #HierarchyEditor #HierarchyEditorEmbeddedQueueModeToggle:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #HierarchyEditor .elementArticleLink:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #HierarchyEditor .elementContainer .elementHamburger:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #HierarchyEditor .elementContainer .portalElementHamburgerEmbeddedSearch span:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #HierarchyEditor .elementContainer .portalElementHamburger span:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #HierarchyEditor .elementContainer .toggleCollapseButton:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #HierarchyEditor .elementListNumber:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #HierarchyEditor .elementPotentialProperties .potentialProperty:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #HierarchyEditor .HierarchyEditorChildrenList:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #HierarchyEditor .notIncludedInDocumentScope .notIncludedAncestorClickable:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #HierarchyEditorCtrlF .icon:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #hierarchyEditorGlobalInsertContainer #HierarchyEditorGlobalInsertToggleVisibility:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #HierarchyEditorTagBar #HierarchyEditorTagBarTag #HierarchyEditorTagBarTagDelete:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #ImportEntireArticle:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #LeechCard #LeechCardFixes .LeechAction:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #MobileQuickAddButtons #MobileQuickAddButton:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #MobileSearchRemButton:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #MultipleWindows .MultipleWindowsDocument #MultipleWindowsClosePane:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #OtherRemStack #OtherRemBlock #OtherRemBlockTitle #CloseOtherRemBlockButton:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #OtherRemStack #OtherRemBlock #OtherRemBlockTitle #OpenAsDocButton:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #OtherRemStack #OtherRemStackClose:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #PluginNode #PluginHamburgerMenu:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #Popup #PopupCloseButton:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #PrivateRemBlocker:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #QuantaReferenceNodeExcludeTypeParent:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #QuantaSelector #QuantaSelectorOption:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #RabbitQueueTopRightButton:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #SearchPopup #PinnedResults .PinnedResult:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #SearchPopup .SearchPopupResults #SearchResultsResult:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #ShowEmbeddedSearchButton:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #ThinkingTrailHistory .ThinkingTrailHistoryDocument:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #UpdateIndicator:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons #zoomIntoRemBackDocument:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons .accuracyButton:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons .actionQueue #ActionQueueOfflineIndicator:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons .actionQueue #ActionQueueOnlyActionRequiredSwitcher:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons .actionQueue #actionQueueTitle #actionQueueBackButton:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons .addListItemButton:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons .AnnotationNode:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons .biggestThumbnail:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons .bigThumbnail:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons .blackOut:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons .button:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons .colorButtonContainer:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons .DocumentSidebarSmall #viewDocuments:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons .elementContainerNotInArticle .elementBulletContainer:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons .elementContainerNotInArticle .elementBulletIcon:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons .hierarchyEditorGlobalInsertContainerOpened #HierarchyEditorToolbar #NoFocusedRemToolbarNotice #NoFocusedRemToolbarNoticeClose:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons .hierarchyEditorGlobalInsertContainerOpened #HierarchyEditorToolbar .ToolbarDuplicateKeyButton:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons .hierarchyEditorGlobalInsertContainerOpened .HierarchyEditorToolbarButton:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons .ImportAllContentsButton:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons .LinkNode:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons .popup #BulletFormatIcons .icon:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons .popup .colorButton:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons .react-contextmenu--visible .HierarchyEditorElementMenu:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons .RichTextEditorSelectedMenu .SelectMenuButton:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons .RichTextEditorSelectedMenu .SelectMenuButtonColorContainer:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons .SearchResults #SearchResultsList #SearchResultsResult:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons .sortSidebarOption:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons .spacedRepetition .spacedRepetitionReveal:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons .thumbnailNoWidth:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons .thumbnailPopup:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons .thumbnailSmall:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons .thumbnailWithWidth:hover,
+#homepage #content #DocumentSidebar #documentListMenuButtons .whiteButton:hover,
+#homepage #content .DocumentSidebarSmall #DocumentSidebar #documentListMenuButtons #viewDocuments:hover,
+#homepage #main #content #DocumentSidebar #DocumentationList #documentListMenuButtons .actionRequiredDocumentLink:hover,
+#homepage #main #content #DocumentSidebar #DocumentationList #documentListMenuButtons .documentListHeader:hover,
+#homepage #main #content #DocumentSidebar #DocumentationList #documentListMenuButtons .documentListItem:hover,
+#homepage #main #content #DocumentSidebar #DocumentationList #documentListMenuButtons .folderFloatButton:hover,
+#homepage #main #content #DocumentSidebar #DocumentationList .documentListItemContainer .documentListHeader #documentListMenuButtons .folder:hover,
+#homepage #main #content #DocumentSidebar #DocumentationList .documentListItemContainer .documentListItem #documentListMenuButtons .folder:hover,
+#homepage #main #content #DocumentSidebar #documentList #documentListMenuButtons .actionRequiredDocumentLink:hover,
+#homepage #main #content #DocumentSidebar #documentList #documentListMenuButtons .documentListHeader:hover,
+#homepage #main #content #DocumentSidebar #documentList #documentListMenuButtons .documentListItem:hover,
+#homepage #main #content #DocumentSidebar #documentList #documentListMenuButtons .folderFloatButton:hover,
+#homepage #main #content #DocumentSidebar #documentList .documentListItemContainer .documentListHeader #documentListMenuButtons .folder:hover,
+#homepage #main #content #DocumentSidebar #documentList .documentListItemContainer .documentListItem #documentListMenuButtons .folder:hover,
+#homepage #main #content #DocumentSidebar #documentListMenuButtons #DocumentationList .actionRequiredDocumentLink:hover,
+#homepage #main #content #DocumentSidebar #documentListMenuButtons #DocumentationList .documentListHeader:hover,
+#homepage #main #content #DocumentSidebar #documentListMenuButtons #DocumentationList .documentListItem:hover,
+#homepage #main #content #DocumentSidebar #documentListMenuButtons #DocumentationList .documentListItemContainer .documentListHeader .folder:hover,
+#homepage #main #content #DocumentSidebar #documentListMenuButtons #DocumentationList .documentListItemContainer .documentListItem .folder:hover,
+#homepage #main #content #DocumentSidebar #documentListMenuButtons #DocumentationList .folderFloatButton:hover,
+#homepage #main #content #DocumentSidebar #documentListMenuButtons #documentList .actionRequiredDocumentLink:hover,
+#homepage #main #content #DocumentSidebar #documentListMenuButtons #documentList .documentListHeader:hover,
+#homepage #main #content #DocumentSidebar #documentListMenuButtons #documentList .documentListItem:hover,
+#homepage #main #content #DocumentSidebar #documentListMenuButtons #documentList .documentListItemContainer .documentListHeader .folder:hover,
+#homepage #main #content #DocumentSidebar #documentListMenuButtons #documentList .documentListItemContainer .documentListItem .folder:hover,
+#homepage #main #content #DocumentSidebar #documentListMenuButtons #documentList .folderFloatButton:hover,
+#homepage #main #content #DocumentSidebar #documentListMenuButtons #DocumentSidebarLink:hover,
+#homepage #main #content #DocumentSidebar #documentListMenuButtons #DocumentSidebarLinkSignUp:hover,
+#homepage #main #content #DocumentSidebar #documentListMenuButtons #HideWalkthroughLinkButton:hover,
+#homepage #main #content #DocumentSidebar #documentListMenuButtons .DocumentSidebarSmall #viewDocuments:hover,
+#homepage #main #content .DocumentSidebarSmall #DocumentSidebar #documentListMenuButtons #viewDocuments:hover,
+#LeechCard #LeechCardFixes #homepage #content #DocumentSidebar #documentListMenuButtons .LeechAction:hover,
+#LeechCard #LeechCardFixes #main #content #DocumentSidebar #documentListMenuButtons .LeechAction:hover,
+#main #content #DocumentSidebar #DocumentationList #documentListMenuButtons .actionRequiredDocumentLink:hover,
+#main #content #DocumentSidebar #DocumentationList #documentListMenuButtons .documentListHeader:hover,
+#main #content #DocumentSidebar #DocumentationList #documentListMenuButtons .documentListItem:hover,
+#main #content #DocumentSidebar #DocumentationList #documentListMenuButtons .folderFloatButton:hover,
+#main #content #DocumentSidebar #DocumentationList .documentListItemContainer .documentListHeader #documentListMenuButtons .folder:hover,
+#main #content #DocumentSidebar #DocumentationList .documentListItemContainer .documentListItem #documentListMenuButtons .folder:hover,
+#main #content #DocumentSidebar #documentList #documentListMenuButtons .actionRequiredDocumentLink:hover,
+#main #content #DocumentSidebar #documentList #documentListMenuButtons .documentListHeader:hover,
+#main #content #DocumentSidebar #documentList #documentListMenuButtons .documentListItem:hover,
+#main #content #DocumentSidebar #documentList #documentListMenuButtons .folderFloatButton:hover,
+#main #content #DocumentSidebar #documentList .documentListItemContainer .documentListHeader #documentListMenuButtons .folder:hover,
+#main #content #DocumentSidebar #documentList .documentListItemContainer .documentListItem #documentListMenuButtons .folder:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #ActionQueueDefaultDocumentContainer #ActionQueueDefaultDocument ul li:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #ArticleDocumentButton:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #ArticleViewer #ArticleViewerStartTakingNotes #ArticleViewerStartTakingNotesButton:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #connectionStatus #HidePrivateRemButton:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #connectionStatus .signUpLink:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #document #AddNewDocumentButtonLarge:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #document #AddNewDocumentButtonSmall:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #document .documentMenu #selectFolder:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #document .documentMenu .documentOptions:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #DocumentationList .actionRequiredDocumentLink:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #DocumentationList .documentListHeader:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #DocumentationList .documentListItem:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #DocumentationList .documentListItemContainer .documentListHeader .folder:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #DocumentationList .documentListItemContainer .documentListItem .folder:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #DocumentationList .folderFloatButton:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #DocumentHoverPreviewPopup #QuantaReferencePreview:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #documentList .actionRequiredDocumentLink:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #documentList .documentListHeader:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #documentList .documentListItem:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #documentList .documentListItemContainer .documentListHeader .folder:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #documentList .documentListItemContainer .documentListItem .folder:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #documentList .folderFloatButton:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #documentParents .parentLink:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #DocumentSidebarHiddenLinkContainer:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #DocumentSidebarLink:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #DocumentSidebarLinkSignUp:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #DocumentTable .DocumentLink:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #EmbeddedSearchRefresh:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #GlobalNameHierarchyViewer #collapsedButton:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #HideWalkthroughLinkButton:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #HierarchyEditor #HierarchyEditorAddButton:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #HierarchyEditor #HierarchyEditorEmbeddedQueueModeToggle:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #HierarchyEditor .elementArticleLink:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #HierarchyEditor .elementContainer .elementHamburger:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #HierarchyEditor .elementContainer .portalElementHamburgerEmbeddedSearch span:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #HierarchyEditor .elementContainer .portalElementHamburger span:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #HierarchyEditor .elementContainer .toggleCollapseButton:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #HierarchyEditor .elementListNumber:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #HierarchyEditor .elementPotentialProperties .potentialProperty:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #HierarchyEditor .HierarchyEditorChildrenList:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #HierarchyEditor .notIncludedInDocumentScope .notIncludedAncestorClickable:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #HierarchyEditorCtrlF .icon:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #hierarchyEditorGlobalInsertContainer #HierarchyEditorGlobalInsertToggleVisibility:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #HierarchyEditorTagBar #HierarchyEditorTagBarTag #HierarchyEditorTagBarTagDelete:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #homepage #callToActionButtons a:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #ImportEntireArticle:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #LeechCard #LeechCardFixes .LeechAction:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #MobileQuickAddButtons #MobileQuickAddButton:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #MobileSearchRemButton:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #MultipleWindows .MultipleWindowsDocument #MultipleWindowsClosePane:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #OtherRemStack #OtherRemBlock #OtherRemBlockTitle #CloseOtherRemBlockButton:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #OtherRemStack #OtherRemBlock #OtherRemBlockTitle #OpenAsDocButton:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #OtherRemStack #OtherRemStackClose:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #PluginNode #PluginHamburgerMenu:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #Popup #PopupCloseButton:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #PrivateRemBlocker:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #QuantaReferenceNodeExcludeTypeParent:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #QuantaSelector #QuantaSelectorOption:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #RabbitQueueTopRightButton:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #SearchPopup #PinnedResults .PinnedResult:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #SearchPopup .SearchPopupResults #SearchResultsResult:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #ShowEmbeddedSearchButton:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #ThinkingTrailHistory .ThinkingTrailHistoryDocument:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #UpdateIndicator:hover,
+#main #content #DocumentSidebar #documentListMenuButtons #zoomIntoRemBackDocument:hover,
+#main #content #DocumentSidebar #documentListMenuButtons .accuracyButton:hover,
+#main #content #DocumentSidebar #documentListMenuButtons .actionQueue #ActionQueueOfflineIndicator:hover,
+#main #content #DocumentSidebar #documentListMenuButtons .actionQueue #ActionQueueOnlyActionRequiredSwitcher:hover,
+#main #content #DocumentSidebar #documentListMenuButtons .actionQueue #actionQueueTitle #actionQueueBackButton:hover,
+#main #content #DocumentSidebar #documentListMenuButtons .addListItemButton:hover,
+#main #content #DocumentSidebar #documentListMenuButtons .AnnotationNode:hover,
+#main #content #DocumentSidebar #documentListMenuButtons .biggestThumbnail:hover,
+#main #content #DocumentSidebar #documentListMenuButtons .bigThumbnail:hover,
+#main #content #DocumentSidebar #documentListMenuButtons .blackOut:hover,
+#main #content #DocumentSidebar #documentListMenuButtons .button:hover,
+#main #content #DocumentSidebar #documentListMenuButtons .colorButtonContainer:hover,
+#main #content #DocumentSidebar #documentListMenuButtons .DocumentSidebarSmall #viewDocuments:hover,
+#main #content #DocumentSidebar #documentListMenuButtons .elementContainerNotInArticle .elementBulletContainer:hover,
+#main #content #DocumentSidebar #documentListMenuButtons .elementContainerNotInArticle .elementBulletIcon:hover,
+#main #content #DocumentSidebar #documentListMenuButtons .hierarchyEditorGlobalInsertContainerOpened #HierarchyEditorToolbar #NoFocusedRemToolbarNotice #NoFocusedRemToolbarNoticeClose:hover,
+#main #content #DocumentSidebar #documentListMenuButtons .hierarchyEditorGlobalInsertContainerOpened #HierarchyEditorToolbar .ToolbarDuplicateKeyButton:hover,
+#main #content #DocumentSidebar #documentListMenuButtons .hierarchyEditorGlobalInsertContainerOpened .HierarchyEditorToolbarButton:hover,
+#main #content #DocumentSidebar #documentListMenuButtons .ImportAllContentsButton:hover,
+#main #content #DocumentSidebar #documentListMenuButtons .LinkNode:hover,
+#main #content #DocumentSidebar #documentListMenuButtons .popup #BulletFormatIcons .icon:hover,
+#main #content #DocumentSidebar #documentListMenuButtons .popup .colorButton:hover,
+#main #content #DocumentSidebar #documentListMenuButtons .react-contextmenu--visible .HierarchyEditorElementMenu:hover,
+#main #content #DocumentSidebar #documentListMenuButtons .RichTextEditorSelectedMenu .SelectMenuButton:hover,
+#main #content #DocumentSidebar #documentListMenuButtons .RichTextEditorSelectedMenu .SelectMenuButtonColorContainer:hover,
+#main #content #DocumentSidebar #documentListMenuButtons .SearchResults #SearchResultsList #SearchResultsResult:hover,
+#main #content #DocumentSidebar #documentListMenuButtons .sortSidebarOption:hover,
+#main #content #DocumentSidebar #documentListMenuButtons .spacedRepetition .spacedRepetitionReveal:hover,
+#main #content #DocumentSidebar #documentListMenuButtons .thumbnailNoWidth:hover,
+#main #content #DocumentSidebar #documentListMenuButtons .thumbnailPopup:hover,
+#main #content #DocumentSidebar #documentListMenuButtons .thumbnailSmall:hover,
+#main #content #DocumentSidebar #documentListMenuButtons .thumbnailWithWidth:hover,
+#main #content #DocumentSidebar #documentListMenuButtons .whiteButton:hover,
+#main #content .DocumentSidebarSmall #DocumentSidebar #documentListMenuButtons #viewDocuments:hover,
+#main #homepage #content #DocumentSidebar #DocumentationList #documentListMenuButtons .actionRequiredDocumentLink:hover,
+#main #homepage #content #DocumentSidebar #DocumentationList #documentListMenuButtons .documentListHeader:hover,
+#main #homepage #content #DocumentSidebar #DocumentationList #documentListMenuButtons .documentListItem:hover,
+#main #homepage #content #DocumentSidebar #DocumentationList #documentListMenuButtons .folderFloatButton:hover,
+#main #homepage #content #DocumentSidebar #DocumentationList .documentListItemContainer .documentListHeader #documentListMenuButtons .folder:hover,
+#main #homepage #content #DocumentSidebar #DocumentationList .documentListItemContainer .documentListItem #documentListMenuButtons .folder:hover,
+#main #homepage #content #DocumentSidebar #documentList #documentListMenuButtons .actionRequiredDocumentLink:hover,
+#main #homepage #content #DocumentSidebar #documentList #documentListMenuButtons .documentListHeader:hover,
+#main #homepage #content #DocumentSidebar #documentList #documentListMenuButtons .documentListItem:hover,
+#main #homepage #content #DocumentSidebar #documentList #documentListMenuButtons .folderFloatButton:hover,
+#main #homepage #content #DocumentSidebar #documentList .documentListItemContainer .documentListHeader #documentListMenuButtons .folder:hover,
+#main #homepage #content #DocumentSidebar #documentList .documentListItemContainer .documentListItem #documentListMenuButtons .folder:hover,
+#main #homepage #content #DocumentSidebar #documentListMenuButtons #DocumentationList .actionRequiredDocumentLink:hover,
+#main #homepage #content #DocumentSidebar #documentListMenuButtons #DocumentationList .documentListHeader:hover,
+#main #homepage #content #DocumentSidebar #documentListMenuButtons #DocumentationList .documentListItem:hover,
+#main #homepage #content #DocumentSidebar #documentListMenuButtons #DocumentationList .documentListItemContainer .documentListHeader .folder:hover,
+#main #homepage #content #DocumentSidebar #documentListMenuButtons #DocumentationList .documentListItemContainer .documentListItem .folder:hover,
+#main #homepage #content #DocumentSidebar #documentListMenuButtons #DocumentationList .folderFloatButton:hover,
+#main #homepage #content #DocumentSidebar #documentListMenuButtons #documentList .actionRequiredDocumentLink:hover,
+#main #homepage #content #DocumentSidebar #documentListMenuButtons #documentList .documentListHeader:hover,
+#main #homepage #content #DocumentSidebar #documentListMenuButtons #documentList .documentListItem:hover,
+#main #homepage #content #DocumentSidebar #documentListMenuButtons #documentList .documentListItemContainer .documentListHeader .folder:hover,
+#main #homepage #content #DocumentSidebar #documentListMenuButtons #documentList .documentListItemContainer .documentListItem .folder:hover,
+#main #homepage #content #DocumentSidebar #documentListMenuButtons #documentList .folderFloatButton:hover,
+#main #homepage #content #DocumentSidebar #documentListMenuButtons #DocumentSidebarLink:hover,
+#main #homepage #content #DocumentSidebar #documentListMenuButtons #DocumentSidebarLinkSignUp:hover,
+#main #homepage #content #DocumentSidebar #documentListMenuButtons #HideWalkthroughLinkButton:hover,
+#main #homepage #content #DocumentSidebar #documentListMenuButtons .DocumentSidebarSmall #viewDocuments:hover,
+#main #homepage #content .DocumentSidebarSmall #DocumentSidebar #documentListMenuButtons #viewDocuments:hover,
+#MobileQuickAddButtons #homepage #content #DocumentSidebar #documentListMenuButtons #MobileQuickAddButton:hover,
+#MobileQuickAddButtons #main #content #DocumentSidebar #documentListMenuButtons #MobileQuickAddButton:hover,
+#MultipleWindows .MultipleWindowsDocument #homepage #content #DocumentSidebar #documentListMenuButtons #MultipleWindowsClosePane:hover,
+#MultipleWindows .MultipleWindowsDocument #main #content #DocumentSidebar #documentListMenuButtons #MultipleWindowsClosePane:hover,
+#OtherRemStack #homepage #content #DocumentSidebar #documentListMenuButtons #OtherRemStackClose:hover,
+#OtherRemStack #main #content #DocumentSidebar #documentListMenuButtons #OtherRemStackClose:hover,
+#OtherRemStack #OtherRemBlock #OtherRemBlockTitle #homepage #content #DocumentSidebar #documentListMenuButtons #CloseOtherRemBlockButton:hover,
+#OtherRemStack #OtherRemBlock #OtherRemBlockTitle #homepage #content #DocumentSidebar #documentListMenuButtons #OpenAsDocButton:hover,
+#OtherRemStack #OtherRemBlock #OtherRemBlockTitle #main #content #DocumentSidebar #documentListMenuButtons #CloseOtherRemBlockButton:hover,
+#OtherRemStack #OtherRemBlock #OtherRemBlockTitle #main #content #DocumentSidebar #documentListMenuButtons #OpenAsDocButton:hover,
+#PluginNode #homepage #content #DocumentSidebar #documentListMenuButtons #PluginHamburgerMenu:hover,
+#PluginNode #main #content #DocumentSidebar #documentListMenuButtons #PluginHamburgerMenu:hover,
+#Popup #homepage #content #DocumentSidebar #documentListMenuButtons #PopupCloseButton:hover,
+#Popup #main #content #DocumentSidebar #documentListMenuButtons #PopupCloseButton:hover,
+#QuantaSelector #homepage #content #DocumentSidebar #documentListMenuButtons #QuantaSelectorOption:hover,
+#QuantaSelector #main #content #DocumentSidebar #documentListMenuButtons #QuantaSelectorOption:hover,
+#SearchPopup #PinnedResults #homepage #content #DocumentSidebar #documentListMenuButtons .PinnedResult:hover,
+#SearchPopup #PinnedResults #main #content #DocumentSidebar #documentListMenuButtons .PinnedResult:hover,
+#SearchPopup .SearchPopupResults #homepage #content #DocumentSidebar #documentListMenuButtons #SearchResultsResult:hover,
+#SearchPopup .SearchPopupResults #main #content #DocumentSidebar #documentListMenuButtons #SearchResultsResult:hover,
+#ThinkingTrailHistory #homepage #content #DocumentSidebar #documentListMenuButtons .ThinkingTrailHistoryDocument:hover,
+#ThinkingTrailHistory #main #content #DocumentSidebar #documentListMenuButtons .ThinkingTrailHistoryDocument:hover,
+.actionQueue #actionQueueTitle #homepage #content #DocumentSidebar #documentListMenuButtons #actionQueueBackButton:hover,
+.actionQueue #actionQueueTitle #main #content #DocumentSidebar #documentListMenuButtons #actionQueueBackButton:hover,
+.actionQueue #homepage #content #DocumentSidebar #documentListMenuButtons #ActionQueueOfflineIndicator:hover,
+.actionQueue #homepage #content #DocumentSidebar #documentListMenuButtons #ActionQueueOnlyActionRequiredSwitcher:hover,
+.actionQueue #main #content #DocumentSidebar #documentListMenuButtons #ActionQueueOfflineIndicator:hover,
+.actionQueue #main #content #DocumentSidebar #documentListMenuButtons #ActionQueueOnlyActionRequiredSwitcher:hover,
+.elementContainerNotInArticle #homepage #content #DocumentSidebar #documentListMenuButtons .elementBulletContainer:hover,
+.elementContainerNotInArticle #homepage #content #DocumentSidebar #documentListMenuButtons .elementBulletIcon:hover,
+.elementContainerNotInArticle #main #content #DocumentSidebar #documentListMenuButtons .elementBulletContainer:hover,
+.elementContainerNotInArticle #main #content #DocumentSidebar #documentListMenuButtons .elementBulletIcon:hover,
+.hierarchyEditorGlobalInsertContainerOpened #HierarchyEditorToolbar #homepage #content #DocumentSidebar #documentListMenuButtons .ToolbarDuplicateKeyButton:hover,
+.hierarchyEditorGlobalInsertContainerOpened #HierarchyEditorToolbar #main #content #DocumentSidebar #documentListMenuButtons .ToolbarDuplicateKeyButton:hover,
+.hierarchyEditorGlobalInsertContainerOpened #HierarchyEditorToolbar #NoFocusedRemToolbarNotice #homepage #content #DocumentSidebar #documentListMenuButtons #NoFocusedRemToolbarNoticeClose:hover,
+.hierarchyEditorGlobalInsertContainerOpened #HierarchyEditorToolbar #NoFocusedRemToolbarNotice #main #content #DocumentSidebar #documentListMenuButtons #NoFocusedRemToolbarNoticeClose:hover,
+.hierarchyEditorGlobalInsertContainerOpened #homepage #content #DocumentSidebar #documentListMenuButtons .HierarchyEditorToolbarButton:hover,
+.hierarchyEditorGlobalInsertContainerOpened #main #content #DocumentSidebar #documentListMenuButtons .HierarchyEditorToolbarButton:hover,
+.popup #BulletFormatIcons #homepage #content #DocumentSidebar #documentListMenuButtons .icon:hover,
+.popup #BulletFormatIcons #main #content #DocumentSidebar #documentListMenuButtons .icon:hover,
+.popup #homepage #content #DocumentSidebar #documentListMenuButtons .colorButton:hover,
+.popup #main #content #DocumentSidebar #documentListMenuButtons .colorButton:hover,
+.react-contextmenu--visible #homepage #content #DocumentSidebar #documentListMenuButtons .HierarchyEditorElementMenu:hover,
+.react-contextmenu--visible #main #content #DocumentSidebar #documentListMenuButtons .HierarchyEditorElementMenu:hover,
+.RichTextEditorSelectedMenu #homepage #content #DocumentSidebar #documentListMenuButtons .SelectMenuButton:hover,
+.RichTextEditorSelectedMenu #homepage #content #DocumentSidebar #documentListMenuButtons .SelectMenuButtonColorContainer:hover,
+.RichTextEditorSelectedMenu #main #content #DocumentSidebar #documentListMenuButtons .SelectMenuButton:hover,
+.RichTextEditorSelectedMenu #main #content #DocumentSidebar #documentListMenuButtons .SelectMenuButtonColorContainer:hover,
+.SearchResults #SearchResultsList #homepage #content #DocumentSidebar #documentListMenuButtons #SearchResultsResult:hover,
+.SearchResults #SearchResultsList #main #content #DocumentSidebar #documentListMenuButtons #SearchResultsResult:hover,
+.spacedRepetition #homepage #content #DocumentSidebar #documentListMenuButtons .spacedRepetitionReveal:hover,
+.spacedRepetition #main #content #DocumentSidebar #documentListMenuButtons .spacedRepetitionReveal:hover,
+#GlobalNameHierarchyViewer #GlobalNameHierarchyViewerSelf:hover {
+    color: #add8e6;
+}

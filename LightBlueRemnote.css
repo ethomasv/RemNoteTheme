@@ -605,6 +605,19 @@ i.refresh.icon:hover {
   border-left: 1px solid #add8e6 !important;
 }
 
+#hierarchy-editor .portalRem {
+  background-color: #fbfcfc;
+  border-top-color: #fbfcfc;
+  border-right-color: #fbfcfc;
+  border-bottom-color: #fbfcfc;
+  border-left: 1px solid #add8e6; 
+}
+
+#hierarchy-editor .portalRem .portalRemTop {
+    border-top: 1px solid #fbfcfc;
+    background-color: #fbfcfc;
+}
+
 .remInPortalBlue .remInPortal {
   background-color: #fbfcfc;
   border: none;

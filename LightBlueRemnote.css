@@ -553,6 +553,14 @@ i.refresh.icon:hover {
   border-left: 1px solid #add8e6;
 }
 
+#hierarchy-editor .portal-rem--embedded-search {
+  background-color: #fbfcfc;
+  border-top-color: #fbfcfc;
+  border-right-color: #fbfcfc;
+  border-bottom-color: #fbfcfc;
+  border-left: 1px solid #add8e6;
+}
+
 #hierarchy-editor .notIncludedInDocumentScope .notIncludedAncestorClickable {
   text-decoration: none;
 }

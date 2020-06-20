@@ -1,7 +1,7 @@
 /*
 ### Light Blue Theme for RemNote ###
 Edits by Eva Thomas 
-Last Update: June 17th, 2020 
+Last Update: June 20th, 2020 
 */
 
 /* CUSTOMIZE: */
@@ -56,11 +56,6 @@ body {
   outline: none;
 }
 
-.bold {
-  font-weight: 500;
-  letter-spacing: 0.03em;
-}
-
 h1 {
   font-size: 20px;
   font-weight: 400;
@@ -83,6 +78,7 @@ a {
 
 .bold {
   font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 #hierarchy-editor .rem-container--focused {
@@ -479,6 +475,16 @@ i.file.text.large.icon:hover {
 
 .rem-bullet__container .rem-bullet {
   background-color: #888;
+}
+
+/* Rems */
+
+#hierarchy-editor #hierarchy-editor-list__inner {
+    line-height: 1.25;
+}
+
+.treeNodeContainer {
+    margin-top: 0.2em;
 }
 
 /* References */
@@ -1068,6 +1074,46 @@ i.refresh.icon:hover {
   border-color: #ddd;
   border-top: solid #ddd;
   border-width: thin;
+}
+
+/* Hidden Rems Popup */
+
+#hierarchy-editor .HierarchyEditorChildrenList .children-list-content {
+  box-shadow: none;
+  border: thin solid #ddd;
+  border-radius: 1px;
+  border-bottom: none;
+}
+
+#hierarchy-editor .HierarchyEditorChildrenList .children-list-content .childrenListItem{
+    padding: 7px;
+    border-bottom: solid;
+    border-width: 1px;
+    border-color: #ddd;
+}
+
+/* "/" Menu */
+
+.search-results {
+    color: #555;
+    min-width: 300px;
+    border: thin solid #ddd;
+    font-size: 15px;
+    max-width: 600px;
+}
+
+.search-results #search-results__list #SearchResultsResult {
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+}
+
+.keycode {
+    font-size: 80%;
+}
+
+#search-results__controls {
+    font-size: 11px;
+    padding-bottom: 7px;
 }
 
 /* Link Popup */

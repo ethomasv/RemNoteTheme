@@ -302,6 +302,10 @@ i.icons .corner.icon {
     color: var(--font-dark-c)!important;
 }
 
+#document-sidebar__hiden-link__container:hover {
+    background-color: var(--hover-background-c);
+}
+
 /* Bottom Bar */
 
 .hierarchyEditorToolbarContainerOpened {

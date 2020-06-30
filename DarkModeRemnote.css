@@ -148,12 +148,12 @@ a {
 
 /* Logo */
 
-#document-sidebar_top__logo-and-user {
+#logo {
     opacity: 0.4;
     filter: grayscale(100%) invert(70%) contrast(180%) brightness(150%);
 }
 
-#document-sidebar_top__logo-and-user:hover {
+#logo:hover {
     opacity: 0.55;
     filter: grayscale(100%) invert(70%) contrast(180%) brightness(150%);
 }

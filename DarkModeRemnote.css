@@ -593,7 +593,7 @@ i.icons .corner.icon {
 }
 
 .selectedRem {
-    background-color: transparent;
+    background-color: #5da1b44d;
     box-shadow: 
         rgba(15, 15, 15, 0.1) 0px 0px 0px 1px,
         rgba(15, 15, 15, 0.2) 0px 0px 2px,

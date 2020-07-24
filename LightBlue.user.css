@@ -18,6 +18,9 @@
 @var       checkbox     hide-indented-rems      "Hide Indented Rem Indicator: |"            1
 @var       checkbox     hide-cloze-menu-arrow   "Show Cloze Menu Button while editing"      1
 @var       checkbox     hide-scroller           "Show Scroller Only on Hover"               0
+@var       checkbox     wider-multiline-rem     "Bold Multiline Rem Bar"                    0 
+@var       checkbox     roomy-spacing           "Roomy Spacing"                             1
+@var       checkbox     stronger-bold-font      "Stronger Bold Font"                        0
 
 @var       color        main-link-c             "Linked Rems Color"                         #8ca7b0
 @var       color        quote-background-c      "Quote Background Color"                         #eee
@@ -126,8 +129,25 @@
             box-shadow: 0px 0px 4px 1px rgba(200, 200, 200, .6) inset;  
         }
     }
+           
+    if not wider-multiline-rem {
+        #hierarchy-editor .TreeNodeListItems {
+            border-width: 1px!important;
+        }
+    }
     
-
+    if roomy-spacing {
+        div {
+            line-height: 1.5em;
+        }
+    }
+    
+    if not stronger-bold-font {
+        .bold {
+            font-weight: var(--bold-font-weight);
+        }    
+    }
+        
     /* Custom colors for highlighting:  */
 
     .highlight-color--red {
@@ -197,7 +217,6 @@
     }
 
     .bold {
-        font-weight: var(--bold-font-weight);
         letter-spacing: var(--bold-font-spacing);
         color: var(--font-c);
     }
@@ -678,7 +697,6 @@
         display: inline-block;
         border: none; 
         margin-top: 0.45em;
-        opacity: 1;
         box-shadow: none;
     }
 
@@ -961,7 +979,6 @@
 
     #hierarchy-editor .TreeNodeListItems {
         border-left: solid;
-        border-width: 1px;
         border-color: var(--border-c);
     }
 
@@ -1773,6 +1790,21 @@
         border-top: 1px solid var(--border-c);
     }
 
+    /* Search */ 
+
+    #SearchPopup .SearchPopupResults #search-results__no-results,
+    #SearchPopup .SearchPopupResults #search-results__result, 
+    #SearchPopup .SearchPopupResults #SearchResultsParentContext {
+        border-left: none;
+        border-right: none;
+        border-bottom: none;
+        border-top: thin solid var(--border-c);
+    }
+    
+    #SearchPopup {
+        color: var(--font-c);
+    }
+        
     /* "::" Bottom Menu */
 
     .ui.upward.dropdown > .menu {

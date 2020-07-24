@@ -1,0 +1,2437 @@
+/* ==UserStyle==
+
+@name           DarkMode
+@namespace      https://github.com/ethomasv/
+@version        1.0.3
+@description    Dark Mode Custom CSS Theme
+@author         Eva Thomas 
+@homepageURL    https://github.com/ethomasv/RemNoteTheme
+@updateURL      https://raw.githubusercontent.com/ethomasv/RemNoteTheme/master/DarkMode.user.css
+@preprocessor   stylus
+
+@var       color        highlight-red-c         "Red Highlight"                             #ff736980
+@var       color        highlight-orange-c      "Orange Highlight"                          #ffa34480
+@var       color        highlight-yellow-c      "Yellow Highlight"                          #ffdc4980
+@var       color        highlight-green-c       "Green Highlight"                           #4dab6e80
+@var       color        highlight-purple-c      "Purple Highlight"                          #c26fb180
+
+@var       checkbox     hide-indented-rems      "Hide Indented Rem Indicator: |"            1
+@var       checkbox     hide-cloze-menu-arrow   "Show Cloze Menu Button while editing"      1
+@var       checkbox     hide-scroller           "Show Scroller Only on Hover"               0
+
+@var       color        main-link-c             "Linked Rems Color"                         #f4bf61
+
+@var       color        quote-background-c      "Quote Background Color"                    #474c50
+
+@advanced  select       font-body               "Font" {
+
+        "Open Sans":  "Open Sans, sans-serif",
+        "Courier": "Courier New, Courier, monospace",
+        "Century Gothic": "Century Gothic, sans-serif",    
+        "Comic Sans Cursive": "Comic Sans MS, Comic Sans, cursive",
+        "Inter": "Inter, sans-serif",
+        "Times New Roman": "Times, Times New Roman, serif",
+        "Arial": "Arial, sans-serif"
+        
+    }
+
+==/UserStyle== */
+
+@-moz-document domain("remnote.io") {
+    
+    :root {
+    --main-background-c: #2f3437;     /* Main Window, Bottom Bar, Doc View, Sticky Top, Pages, Queue */
+    --secondary-background-c: #373c3f;     /* Sidebar, Quotes, icons, Portals, Embedded Search, Settings Menu */
+    --elevated-background-c: #3f4447;     /* Queue Cards, Popups */
+    --hover-background-c: #474c50;     /* Hover */
+    --border-c: #555;
+        
+        
+
+    --font-c: #E0E0DF;
+    --font-dark-c: rgba(240, 240, 239, .6);
+    --font-background-c: #aaa;
+
+    --font-red-c: #f06f73;
+    --font-blue-c: #8ca7b0;
+
+    --main-font-spacing: 0.01em;
+    --bold-font-spacing: 0.02em;
+    --semiwide-font-spacing: 0.05em;
+    --wide-font-spacing: 0.1em;
+
+    --normal-font-weight: 400;
+    --focus-font-weight: 500;
+    --bold-font-weight: 600;
+    }
+
+    if hide-indented-rems {
+        .rem-indented-indicator
+        {
+            display: none; 
+        }
+    }
+    if not hide-indented-rems {
+        .rem-indented-indicator
+        {
+            color: main-link-c;
+            font-size: 0.75em;
+            opacity: 0.6;
+        }
+    }
+    
+    if hide-cloze-menu-arrow {
+        
+        i.icon.caret.square.down.icon:before {
+            display: none;
+        }
+
+        i.icon.caret.square.down.icon:after {
+            content: '+';
+        }
+    }
+    
+    if hide-scroller {
+        
+        div::-webkit-scrollbar {
+            width: 6px !important;
+            height: 2px !important;
+        }
+        div::-webkit-scrollbar-track {
+            background-color: transparent !important;     
+        }
+        div::-webkit-scrollbar-thumb {
+            background-color: transparent!important;
+            border-radius: 10px!important;
+        }
+        div::-webkit-scrollbar-thumb:hover {
+            background-color: rgba(17, 17, 17, .35) !important;
+            cursor: pointer !important;
+        }
+        
+    }
+    
+    if not hide-scroller {
+        
+        div::-webkit-scrollbar {
+            width: 6px !important;
+            height: 2px !important;
+        }
+        div::-webkit-scrollbar-track {
+            background-color: transparent !important;     
+        }
+        div::-webkit-scrollbar-thumb {
+            background-color: rgba(17, 17, 17, .35) !important;
+            border-radius: 10px!important;
+        }
+        div::-webkit-scrollbar-thumb:hover {
+            box-shadow: 0px 0px 4px 1px rgba(17, 17, 17, .5) inset;  
+        }
+    }
+    
+
+    /* Custom colors for highlighting:  */
+
+    .highlight-color--red {
+        background-color: highlight-red-c!important;
+        padding: 0px 5px;
+    }
+
+    .highlight-color--orange {
+        background-color: highlight-orange-c!important;
+        padding: 0px 5px;
+    }
+
+    .highlight-color--yellow {
+        background-color: highlight-yellow-c!important;
+        padding: 0px 5px;
+    }
+
+    .highlight-color--green {
+        background-color: highlight-green-c!important;
+        padding: 0px 5px;
+    }
+
+    .highlight-color--purple {
+        background-color: highlight-purple-c!important;
+        padding: 0px 5px;
+    }
+    
+    /* Main */
+
+    body {
+        font-size: 13px;
+        letter-spacing: var(--main-font-spacing);
+        color: var(--font-c);
+        background: var(--main-background-c);
+    }
+
+    div {
+        font-family: font-body;
+        font-size: 1em;
+        line-height: 1.5em;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    :focus {
+        outline: none;
+    }
+
+    h1 {
+        font-size: 20px;
+        font-weight: var(--normal-font-weight);
+    }
+
+    h2 {
+        font-size: 17px;
+        font-weight: var(--normal-font-weight);
+    }
+
+    h3 {
+        font-size: 15px;
+        font-weight: var(--normal-font-weight);
+    }
+
+    a {
+        color: #bbb;
+        text-shadow: none !important;
+    }
+
+    .bold {
+        font-weight: var(--bold-font-weight);
+        letter-spacing: var(--bold-font-spacing);
+        color: white;
+    }
+
+    #code-node,
+    #quote,
+    .quote {
+        background-color: quote-background-c;
+        border: none;
+        color: var(--font-dark-c);
+        padding: 1px;
+        padding-left: 7px;
+        padding-right: 7px;
+    }
+
+    #hierarchy-editor .rem-header--1 {
+        font-size: 18px;
+        font-weight: var(--focus-font-weight);
+        background-color: transparent;
+        letter-spacing: var(--bold-font-spacing);
+    }
+    
+    /* Logo */
+
+    #logo {
+        opacity: 0.4;
+        filter: grayscale(100%) invert(70%) contrast(180%) brightness(150%);
+    }
+
+    #logo:hover {
+        opacity: 0.55;
+        filter: grayscale(100%) invert(70%) contrast(180%) brightness(150%);
+    }
+
+    /* Icons */
+
+    i.icon {
+        color: rgba(255, 255, 255, 0.35)!important;
+    }
+
+    i.icon:hover {
+        color: rgba(255, 255, 255, 0.5)!important;
+    }
+
+    i.icons .corner.icon {
+        text-shadow: 
+            -1px -1px 0 var(--secondary-background-c),
+            1px -1px 0 var(--secondary-background-c),
+            -1px 1px 0 var(--secondary-background-c),
+            1px 1px 0 var(--secondary-background-c);
+    }
+
+
+    /* Left Sidebar */
+
+    #homepage #content #document-sidebar,
+    #main #content #document-sidebar {
+        border-right: thin transparent solid;
+        box-shadow: 1px 0px 5px -2px rgba(0, 0, 0, .5);
+        background-color: var(--secondary-background-c);
+        color: var(--font-dark-c);
+    }
+
+    #homepage #content #document-sidebar .document-sidebar__linkQueue,
+    #main #content #document-sidebar .document-sidebar__linkQueue {
+        margin-top: 5px;
+    }
+
+    #homepage #content #document-sidebar #document-sidebar__link,
+    #main #content #document-sidebar #document-sidebar__link {
+        padding: 5px;
+        font-weight: var(--focus-font-weight);
+        letter-spacing: var(--semiwide-font-spacing);
+        color: var(--font-dark-c);
+    }
+
+    #homepage #content #document-sidebar #document-sidebar__link:hover,
+    #main #content #document-sidebar #document-sidebar__link:hover {
+        font-weight: var(--focus-font-weight);
+        background: var(--hover-background-c);
+    }
+
+    #homepage #content #document-sidebar .document-sidebar__linkOpen,
+    #main #content #document-sidebar .document-sidebar__linkOpen {
+        font-weight: var(--normal-font-weight);
+        background: var(--hover-background-c) !important;
+        padding-left: 5px !important;
+    }
+
+
+    #homepage #content #document-sidebar #DocumentationList,
+    #homepage #content #document-sidebar #documentList,
+    #main #content #document-sidebar #DocumentationList,
+    #main #content #document-sidebar #documentList {
+        margin-top: 5px;
+        letter-spacing: var(--bold-font-spacing);
+        line-height: 1.2;
+    }
+
+    #homepage #content #document-sidebar #DocumentationList .documentListHeader:hover,
+    #homepage #content #document-sidebar #DocumentationList .document-list-item:hover,
+    #homepage #content #document-sidebar #documentList .documentListHeader:hover,
+    #homepage #content #document-sidebar #documentList .document-list-item:hover,
+    #main #content #document-sidebar #DocumentationList .documentListHeader:hover,
+    #main #content #document-sidebar #DocumentationList .document-list-item:hover,
+    #main #content #document-sidebar #documentList .documentListHeader:hover,
+    #main #content #document-sidebar #documentList .document-list-item:hover {
+        font-weight: var(--focus-font-weight);
+        background: var(--hover-background-c);
+    }
+
+    #homepage #content #document-sidebar #DocumentationList .document-list-item--opened,
+    #homepage #content #document-sidebar #documentList .document-list-item--opened,
+    #main #content #document-sidebar #DocumentationList .document-list-item--opened,
+    #main #content #document-sidebar #documentList .document-list-item--opened {
+        font-weight: var(--normal-font-weight);
+        background: var(--hover-background-c);
+    }
+
+    #homepage #content #document-sidebar #document-sidebar__bottom-menu,
+    #main #content #document-sidebar #document-sidebar__bottom-menu {
+        padding-top: 8px;
+        font-size: 11px;
+        font-weight: var(--normal-font-weight);
+        border-top: 1px solid var(--border-c);
+        box-shadow: none;
+        padding-bottom: 5px;
+    }
+
+    #homepage #content #document-sidebar #document-sidebar__bottom-menu .document-sidebar__current-route,
+    #main #content #document-sidebar #document-sidebar__bottom-menu .document-sidebar__current-route {
+        border: 1px solid var(--hover-background-c) !important;
+        background: var(--hover-background-c) !important;
+        color: var(--font-dark-c) !important;
+    }
+
+    #DocumentationList #documentation-list__section__title {
+        font-weight: var(--bold-font-weight);
+        letter-spacing: var(--semiwide-font-spacing);
+    }
+
+    #DocumentationList #documentation-list__section {
+        border-left: thin solid var(--border-c);
+    }
+
+    #DocumentationList {
+        border-left: transparent;
+    }
+
+    #KeyboardShortcuts,
+    #KeyboardShortcuts #KeyboardShortcutsTitle,
+    #KeyboardShortcuts #KeyboardShortcutSectionHeader {
+        background-color: var(--secondary-background-c)!important;
+        color: var(--font-dark-c);
+        border: none;
+        line-height: 1.3;
+        font-size: 12px;
+    }
+
+    #DocumentationList #documentation-list__section__large-title {
+        font-weight: var(--bold-font-weight);
+        background: var(--secondary-background-c)!important;
+        padding-left: 5px !important;
+        border: none;
+    }
+
+    #homepage #content #document-sidebar a,
+    #main #content #document-sidebar a {
+        color: var(--font-dark-c)!important;
+    }
+
+    #homepage #content #document-sidebar a:hover,
+    #homepage #content #document-sidebar a:visited,
+    #main #content #document-sidebar a:hover,
+    #main #content #document-sidebar a:visited {
+        color: var(--font-dark-c)!important;
+    }
+
+    #document-sidebar__hiden-link__container:hover {
+        background-color: var(--hover-background-c);
+    }
+
+    #document-sidebar__hiden-link__container {
+        background-color: var(--secondary-background-c);
+    }
+
+    /* Bottom Bar */
+
+    .hierarchyEditorToolbarContainerOpened {
+        background-color: var(--main-background-c);
+    }
+
+    #hierarchyEditorToolbarContainer #hierarchyEditorGlobalInsert .rich-text-editor {
+        background-color: var(--hover-background-c);
+        border: 0px solid var(--main-background-c);
+        border-radius: 7px;
+        padding-left: 10px;
+        width: 220px;
+    }
+
+    .hierarchyEditorToolbarContainerOpened #HierarchyEditorToolbar {
+        border-top: 1px solid var(--border-c);
+    }
+
+    .hierarchyEditorToolbarContainerOpened #HierarchyEditorToolbar .HierarchyEditorToolbarItem {
+        color: #888;
+    }
+
+    .hierarchyEditorToolbarContainerOpened #HierarchyEditorToolbar .ToolbarDuplicateKeyButton {
+        color: var(--font-red-c);
+        border-radius: 3px;
+        border: 1px solid var(--font-red-c);
+        padding: 2px 5px;
+        font-size: 12px;
+    }
+
+    /* Documents List */
+    
+    .ReactVirtualized__Table__headerRow {
+        text-align: center;
+        color: var(--font-background-c);
+        font-weight: var(--normal-font-weight);
+        letter-spacing: var(--wide-font-spacing);
+        font-size: 12px;
+        padding-bottom: 5px;
+    }
+
+
+    .ReactVirtualized__Table__headerTruncatedText:hover {
+        font-weight: var(--focus-font-weight);
+    }
+
+    .ReactVirtualized__Grid__innerScrollContainer .ReactVirtualized__Table__row[style*="background-color: rgba(1\, 1\, 1\, 0.1);"] { 
+        background-color: var(--main-background-c) !important;
+    }
+
+    .ReactVirtualized__Grid__innerScrollContainer .ReactVirtualized__Table__row {
+        border-top: 1px solid var(--border-c);
+        opacity: 0.75;
+    }
+
+    #DocumentTable .DocumentLink:hover {
+        background-color: transparent;
+        color: var(--font-c)!important;
+    }
+
+    #DocumentTable .DocumentLink {
+        padding: 8px;
+        color: var(--font-c)!important;
+    }
+
+    #DocumentTable a:hover,
+    #DocumentTable .blackLinks a:hover {
+        font-weight: var(--focus-font-weight);
+        letter-spacing: var(--bold-font-spacing);
+    }  
+    
+    /* Sticky Top */
+
+    #hierarchy-editor-list__sticky-top__container {
+        background-color: transparent;
+    }
+
+    #hierarchy-editor #hierarchy-editor-list__sticky-top__container #hierarchy-editor-list__sticky-top {
+        background-color: var(--main-background-c);
+        border-top: 1px solid var(--main-background-c);
+    }
+
+    #hierarchy-editor #hierarchy-editor-list__sticky-top__container #hierarchy-editor-list__sticky-top #hierarchy-editor-list__sticky-top__bottom {
+        margin-left: 0px;
+        border-width: thin;
+        border-bottom-style: solid;
+        border: 1px solid var(--main-background-c);
+        background-image: linear-gradient(to bottom, #282b2c 0%, var(--main-background-c) 100%);
+        padding: 2px;
+    }
+
+    #hierarchy-editor .rem-container--sticky-document-title {
+        font-weight: var(--normal-font-weight);
+        letter-spacing: var(--semiwide-font-spacing);
+        color: var(--font-c);
+        background-color: var(--main-background-c);
+    }
+
+    #hierarchy-editor #hierarchy-editor-list__sticky-top__container #hierarchy-editor-list__sticky-top .hierarchy-editor-list__sticky-top__rem-container {
+        background-color: var(--main-background-c);
+        border: none;
+    }
+
+    #hierarchy-editor-list__sticky-top__container .remInPortalBlue {
+        background-color: var(--main-background-c);
+    }
+
+    #hierarchy-editor-list__sticky-top .indented-hierarchy-editor-remPortal {
+        display:none;
+    }
+
+    /* Top */
+
+    #document-parents .parent-link {
+        color: var(--font-background-c);
+        opacity: 0.65;
+    }
+
+    #document-parents i.icon {
+        display: none;
+    }
+
+    #document-parents .join-arrow {
+        font-size: 12px;
+        color: #bbb;
+        opacity: 0.65;
+    }
+
+    #ArticleViewer #ArticleContent #ArticleViewerTitle {
+        letter-spacing: var(--semiwide-font-spacing);
+        color: var(--font-c);
+        padding-top: 5px;
+    }
+
+    .ArticleLink {
+        border: none;
+        color: var(--font-background-c);
+        font-style: italic;
+        margin-left: 10px;
+        padding-top: 1.5em;
+        font-size: 12px;
+        letter-spacing: var(--bold-font-spacing);
+    }
+
+    .ArticleLink i.newspaper.icon {
+        display: none;
+    }
+
+    #document-parents.documenParentsLinksDisabled {
+    padding-bottom: 0.5em;
+    }
+
+    #ArticleViewer #ArticleContent #ArticleViewerSource {
+        color: var(--font-background-c);
+        font-size: 12px;
+        letter-spacing: var(--bold-font-spacing);
+    }
+
+    #ArticleViewer #ArticleContent #ArticleViewerAuthor {
+        font-style: italic;
+        margin-left: 10px;
+        padding-top: 4px;
+        color: var(--font-background-c);
+        font-size: 12px;
+        letter-spacing: var(--bold-font-spacing);
+        font-weight: var(--focus-font-weight);
+
+    }
+
+    #ArticleViewer #ArticleContent #ArticleViewerReadingTime {
+        margin-left: 10px;
+        padding-top: 4px;
+        color: var(--font-background-c);
+        font-size: 12px;
+        letter-spacing: var(--bold-font-spacing);
+    }
+
+
+    #hierarchy-editor .rem-header--3 {
+        font-size: 15px;
+        font-weight: var(--focus-font-weight);
+        letter-spacing: var(--semiwide-font-spacing);
+    }
+
+    #hierarchy-editor .rem-header--,
+    #hierarchy-editor .rem-header--1,
+    #hierarchy-editor .rem-header--2,
+    #hierarchy-editor .rem-header--3 {
+        color: var(--font-c);
+    }
+
+    #hierarchy-editor .rem-header--2 {
+    font-weight: var(--focus-font-weight);
+    font-size: 17px;
+    }
+
+    #hierarchy-editor .TreeNode {
+        border-color: var(--border-c);
+    }
+
+    #hierarchy-editor .indented-hierarchy-editor-rem {
+        border-color: var(--border-c);
+    }
+
+
+    /* Document Window */
+
+    #ExamplesPageContainer #ExamplesPageContent,
+    #ExportContainer #Export,
+    #HelpPage #HelpPageContent,
+    #SettingsPage #SettingsPageContent,
+    #StatsPage #StatsPageContent,
+    .centered-page,
+    .narrow-document {
+        background-color: var(--main-background-c);
+    }
+    
+     #multiple-windows .multiple-windows__document {
+        border: none;
+        margin-right: 3.5px;
+    }
+    
+    /* Trail History */
+
+    #thinking-trail-history {
+        margin-left: 10px;
+        height: 25px;
+    }
+
+    #thinking-trail-history .button .grey.close.icon {
+        color: var(--font-background-c) !important;
+        padding-top: 4px;
+    }
+
+    #thinking-trail-history .thinking-trail-history__document .thinking-trail-history__document-dot {
+        background-color: var(--font-background-c);
+        border: thin solid var(--font-background-c);
+        border-radius: 2.5px;
+        width: 8px;
+        height: 8px;
+    }
+
+    #thinking-trail-history .thinking-trail-history__document .thinking-trail-history__document-dot:hover {
+        box-shadow: 0px 0px 0px 1px var(--font-background-c);
+        border-radius: 2px;
+    }
+
+    /* Title */
+
+    #document #DocumentTopRow {
+        margin-top: 10px;
+    }
+
+    #document #actionRequiredDocumentTitle,
+    #document .document-title {
+        font-size: 20px;
+        letter-spacing: var(--bold-font-spacing);
+        color: var(--font-c);
+    }
+
+    .document-source {
+        margin-left: 20px;
+        margin-top: 5px;
+    }
+
+    #document #AddNewDocumentButtonSmall:hover {
+        color: #999;
+    }
+
+    /* Bullets */
+
+    .rem-bullet, .rem-bullet--in-list {
+        width: 0.4em;
+        height: 0.4em;
+        border-radius: 100%;
+        background-color: #999;
+        display: inline-block;
+        border: 5px solid #444; 
+        margin-top: 0.2em;
+        opacity: 1;
+        box-shadow: 0px 0px 0px 1.25px #777;
+    }
+
+    .rem-bullet[style*="border-width: 3px;"] {
+        border-width: 3.5px!important;
+    }
+
+    .rem-bullet__container .rem-bullet--all-children-visible {
+        width: 0.5em;
+        height: 0.5em;
+        border-radius: 100%;
+        background-color: #999;
+        display: inline-block;
+        border: none; 
+        margin-top: 0.45em;
+        opacity: 1;
+        box-shadow: none;
+    }
+
+    .rem-container--not-in-article .rem-bullet__container:hover .rem-bullet--all-children-visible,
+    .rem-container--not-in-article .rem-bullet__container:hover .rem-bullet, .rem-container--not-in-article .rem-bullet__container:hover .rem-bullet--in-list {
+        border: 3.5px solid #666;
+    }
+    
+    /* Rems */
+
+    #hierarchy-editor .rem-container--default .rem-bullet__container, #hierarchy-editor .rem-container--default .rem-hamburgerGeneric, #hierarchy-editor .rem-container--default .toggleCollapseButton {
+        margin-top: 0.4em;
+    }
+
+    #hierarchy-editor #hierarchy-editor-list__inner {
+        line-height: 1.3;
+    }
+
+    .treeNodeContainer {
+        margin-top: 0.2em;
+    }
+
+    #hierarchy-editor .isToolbarPreviousFocusRem {
+        box-shadow: 
+            rgba(15, 15, 15, 0.1) 0px 0px 0px 1px,
+            rgba(15, 15, 15, 0.2) 0px 0px 6px,
+            rgba(15, 15, 15, 0.5) 0px 0px 24px;
+    }
+
+    .selectedRem {
+        background-color: #5da1b44d;
+    }
+
+    #hierarchy-editor .rem-container--focused {
+        background-color: transparent;
+    }
+
+    /* References */
+
+    .rem.portal-rem--blue.portalRem {
+        background-color: transparent!important;
+        border: none!important;
+        box-shadow: none!important;
+    }
+
+    #hierarchy-editor .portalRem .portalRemTop {
+        border-top: 2px solid transparent;
+        background-color:transparent;
+    }
+
+    #hierarchy-editor .portalRem .portalRemTop:hover {
+        cursor: pointer;
+    }
+
+    #hierarchy-editor .portalRemSelected .portalRemTop {
+        border-color: transparent!important;
+        box-shadow: -0.5px 9px 0px 0.5px var(--secondary-background-c);
+    }
+
+    .HierarchyEditorAfterPortalBlue.HierarchyEditorAfterPortal {
+        visibility: hidden;
+    }
+
+    #hierarchy-editor .indented-hierarchy-editor-rem--after-portal-embedded-search {
+        visibility: hidden;
+    }
+
+    #show-embedded-search-button {
+        padding: 4px;
+        margin-right: 0;
+        margin-top: 4px;
+        margin-left: -6px;
+        border: none;
+        color: var(--font-background-c);
+    }
+
+    #show-embedded-search-button i.caret.down.icon {
+        opacity: 0.5;
+    }
+
+    #hierarchy-editor .portal-rem {
+        background-color: var(--secondary-background-c);
+        border-top-color: var(--secondary-background-c);
+        border-right-color: var(--secondary-background-c);
+        border-bottom-color: var(--secondary-background-c);
+        border-left: 1px solid transparent !important;
+        box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, .5);
+        border-radius: 3px;
+    }
+
+    #hierarchy-editor .portal-rem-top--embedded-search-top {
+        border-top-style: none !important;
+    }
+
+    i.refresh.icon {
+        opacity: 0.5;
+        margin-top: 0.2em;
+    }
+
+    i.refresh.icon:hover {
+        opacity: 0.85;
+    }
+
+    .embeddedSearch {
+        border-radius: 0.4em;
+        border: 1px solid var(--border-c);
+        text-decoration: none;
+        padding: 5px 5px 5px 10px;
+        color: var(--font-c);
+        letter-spacing: var(--semiwide-font-spacing);
+        background-color: var(--secondary-background-c);
+        margin-left: 9px;
+        margin-bottom: 8px;
+    }
+
+    .remInEmbeddedSearch {
+        border-color: var(--secondary-background-c);
+        background-color: var(--secondary-background-c);
+    }
+
+    #hierarchy-editor .search-portal-tree-node {
+        border:none;
+        border-radius: 0px;
+        background-color: transparent;
+        margin-left: 5px;
+        margin-right: 25px;
+
+    }
+
+    #hierarchy-editor .rem-container__top-level-spacer .rem-container__top-level-spacer__inner {
+        display: none;
+    }
+
+    #hierarchy-editor .rem-container__top-level-spacer {
+        display: none;
+    }
+
+    #Hierarchy-editor .HierarchyEditorAfterPortal {
+        border: 1px solid var(--border-c) !important;
+        box-shadow: none;
+        border-radius: 5px;
+        background-color: var(--main-background-c);
+    }
+
+    #hierarchy-editor .indented-hierarchy-editor-rem--after-portal-embedded-search {
+        border: 1px solid var(--border-c) !important;
+        box-shadow: none;
+        border-radius: 5px;
+        background-color: var(--main-background-c);
+    }
+
+    #hierarchy-editor .portal-rem--embedded-search {
+        background-color: transparent!important;
+        border: none!important;
+        box-shadow: none!important;
+    }
+
+    #hierarchy-editor .notIncludedInDocumentScope .notIncludedAncestorClickable {
+        text-decoration: none;
+    }
+
+    .notIncludedInDocumentScope.rem-container--default.remContainer.rem-container--not-in-article.rem-container--not-importable .join-arrow {
+        font-size: 11px;
+        color: #bbb;
+    }
+
+    .notIncludedInDocumentScope.rem-container--default.remContainer.rem-container--not-in-article.rem-container--not-importable i.file.text.small.icon {
+        display: none;
+    }
+
+    #hierarchy-editor .isSearchResult {
+        background-color: var(--hover-background-c);
+        padding: 5px 0px;
+        border-radius: 5px;
+    }
+
+    .search-portal-tree-node  > .treeNodeContainer { /* custom */
+        background-color: var(--secondary-background-c);
+        border-top-color: var(--secondary-background-c);
+        border-right-color: var(--secondary-background-c);
+        border-bottom-color: var(--secondary-background-c);
+        border-left: 1px solid transparent !important;
+        box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, .5);
+        border-radius: 4px;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .searchKeywordHighlight {
+        background-color: transparent;
+    }
+
+    .remInPortalBlue { 
+        background-color: var(--secondary-background-c);
+        border-top-color: var(--secondary-background-c);
+        border-right-color: var(--secondary-background-c);
+        border-bottom-color: var(--secondary-background-c);
+    }
+
+    #hierarchy-editor .portal-remBlue {
+        background-color: var(--secondary-background-c);
+        border-top-color: var(--secondary-background-c);
+        border-right-color: var(--secondary-background-c);
+        border-bottom-color: var(--secondary-background-c);
+        border-left: 1px solid transparent !important;
+        box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, .5);
+        border-radius: 3px;
+    }
+
+    .rem.portal-remBlue.portal-rem .portal-remTop {
+        border: none !important;
+    }
+
+    .portal-tree-node {
+        background-color: var(--secondary-background-c);
+        letter-spacing: var(--semiwide-font-spacing);
+        border-top-color: var(--secondary-background-c) !important;
+        border-right-color: var(--secondary-background-c) !important;
+        border-bottom-color: var(--secondary-background-c) !important;
+        border-left: 1px solid transparent !important;
+        box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, .5);
+        border-radius: 3px;
+    }
+
+    #hierarchy-editor .portalRem {
+        background-color: var(--secondary-background-c);
+        border-top-color: var(--secondary-background-c);
+        border-right-color: var(--secondary-background-c);
+        border-bottom-color: var(--secondary-background-c);
+        border-left: 1px solid transparent !important;
+        box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, .5);
+        border-radius: 3px;
+    }
+
+    .remInPortalBlue .remInPortal {
+        background-color: var(--secondary-background-c);
+        border: none;
+    }
+
+    .indented-hierarchy-editor-remPortal {
+        background-color: var(--secondary-background-c);
+        border-top-color: var(--secondary-background-c) !important;
+        border-right-color: var(--secondary-background-c) !important;
+        border-bottom-color: var(--secondary-background-c) !important;
+        border-left: 1px solid transparent !important;
+        box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, .5);
+        border-radius: 3px;
+        border-right: 2px solid var(--secondary-background-c)!important;
+    }
+
+    #hierarchy-editor .HierarchyEditorAfterPortalBlue {
+        background-color: var(--secondary-background-c);
+        border-top-color: var(--secondary-background-c);
+        border-right-color: var(--secondary-background-c);
+        border-bottom-color: var(--secondary-background-c);
+        border-left: 1px solid transparent !important;
+        box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, .5);
+        border-radius: 3px;
+    }
+
+    .import-all-contents-button__container {
+        margin-top: 8px;
+    }
+
+    .ImportAllContentsButton {
+        opacity: 0.5;
+    }
+
+    .ImportAllContentsButton:hover {
+        color: grey;
+        opacity: 0.8;
+        font-weight: var(--focus-font-weight);
+    }
+
+    #hierarchy-editor .remChildren .ImportAllContentsButton {
+        float: none;
+        text-align: right;
+    }
+
+    /* List Item */
+
+    #hierarchy-editor .TreeNodeListItems {
+        border-left: solid;
+        border-width: 1px;
+        border-color: var(--border-c);
+    }
+
+    #hierarchy-editor .rem-container--importable .rem-bulletPlus {
+        color: #787878;
+    }
+
+    #hierarchy-editor .rem-container--importable .rem-bulletPlus:hover {
+        color: var(--font-background-c);
+        text-shadow: none;
+    }
+
+    /* Tags */
+
+    #hierarchy_editor__tag-bar #hierarchy-editor__tag-bar__tag,
+    #hierarchy-editor__tag-bar__tag {
+        border-radius: 4px;
+        color: var(--font-background-c);
+        padding: 1px 5px;
+        letter-spacing: var(--bold-font-spacing);
+        opacity: 1;
+        margin-top: 5px;
+        background-color: #50565c;
+    }
+
+    #hierarchy-editor__tag-bar__tag .rem-indented-indicator {
+        display: none;
+    }
+
+    #hierarchy_editor__tag-bar #hierarchy-editor__tag-bar__tag span.RichTextViewer {
+        padding-left: 0px;
+    }
+
+    #hierarchy_editor__tag-bar #hierarchy-editor__tag-bar__tag #hierarchy-editor__tag-bar__tag__delete {
+        padding: 7px;
+        margin-left: -3px;
+        color: var(--secondary-background-c);
+        font-size: 12px;
+        top: 0.8px;
+    }
+
+    #hierarchy_editor__tag-bar #hierarchy-editor__tag-bar__tag #hierarchy-editor__tag-bar__tag__delete:hover {
+        color: var(--font-background-c);
+    }
+
+    .workInProgressTag {
+        border-radius: 4px;
+        color: var(--font-background-c);
+        padding: 1px 5px;
+        background-color: #50565c;
+    }
+    
+    /* Links */
+
+    .rem-reference-link {
+        color: main-link-c;
+    }
+
+    .rem-reference-link:hover {
+        background-color: transparent;
+        border: none;
+        font-weight: var(--focus-font-weight);
+    }
+
+    .rem-reference--focused {
+        border: none;
+        font-weight: var(--focus-font-weight);
+        box-shadow: none!important;
+    }
+
+    .rem-reference--highlighted {
+        border: none;
+        box-shadow: none;
+        font-weight: var(--focus-font-weight);
+    }
+
+    .rem-reference {
+        border-radius: 5px;
+        transition: none;
+    }
+
+    .rem-reference.rem-reference-link .file.text.small.icon {
+        display: none;
+    }
+
+    #rem-reference__exclude-type-parent {
+        padding-left: 4px;
+        padding-right: 4px;
+        padding-bottom: 2px;
+        padding-top: 0px;
+        margin-right: 3px;
+        top: -2px;
+        border-radius: 4px;
+        color: main-link-c;
+        font-size: 11px;
+        opacity: 1;
+        border: 1px solid rgba(140, 167, 176, .25);
+        background-color: var(--secondary-background-c);
+    }
+
+    .rem-reference.rem-reference-link .gray {
+        color: var(--font-dark-c);
+    }
+
+    .LinkNode {
+        text-decoration: none;
+        color: main-link-c;
+    }
+
+    .link-node--focused {
+        color: main-link-c;
+        font-weight: var(--focus-font-weight);
+    }
+
+    .workInProgressRem {
+        padding: 0px;
+        background-color: transparent;
+    }
+    .workInProgressRem > span::first-letter {
+        visibility: hidden;
+    }
+
+    /* Flash Highlight */
+
+    .flash {
+        background-color: transparent !important;
+        box-shadow:none;
+        border: none;
+    }
+
+    /* Cloze */
+
+    .cloze {
+        background-color: #606569;
+        padding: 0px 4px;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: var(--focus-font-weight);
+    }
+
+    /* Image Occlusion */
+
+    #image-viewer-popup i.inbox.icon {
+        color: var(--hover-background-c)!important;
+    }
+
+    .image-occlusion__toolbar > .button {
+        font-size: 1em;
+    }
+
+    .image-occlusion__toolbar > .button > .icon {
+        color: var(--hover-background-c)!important;
+    }
+
+    .image-occlusion .image-occlusion__toolbar .image-occlusion__toolbar__dropdown {
+        border: thin solid var(--main-background-c);
+        background-color: var(--elevated-background-c);
+        box-shadow: 
+            rgba(15, 15, 15, 0.1) 0px 0px 0px 1px,
+            rgba(15, 15, 15, 0.2) 0px 0px 6px,
+            rgba(15, 15, 15, 0.5) 0px 0px 24px;
+        border-radius: 4px;
+    }
+
+    #clozeChangeDropdown #ClozeIdentifierInfo {
+        color: var(--font-c);
+    }
+
+    #clozeChangeDropdown .ClozeIdentifierSelected {
+        background-color: hsla(193, 37%, 54%, .3);
+    }
+
+    #clozeChangeDropdown #ClozeIdentifierOption {
+        border: none;
+    }
+
+    #clozeChangeDropdown #ClozeIdentifierOption:hover {
+        background-color: rgba(93, 161, 180, .7);
+    }
+
+    /* Queue Cards */
+
+    .Queue {
+        background-color: var(--elevated-background-c);
+        border: thin solid var(--main-background-c);
+        border-radius: 4px;
+        box-shadow: 
+            rgba(15, 15, 15, 0.1) 0px 0px 0px 1px,
+            rgba(15, 15, 15, 0.2) 0px 0px 6px,
+            rgba(15, 15, 15, 0.5) 0px 0px 24px;
+    }
+
+    .Queue #queue__title {
+        background-color: var(--elevated-background-c);
+        box-shadow: 
+            rgba(15, 15, 15, 0.1) 0px 0px 0px 1px,
+            rgba(15, 15, 15, 0.2) 0px 0px 6px,
+            rgba(15, 15, 15, 0.1) 0px 0px 10px;
+        letter-spacing: var(--semiwide-font-spacing);
+        color: var(--font-blue-c);
+        border-radius: 3px;
+    }
+
+    .Queue #QueueBadge {
+        color: var(--font-blue-c);
+        padding: 2px 4px;
+        border-radius: 4px;
+        letter-spacing: var(--bold-font-spacing);
+        background-color: var(--hover-background-c);
+        border: 1px solid var(--hover-background-c);
+        box-shadow: 
+            rgba(15, 15, 15, 0.1) 0px 0px 0px 1px,
+            rgba(15, 15, 15, 0.2) 0px 0px 6px,
+            rgba(15, 15, 15, 0.5) 0px 0px 24px;
+        font-size: 12px;
+    }
+
+    .Queue #queue__title #QueueStreakIndicator {
+    color: var(--font-blue-c);
+    letter-spacing: var(--bold-font-spacing);
+    }
+
+    .Queue #queue__progress-bar[style*="background-color: darkgrey;"],
+    .Queue #queue__progress-bar[style*="background-color: green;"] {
+        background-color: var(--font-blue-c) !important;
+    }
+
+    .spacedRepetition .spaced-repetition__prompt .indented-rem .rem-bullet__document {
+        background-color: var(--elevated-background-c);
+        border-radius: 3px;
+        display: inline-block;
+        padding: 4px;
+    }
+
+    .spacedRepetition .spaced-repetition__prompt {
+        font-size: 15px;
+        line-height: 1.4;
+    }
+
+    .spacedRepetition .spaced-repetition__prompt .bold {
+        font-weight: var(--normal-font-weight);
+    }
+
+    .spacedRepetition .spacedRepetitionAnswer {
+        border-color: var(--font-blue-c);
+    }
+
+    .queue--desktop {
+        box-shadow: 0px 0px 1px 10px white;
+    }
+
+    #ArticleQueue .QueueFocused {
+        box-shadow: none;
+    }
+
+    .spacedRepetition .spaced-repetition__prompt .indented-rem .rem-bulletDocument {
+    color: var(--font-blue-c);
+    font-size: 13px;
+    letter-spacing: var(--bold-font-spacing);
+    margin-bottom: 5px;
+    font-weight: var(--focus-font-weight);
+    background-color: var(--elevated-background-c);
+    }
+
+    .spacedRepetition .fill-in-the-blank {
+        color: var(--font-blue-c);
+        border: none;
+    }
+
+    .spacedRepetition .spaced-repetition__bottom {
+        background-color: var(--elevated-background-c);
+        letter-spacing: var(--semiwide-font-spacing);
+        color: var(--font-blue-c);
+        font-weight: var(--focus-font-weight);
+        font-size: 13px;
+    }
+
+    .spacedRepetition .spaced-repetition__reveal {
+        background-color: var(--elevated-background-c);
+    }
+
+    .spacedRepetition .spaced-repetition__prompt .indented-rem .rem-bullet__document i.icon {
+        display: none;
+    }
+
+    .spacedRepetition .fill-in-the-blank {
+        color: var(--font-blue-c);
+    }
+
+    .queue__buttons {
+        background-color: var(--elevated-background-c);
+    }
+    
+    .spacedRepetition .queue__response-button--big[data-tip="I don't know this (press K)"]:after {
+    content: '☹️';
+    }
+
+    .spacedRepetition .queue__response-button--big[data-tip="I know this! (press L)"]:after {
+        content: '😊';
+    }
+
+    .spacedRepetition .queue__response-button--big[data-tip="Accidentally pressed 'Show Answer' too early - try again in an hour. (press H)"]:after {
+        content: '😶';
+    }
+
+    .spacedRepetition .queue__response-button--big[data-tip="Knew it\, but not well. (press ,)"]:after {
+        content: '😕';
+    }
+
+    .spacedRepetition .queue__response-button--big i.icon {
+        display: none;
+    }
+
+    #leech-card #leech-card__header i.frown.outline.icon:before {
+        display: none;
+    }
+
+    #leech-card #leech-card__header i.frown.outline.icon:after {
+        content: "☹️";
+    }
+
+    #leech-card #leech-card__header {
+        margin: 20px;
+        font-weight: var(--focus-font-weight);
+    }
+
+    #leech-card #leech-card__contents {
+        border: 1px solid var(--elevated-background-c);
+        border-radius: 3px;
+        box-shadow: 
+            rgba(15, 15, 15, 0.1) 0px 0px 0px 1px,
+            rgba(15, 15, 15, 0.2) 0px 0px 6px,
+            rgba(15, 15, 15, 0.5) 0px 0px 24px;
+    }
+
+    #leech-card #leech-card__fixes .LeechAction,
+    #leech-card #leech-card__fixes ul li {
+        text-decoration: none;
+        color: var(--font-blue-c);
+        font-weight: var(--normal-font-weight);
+        letter-spacing: var(--bold-font-spacing);
+    }
+
+    #leech-card #leech-card__fixes .LeechAction:hover {
+        text-decoration: none;
+        color: var(--font-blue-c);
+        font-weight: var(--focus-font-weight);
+        letter-spacing: var(--bold-font-spacing);
+    }
+
+    #leech-card .leech-card__bottom {
+        background-color: var(--elevated-background-c);
+        letter-spacing: var(--semiwide-font-spacing);
+        color: var(--font-blue-c);
+        font-weight: var(--focus-font-weight);
+        font-size: 13px;
+    }
+
+    .queue__response-button:hover {
+        background-color: var(--elevated-background-c);
+        color: var(--font-blue-c);
+        font-weight: 700;
+    }
+
+    #milestone .daily-checkpoint {
+        color: var(--font-blue-c) !important;
+    }
+
+    #milestone .badge {
+        border: 1px solid var(--elevated-background-c);
+        border-radius: 3px;
+        box-shadow: 
+            rgba(15, 15, 15, 0.1) 0px 0px 0px 1px,
+            rgba(15, 15, 15, 0.2) 0px 0px 6px,
+            rgba(15, 15, 15, 0.5) 0px 0px 24px;
+    }
+
+    .queue__response-button,
+    .accuracy-item {
+        background-color: var(--elevated-background-c);
+        color: var(--font-blue-c);
+        font-weight: var(--focus-font-weight);
+        letter-spacing: var(--bold-font-spacing);
+    }
+
+    .queue__response-button:hover,
+    .accuracy-item:hover {
+        background-color: var(--elevated-background-c);
+        color: var(--font-blue-c);
+        font-weight: 700;
+        letter-spacing: var(--bold-font-spacing);
+    }
+
+    #milestone h1 {
+        color: var(--font-blue-c);
+        font-weight: var(--bold-font-weight);
+    }
+
+    .Queue .queue__no-items .success {
+        font-weight: var(--bold-font-weight);
+        color: var(--font-blue-c);
+        padding-bottom: 20px;
+        font-size: 15px;
+        letter-spacing: var(--semiwide-font-spacing);
+    }
+
+    #document-sidebar__link__queue-indicator {
+        font-size: 12px;
+    }
+
+    .black-out--enable {
+        background-color: var(--main-background-c);
+    }
+
+    .addListItemButton {
+        border: none;
+        border-radius: 3px;
+        background-color: var(--hover-background-c);
+        padding: 1px 7px;
+        color: #888;
+    }
+
+    #QueueCollapsed {
+        background-color: var(--hover-background-c);
+        color: #ccc;
+    }
+
+    #QueueCollapsed #QueueCollapsedSmall {
+        font-size: 13px;
+    }
+
+    #hierarchy-editor__embedded-queue-mode-toggle {
+        color: #888!important;
+        margin-bottom: 5px!important;
+    }
+
+    #hierarchy-editor__embedded-queue-mode-toggle:hover {
+        color: var(--font-background-c)!important;
+    }
+
+    /* Latex */
+
+    .katex {
+        font-size: 18px!important;
+        border-radius: 4px;
+        padding: 0px 7px;   
+    }
+
+    .LatexNodeFocused {
+        border: none;
+        border-radius: 4px;
+        color: var(--font-c);
+        padding: 0px 2px;
+        background-color: transparent!important;
+    }
+
+    .LatexNode {
+        text-decoration: none;
+    }
+
+    .LatexNode .latex-node__latex {
+        border: none;
+        margin-top: 5px;
+        box-shadow: 
+            rgba(15, 15, 15, 0.1) 0px 0px 0px 1px,
+            rgba(15, 15, 15, 0.2) 0px 0px 6px,
+            rgba(15, 15, 15, 0.3) 0px 0px 24px;
+        border-radius: 4px;
+        padding: 2px 7px;
+        background-color: var(--elevated-background-c)!important;
+    }
+
+    /* Popups */
+
+    /* Preview */
+
+    #document-hover-preview {
+        background-color: var(--elevated-background-c);
+        border: 1px solid var(--elevated-background-c);
+        border-radius: 4px;
+        padding: 10px 0 10px 20px;
+        font-weight: var(--normal-font-weight);
+        color: var(--font-dark-c);
+        box-shadow: 
+            rgba(15, 15, 15, 0.2) 0px 0px 0px 1px,
+            rgba(15, 15, 15, 0.4) 0px 0px 6px,
+            rgba(15, 15, 15, 0.6) 0px 0px 24px;
+    }
+
+    /* Search links */
+
+    .search-results {
+        color: var(--font-dark-c);
+        font-size: 13px;
+        font-weight: var(--normal-font-weight);
+        max-width: 500px;
+        background-color: var(--elevated-background-c);
+        border: 1px solid var(--elevated-background-c);
+        border-radius: 3px;
+        padding: 5px;
+        box-shadow: 
+            rgba(15, 15, 15, 0.2) 0px 0px 0px 1px,
+            rgba(15, 15, 15, 0.4) 0px 0px 6px,
+            rgba(15, 15, 15, 0.6) 0px 0px 24px;
+    }
+
+    .selectedResult {
+        font-weight: var(--focus-font-weight);
+        background-color: var(--hover-background-c);
+        letter-spacing: -0.004em;
+    }
+
+    #search-results__list #SearchResultsResult div span#quote {
+        visibility: hidden;
+        display: none;
+    }
+
+    .search-results #search-results__list #SearchResultsResult {
+        padding: 5px;
+    }
+
+    #search-results__controls {
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 8px;
+    }
+
+    #search-results__controls #search-results__control {
+        border-color: var(--border-c);
+    }
+
+    /* Menu */
+
+    .react-contextmenu--visible {
+        background-color: var(--elevated-background-c);
+        border: 1px solid var(--elevated-background-c);
+        border-radius: 3px;
+        box-shadow: 
+            rgba(15, 15, 15, 0.2) 0px 0px 0px 1px,
+            rgba(15, 15, 15, 0.4) 0px 0px 6px,
+            rgba(15, 15, 15, 0.6) 0px 0px 24px;
+    }
+
+    .react-contextmenu--visible .hierarchy-editor__rem-menu {
+        color: var(--font-dark-c);
+    }
+
+    .react-contextmenu--visible .hierarchy-editor__rem-menu,
+    .react-contextmenu--visible .MenuItem {
+        padding: 5px;
+        border: none;
+    }
+
+    .react-contextmenu--visible .hierarchy-editor__rem-menu:hover {
+        background-color: var(--hover-background-c);
+    }
+
+    .react-contextmenu--visible #menu-divider {
+        border: none;
+    }
+
+    .react-contextmenu-item.react-contextmenu-submenu {
+        padding: 5px;
+    }
+
+    .react-contextmenu-item.react-contextmenu-submenu:hover {
+        background-color: var(--hover-background-c);
+    }
+
+    .react-contextmenu--visible i.icon {
+        opacity: 0.6;
+    }
+
+    .color-button {
+        border: thin solid var(--border-c);
+    }
+
+    .color-button {
+        border: thin solid var(--border-c);
+    }
+
+    /* Link Popup */
+
+    .link-node__popup {
+        text-decoration: none !important;
+    }
+
+    .link-node__popup .content {
+        text-decoration: none !important;
+    }
+
+    .ui.popup {
+        color: var(--font-c);
+        background-color: var(--elevated-background-c);
+        border: 1px solid var(--elevated-background-c);
+        border-radius: 3px;
+        box-shadow: 
+            rgba(15, 15, 15, 0.2) 0px 0px 0px 1px,
+            rgba(15, 15, 15, 0.4) 0px 0px 6px,
+            rgba(15, 15, 15, 0.6) 0px 0px 24px;
+    }
+
+    .link-node__popup {
+        box-shadow: none !important;
+    }
+
+    .link-node__popup a:-webkit-any-link {
+        text-decoration: none !important;
+    }
+
+    /* Hidden Rems Popup */
+
+    #hierarchy-editor .HierarchyEditorChildrenList .children-list-content {
+        background-color: var(--elevated-background-c);
+        border: 1px solid var(--elevated-background-c);
+        border-radius: 3px;
+        box-shadow: 
+            rgba(15, 15, 15, 0.2) 0px 0px 0px 1px,
+            rgba(15, 15, 15, 0.4) 0px 0px 6px,
+            rgba(15, 15, 15, 0.6) 0px 0px 24px;
+    }
+
+    #hierarchy-editor .HierarchyEditorChildrenList .children-list-content .childrenListItem {
+        padding: 7px;
+        border-bottom: solid;
+        border-width: 1px;
+        border-color: var(--border-c);
+        color: var(--font-dark-c);
+    }
+
+    #hierarchy-editor .HierarchyEditorChildrenList .children-list-content .childrenListItem:hover {
+        background-color: var(--hover-background-c);
+    }
+
+    #hierarchy-editor .hierarchy-editor__children-list--focused {
+        border-color: transparent;
+        color: var(--font-dark-c)!important;
+        font-weight: var(--normal-font-weight);
+    }
+    
+    /* Selected text menu */
+
+    .rich-text-editor__selected-text-menu {
+        background-color: var(--elevated-background-c);
+        border: 1px solid var(--elevated-background-c);
+        border-radius: 3px;
+        box-shadow: 
+            rgba(15, 15, 15, 0.2) 0px 0px 0px 1px,
+            rgba(15, 15, 15, 0.4) 0px 0px 6px,
+            rgba(15, 15, 15, 0.6) 0px 0px 24px;
+    }
+
+    .rich-text-editor__selected-text-menu .rich-text-editor__selected-text-menu__divider {
+        border: thin solid var(--border-c);
+    }
+
+    .rich-text-editor__selected-text-menu .rich-text-editor__selected-text-menu__search {
+        padding-top: 7px;
+        padding-bottom: 7px;
+        border-top: thin solid var(--border-c);
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .rich-text-editor__selected-text-menu .search-results {
+        box-shadow: none;
+        width: 308px;
+    }
+
+    .rich-text-editor__selected-text-menu .selected-text-menu__button:hover {
+        background-color: var(--main-background-c);
+    }
+
+    /* Document Options Menu */
+
+    .ui.dropdown .menu {
+        background-color: var(--elevated-background-c);
+        border: 1px solid var(--elevated-background-c);
+        border-radius: 3px;
+        box-shadow: 
+            rgba(15, 15, 15, 0.2) 0px 0px 0px 1px,
+            rgba(15, 15, 15, 0.4) 0px 0px 6px,
+            rgba(15, 15, 15, 0.6) 0px 0px 24px;
+    }
+
+    .ui.dropdown .menu > .item {
+        color: var(--font-c);
+        background-color: var(--elevated-background-c);
+        border: 1px solid var(--elevated-background-c);
+    }
+
+    .ui.dropdown .menu > .divider {
+        border-top: thin solid var(--border-c);
+    }
+
+    .ui.dropdown .menu > .item:hover{
+        background: var(--hover-background-c);
+        color: var(--font-c);
+    }
+
+    .ui.header .sub.header {
+        background-color: inherit;
+        color: var(--font-c);
+    }
+
+    .ui.dropdown .menu .selected.item,
+    .ui.dropdown.selected {
+        background-color: var(--elevated-background-c);
+        color: var(--font-c);
+        border: 1px solid var(--elevated-background-c);
+    }
+
+    .ui.header {
+        color: var(--font-c);
+    }
+
+    .ui.pointing.dropdown > .menu:after {
+        background: var(--elevated-background-c);
+    }
+
+    /* "/" Menu */
+
+    .search-results {
+        color: var(--font-dark-c);
+        min-width: 300px;
+        background-color: var(--elevated-background-c);
+        border: 1px solid var(--elevated-background-c);
+        border-radius: 3px;
+        box-shadow: 
+            rgba(15, 15, 15, 0.2) 0px 0px 0px 1px,
+            rgba(15, 15, 15, 0.4) 0px 0px 6px,
+            rgba(15, 15, 15, 0.6) 0px 0px 24px;
+        font-size: 15px;
+        max-width: 600px;
+    }
+
+    .search-results #search-results__list #search-results__result:hover {
+        background-color: var(--hover-background-c);
+    }
+
+    .search-results #search-results__list #SearchResultsResult {
+        padding: 5px;
+        border-bottom: 1px solid var(--border-c);
+    }
+
+    .keycode {
+        font-size: 70%;
+        transform: none;
+    }
+
+    .keycode #quote{
+        font-size: 118%;
+    }
+
+    #search-results__controls {
+        font-size: 11px;
+        padding-bottom: 7px;
+    }
+    
+    /* Date Picker */
+
+    .react-datepicker__month, 
+    .react-datepicker__header,
+    .react-datepicker, 
+    .react-datepicker-wrapper {
+        background-color: var(--elevated-background-c);
+    }
+
+    .react-datepicker__header {
+        border-bottom: none;
+        opacity: 0.5;
+    }
+    
+    .react-datepicker__day, 
+    .react-datepicker__day-name, 
+    .react-datepicker__time-name, 
+    .react-datepicker-time__header, 
+    .react-datepicker__current-month {
+        color: var(--font-c)!important;
+    }
+
+    .react-datepicker__day--in-range, 
+    .react-datepicker__day--in-selecting-range, 
+    .react-datepicker__day--selected {        
+        background-color: main-link-c;
+        opacity: 0.8;
+        color: var(--main-background-c)!important;
+    }
+
+    .react-datepicker__month-container {
+        width: 300px;
+    }
+
+    .react-datepicker__today-button {
+        background: #e0e1e2 none;
+        color: rgba(0, 0, 0, .6);
+        border: none;
+        border-radius: 3px;
+    }
+
+    .react-datepicker__today-button:hover {
+        box-shadow: inset 0 0 0 1px transparent, inset 0 0 0 0 rgba(34, 36, 38, .15);
+        background-color: #cacbcd;
+        background-image: none;
+        color: rgba(0, 0, 0, .8);
+    }
+
+    /* Ctrl+f Menu */
+
+    #hierarchy-editor__ctrl-f {
+        background-color: var(--elevated-background-c);
+        border: 1px solid var(--elevated-background-c);
+        border-radius: 3px;
+        box-shadow: 
+            rgba(15, 15, 15, 0.2) 0px 0px 0px 1px,
+            rgba(15, 15, 15, 0.4) 0px 0px 6px,
+            rgba(15, 15, 15, 0.6) 0px 0px 24px;
+    }
+
+    #hierarchy-editor__ctrl-f #hierarchy-editor__ctrl-f__suggestions {
+        border-top: 1px solid var(--border-c);
+    }
+
+    /* "::" Bottom Menu */
+
+    .ui.upward.dropdown > .menu {
+        background-color: var(--elevated-background-c);
+        border: 1px solid var(--elevated-background-c);
+        border-radius: 3px;
+        box-shadow: 
+            rgba(15, 15, 15, 0.2) 0px 0px 0px 1px,
+            rgba(15, 15, 15, 0.4) 0px 0px 6px,
+            rgba(15, 15, 15, 0.6) 0px 0px 24px;
+    }
+
+    /* Bottom Bar Doc Window */
+
+    .hierarchyEditorToolbarContainerOpened #HierarchyEditorToolbar #hierarchy-editor-toolbar__view_as_card {
+        background-color: var(--elevated-background-c);
+        border: 1px solid var(--elevated-background-c);
+        border-radius: 3px;
+        box-shadow: 
+            rgba(15, 15, 15, 0.2) 0px 0px 0px 1px,
+            rgba(15, 15, 15, 0.4) 0px 0px 6px,
+            rgba(15, 15, 15, 0.6) 0px 0px 24px;
+    }
+
+    .red {
+        color: var(--font-red-c);
+    }
+
+    .green.card-that-will-be-tested {
+        color: var(--font-red-c);
+    }
+
+    /* Account Popup */
+
+    #bordered-card,
+    #Popup #PopupContent,
+    .HierarchyEditorBodyview-as-cardTooltip {
+        background-color: var(--elevated-background-c);
+        box-shadow: 
+            rgba(15, 15, 15, 0.2) 0px 0px 0px 1px,
+            rgba(15, 15, 15, 0.4) 0px 0px 6px,
+            rgba(15, 15, 15, 0.6) 0px 0px 24px;
+    }
+
+    #Popup #popup-close-button {
+        border: thin solid var(--secondary-background-c);
+        background-color: var(--elevated-background-c);
+        font-size: 14px;
+        padding: 1px 0px 3px 5px;
+    }
+    
+    /* Context Popup */
+
+    .react-contexify {
+        background-color: var(--elevated-background-c);
+        border: 1px solid var(--elevated-background-c);
+        border-radius: 3px;
+        box-shadow: 
+            rgba(15, 15, 15, 0.2) 0px 0px 0px 1px,
+            rgba(15, 15, 15, 0.4) 0px 0px 6px,
+            rgba(15, 15, 15, 0.6) 0px 0px 24px;
+        color: var(--font-dark-c);
+    }
+
+    .react-contexify__item__content {
+        display: block;
+        color: var(--font-dark-c);
+    }
+
+    .react-contexify__item:not(.react-contexify__item--disabled):hover > .react-contexify__item__content {
+        color: var(--font-dark-c);
+        background-color: var(--hover-background-c);
+        font-weight: var(--focus-font-weight);
+    }
+
+    /* Sorting Popup */
+
+    .popup #ToolbarPopupHeader {
+        font-weight: var(--focus-font-weight);
+        padding-bottom: 10px;
+        letter-spacing: var(--semiwide-font-spacing);
+    }
+
+    .sortSidebarOption {
+        border-color: var(--border-c);
+        color: var(--font-dark-c);
+    }
+
+    .sortSidebarOption:hover {
+        background-color: var(--hover-background-c);
+    }
+
+    /* Filter popup */
+
+    #HierarchyEditorCtrlF {
+        background-color: var(--elevated-background-c);
+        border: 1px solid var(--elevated-background-c);
+        border-radius: 3px;
+        box-shadow: 
+            rgba(15, 15, 15, 0.2) 0px 0px 0px 1px,
+            rgba(15, 15, 15, 0.4) 0px 0px 6px,
+            rgba(15, 15, 15, 0.6) 0px 0px 24px;
+        color: var(--font-dark-c);
+    }
+
+    #hierarchy_editor__tag-bar {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    /* Buttons */
+
+    #KnowledgeBaseButtons i.icon {
+        color: var(--hover-background-c) !important;
+    }
+
+    .ui.button {
+        background: #e0e1e2 none;
+        color: rgba(0, 0, 0, .6);
+    }
+
+    .ui.button,
+    .ui.button:hover {
+        box-shadow: inset 0 0 0 1px transparent, inset 0 0 0 0 rgba(34, 36, 38, .15);
+    }
+
+    .ui.button:hover {
+        background-color: #cacbcd;
+        background-image: none;
+        color: rgba(0, 0, 0, .8);
+    }
+
+    /* Note Popup */
+
+    .__floater__container[style*="border-color: green;"] {
+        border-color: black !important;
+    }
+
+    .__floater.__floater__open[style*="filter: drop-shadow(rgb(0\, 125\, 0) 0px 0px 5px);"] {
+        filter: drop-shadow(black 0px 0px 5px) !important;
+    }
+
+    .__floater__container .green {
+        color: var(--main-background-c);
+    }
+
+    /* Settings Menu */
+
+    .ui.tabular.menu .active.item {
+        background: var(--secondary-background-c);
+        color: var(--font-c);
+        border-color: var(--secondary-background-c);
+    }
+
+    .ui.tabular.menu .item {
+        color: var(--font-c);
+    }
+
+    .ui.tabular.menu .item:hover {
+        color: var(--font-dark-c);
+    }
+
+    .ui.segment {
+        background: var(--secondary-background-c);
+    }
+
+    .ui.tabular.menu {
+        border-bottom: 0px solid var(--secondary-background-c);
+    }
+
+    #SettingsPage #SettingsPageHeader {
+        border-bottom: 1px solid var(--border-c);
+    }
+
+    /* About */
+
+    #AboutSectionTitle {
+        border: none;
+        background-color: var(--main-background-c);
+        color: var(--font-c);
+    }
+
+    #AboutPage a {
+        color: var(--font-dark-c);
+        text-decoration: none!important;
+    }
+
+    /* Checkbox */
+
+    .ui.checkbox {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        width: 17px;
+    }
+
+    .ui.checkbox .box:before,
+    .ui.checkbox label:before {
+        background-color: var(--main-background-c);
+        border: 1px solid var(--font-background-c);
+        box-shadow: none;
+    }
+
+    ui.checkbox input:checked ~ .box:after,
+    .ui.checkbox input:checked ~ label:after {
+        font-size: 12px;
+        padding: 1px 1px;
+        color: var(--main-background-c);
+        background: var(--font-blue-c);
+        border-radius: 3px;
+        box-shadow: none;
+    }
+
+    .remCheckbox {
+        opacity: 0.65;
+    }
+
+    #hierarchy-editor .remTodoFinished {
+        text-decoration: none;
+        color: var(--hover-background-c);
+    }
+
+    #homepage #content #document-sidebar #DocumentationList .document-list-item__container .documentListHeader .folder:hover,
+    #homepage #content #document-sidebar #DocumentationList .document-list-item__container .document-list-item .folder:hover,
+    #homepage #content #document-sidebar #documentList .document-list-item__container .documentListHeader .folder:hover,
+    #homepage #content #document-sidebar #documentList .document-list-item__container .document-list-item .folder:hover,
+    #main #content #document-sidebar #DocumentationList .document-list-item__container .documentListHeader .folder:hover,
+    #main #content #document-sidebar #DocumentationList .document-list-item__container .document-list-item .folder:hover,
+    #main #content #document-sidebar #documentList .document-list-item__container .documentListHeader .folder:hover,
+    #main #content #document-sidebar #documentList .document-list-item__container .document-list-item .folder:hover {
+        text-shadow: none !important;
+    }
+
+    #hierarchy_editor__tag-bar #hierarchy-editor__tag-bar__tag #hierarchy-editor__tag-bar__tag__delete:hover {
+        text-shadow: none !important;
+    }
+
+    #hierarchy-editor .rem-container--importable .rem-bulletPlus:hover {
+        text-shadow: none !important;
+    }
+
+    #hierarchy-editor .rem-container--importable .rem-bulletMinus:hover {
+        text-shadow: none !important;
+    }
+
+    #hierarchy-editor .rem-container--focused .rem-bulletIcon,
+    #hierarchy-editor .rem-container--focused .remListNumber {
+        text-shadow: none !important;
+    }
+
+    #UpdateIndicator #UpdateIndicatorClose:hover {
+        text-shadow: none !important;
+    }
+
+#ActionQueueDefaultDocumentContainer #ActionQueueDefaultDocument ul #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons li:hover,
+#ActionQueueDefaultDocumentContainer #ActionQueueDefaultDocument ul #main #content #document-sidebar #document-sidebar__buttons-menu__buttons li:hover,
+#ArticleViewer #ArticleViewerStartTakingNotes #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #ArticleViewerStartTakingNotesButton:hover,
+#ArticleViewer #ArticleViewerStartTakingNotes #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #ArticleViewerStartTakingNotesButton:hover,
+#connectionStatus #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #HidePrivateRemButton:hover,
+#connectionStatus #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .signUpLink:hover,
+#connectionStatus #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #HidePrivateRemButton:hover,
+#connectionStatus #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .signUpLink:hover,
+#document #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #AddNewDocumentButtonLarge:hover,
+#document #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #AddNewDocumentButtonSmall:hover,
+#document #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #AddNewDocumentButtonLarge:hover,
+#document #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #AddNewDocumentButtonSmall:hover,
+#document .documentMenu #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #selectFolder:hover,
+#document .documentMenu #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .documentOptions:hover,
+#document .documentMenu #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #selectFolder:hover,
+#document .documentMenu #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .documentOptions:hover,
+#document-hover-preview #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #RemReferencePreview:hover,
+#document-hover-preview #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #RemReferencePreview:hover,
+#document-parents #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .parent-link:hover,
+#document-parents #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .parent-link:hover,
+#DocumentTable #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .DocumentLink:hover,
+#DocumentTable #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .DocumentLink:hover,
+#GlobalNameHierarchyViewer #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons  #collapsedButton:hover,
+#GlobalNameHierarchyViewer #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #collapsedButton:hover,
+#hierarchy-editor#homepage #content  #document-sidebar #document-sidebar__buttons-menu__buttons #hierarchy-editor__add-button:hover,
+#HierarchyEditor #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #hierarchy-editor__embedded-queue-mode-toggle:hover,
+#hierarchy-editor#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .rem-container--article-link:hover,
+#hierarchy-editor#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .remListNumber:hover,
+#hierarchy-editor#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .HierarchyEditorChildrenList:hover,
+#hierarchy-editor#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #hierarchy-editor__add-button:hover,
+#hierarchy-editor#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #hierarchy-editor__embedded-queue-mode-toggle:hover,
+#hierarchy-editor#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .rem-container--article-link:hover,
+#hierarchy-editor#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .remListNumber:hover,
+#hierarchy-editor#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .HierarchyEditorChildrenList:hover,
+#hierarchy-editor .remContainer #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .rem-hamburger:hover,
+#HierarchyEditor .remContainer #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .toggleCollapseButton:hover,
+#hierarchy-editor .remContainer #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .rem-hamburger:hover,
+#hierarchy-editor .remContainer #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .toggleCollapseButton:hover,
+#HierarchyEditor .remContainer .portal-remHamburger #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons span:hover,
+#HierarchyEditor .remContainer .portal-remHamburger #main #content #document-sidebar #document-sidebar__buttons-menu__buttons span:hover,
+#HierarchyEditor .remContainer .portal-remHamburgerEmbeddedSearch #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons span:hover,
+#HierarchyEditor .remContainer .portal-remHamburgerEmbeddedSearch #main #content #document-sidebar #document-sidebar__buttons-menu__buttons span:hover,
+#HierarchyEditor .remPotentialProperties #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .potentialProperty:hover,
+#HierarchyEditor .remPotentialProperties #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .potentialProperty:hover,
+#HierarchyEditor .notIncludedInDocumentScope #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .notIncludedAncestorClickable:hover,
+#HierarchyEditor .notIncludedInDocumentScope #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .notIncludedAncestorClickable:hover,
+#HierarchyEditorCtrlF #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .icon:hover,
+#HierarchyEditorCtrlF #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .icon:hover,
+#hierarchyEditorGlobalInsertContainer #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #HierarchyEditorGlobalInsertToggleVisibility:hover,
+#hierarchyEditorGlobalInsertContainer #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #HierarchyEditorGlobalInsertToggleVisibility:hover,
+#hierarchy_editor__tag-bar #hierarchy-editor__tag-bar__tag #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #hierarchy-editor__tag-bar__tag__delete:hover,
+#hierarchy_editor__tag-bar #hierarchy-editor__tag-bar__tag #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #hierarchy-editor__tag-bar__tag__delete:hover,
+#homepage #callToActionButtons #content #document-sidebar #document-sidebar__buttons-menu__buttons a:hover,
+#homepage #callToActionButtons #main #content #document-sidebar #document-sidebar__buttons-menu__buttons a:hover,
+#homepage #content #document-sidebar #DocumentationList #document-sidebar__buttons-menu__buttons .actionRequiredDocumentLink:hover,
+#homepage #content #document-sidebar #DocumentationList #document-sidebar__buttons-menu__buttons .documentListHeader:hover,
+#homepage #content #document-sidebar #DocumentationList #document-sidebar__buttons-menu__buttons .document-list-item:hover,
+#homepage #content #document-sidebar #DocumentationList .document-list-item__container .documentListHeader #document-sidebar__buttons-menu__buttons .folder:hover,
+#homepage #content #document-sidebar #DocumentationList .document-list-item__container .document-list-item #document-sidebar__buttons-menu__buttons .folder:hover,
+#homepage #content #document-sidebar #documentList #document-sidebar__buttons-menu__buttons .actionRequiredDocumentLink:hover,
+#homepage #content #document-sidebar #documentList #document-sidebar__buttons-menu__buttons .documentListHeader:hover,
+#homepage #content #document-sidebar #documentList #document-sidebar__buttons-menu__buttons .document-list-item:hover,
+#homepage #content #document-sidebar #documentList #document-sidebar__buttons-menu__buttons .folderFloatButton:hover,
+#homepage #content #document-sidebar #documentList .document-list-item__container .documentListHeader #document-sidebar__buttons-menu__buttons .folder:hover,
+#homepage #content #document-sidebar #documentList .document-list-item__container .document-list-item #document-sidebar__buttons-menu__buttons .folder:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #ActionQueueDefaultDocumentContainer #ActionQueueDefaultDocument ul li:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #ArticleDocumentButton:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #ArticleViewer #ArticleViewerStartTakingNotes #ArticleViewerStartTakingNotesButton:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #callToActionButtons a:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #connectionStatus #HidePrivateRemButton:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #connectionStatus .signUpLink:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #document #AddNewDocumentButtonLarge:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #document #AddNewDocumentButtonSmall:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #document .documentMenu #selectFolder:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #document .documentMenu .documentOptions:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .actionRequiredDocumentLink:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .documentListHeader:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .document-list-item:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .document-list-item__container .documentListHeader .folder:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .document-list-item__container .document-list-item .folder:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .folderFloatButton:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #document-hover-preview #RemReferencePreview:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .actionRequiredDocumentLink:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .documentListHeader:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .document-list-item:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .document-list-item__container .documentListHeader .folder:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .document-list-item__container .document-list-item .folder:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .folderFloatButton:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #document-parents .parent-link:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #document-sidebar__hiden-link__container:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #document-sidebar__link:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #document-sidebar__link--sign_up:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentTable .DocumentLink:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #EmbeddedSearchRefresh:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #GlobalNameHierarchyViewer #collapsedButton:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #hide-walkthrough-link-button:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #hierarchy-editor#hierarchy-editor__add-button:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #HierarchyEditor #hierarchy-editor__embedded-queue-mode-toggle:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #hierarchy-editor .rem-container--article-link:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #hierarchy-editor .remContainer .rem-hamburger:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #HierarchyEditor .remContainer .portal-remHamburgerEmbeddedSearch span:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #HierarchyEditor .remContainer .portal-remHamburger span:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #HierarchyEditor .remContainer .toggleCollapseButton:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #hierarchy-editor .remListNumber:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #HierarchyEditor .remPotentialProperties .potentialProperty:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #hierarchy-editor .HierarchyEditorChildrenList:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #HierarchyEditor .notIncludedInDocumentScope .notIncludedAncestorClickable:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #HierarchyEditorCtrlF .icon:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #hierarchyEditorGlobalInsertContainer #HierarchyEditorGlobalInsertToggleVisibility:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #hierarchy_editor__tag-bar #hierarchy-editor__tag-bar__tag #hierarchy-editor__tag-bar__tag__delete:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #ImportEntireArticle:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #leech-card #leech-card__fixes .LeechAction:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #mobile-queue__shortcuts #mobile-queue__shortcuts__button:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #MobileSearchRemButton:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #multiple-windows .multiple-windows__document #multiple-windows__close-pane:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #OtherRemStack #OtherRemBlock #other-rem-block__title #close-other-rem-block-button:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #OtherRemStack #OtherRemBlock #other-rem-block__title #open-as-doc-button:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #OtherRemStack #other-rem-stack__close:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #PluginNode #PluginHamburgerMenu:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #Popup #popup-close-button:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #PrivateRemBlocker:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #rem-reference__exclude-type-parent:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #RemSelector #RemSelectorOption:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #RabbitQueueTopRightButton:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #SearchPopup #PinnedResults .PinnedResult:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #SearchPopup .SearchPopupResults #SearchResultsResult:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #show-embedded-search-button:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #thinking-trail-history .thinking-trail-history__document-dot:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #UpdateIndicator:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #zoomIntoRemBackDocument:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .queue__response-button:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .Queue #ActionQueueOfflineIndicator:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .Queue #ActionQueueOnlyActionRequiredSwitcher:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .Queue #queue__title #QueueBackButton:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .addListItemButton:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .AnnotationNode:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .thumbnail--big:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .thumbnail--big:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .blackOut:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .button:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .color-button-container:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .DocumentSidebarSmall #viewDocuments:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .rem-container--not-in-article .rem-bullet__container:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .rem-container--not-in-article .rem-bulletIcon:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .hierarchyEditorGlobalInsertContainerOpened #HierarchyEditorToolbar #NoFocusedRemToolbarNotice #NoFocusedRemToolbarNoticeClose:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .hierarchyEditorGlobalInsertContainerOpened #HierarchyEditorToolbar .ToolbarDuplicateKeyButton:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .hierarchyEditorGlobalInsertContainerOpened .HierarchyEditorToolbarButton:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .ImportAllContentsButton:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .LinkNode:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .popup #BulletFormatIcons .icon:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .popup .color-button:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .react-contextmenu--visible .hierarchy-editor__rem-menu:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .rich-text-editor__selected-text-menu .selected-text-menu__button:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .rich-text-editor__selected-text-menu .selected-text-menu__button--color-container:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .SearchResults #search-results__list #SearchResultsResult:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .sortSidebarOption:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .spacedRepetition .spaced-repetition__reveal:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .tumbnail--no-width:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .thumbnail--popup:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .tumbnail--small:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .tumbnail--with-width:hover,
+#homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .whiteButton:hover,
+#homepage #content .DocumentSidebarSmall #document-sidebar #document-sidebar__buttons-menu__buttons #viewDocuments:hover,
+#homepage #main #content #document-sidebar #DocumentationList #document-sidebar__buttons-menu__buttons .actionRequiredDocumentLink:hover,
+#homepage #main #content #document-sidebar #DocumentationList #document-sidebar__buttons-menu__buttons .documentListHeader:hover,
+#homepage #main #content #document-sidebar #DocumentationList #document-sidebar__buttons-menu__buttons .document-list-item:hover,
+#homepage #main #content #document-sidebar #DocumentationList #document-sidebar__buttons-menu__buttons .folderFloatButton:hover,
+#homepage #main #content #document-sidebar #DocumentationList .document-list-item__container .documentListHeader #document-sidebar__buttons-menu__buttons .folder:hover,
+#homepage #main #content #document-sidebar #DocumentationList .document-list-item__container .document-list-item #document-sidebar__buttons-menu__buttons .folder:hover,
+#homepage #main #content #document-sidebar #documentList #document-sidebar__buttons-menu__buttons .actionRequiredDocumentLink:hover,
+#homepage #main #content #document-sidebar #documentList #document-sidebar__buttons-menu__buttons .documentListHeader:hover,
+#homepage #main #content #document-sidebar #documentList #document-sidebar__buttons-menu__buttons .document-list-item:hover,
+#homepage #main #content #document-sidebar #documentList #document-sidebar__buttons-menu__buttons .folderFloatButton:hover,
+#homepage #main #content #document-sidebar  #documentList .document-list-item__container .documentListHeader #document-sidebar__buttons-menu__buttons .folder:hover,
+#homepage #main #content #document-sidebar #documentList .document-list-item__container .document-list-item #document-sidebar__buttons-menu__buttons .folder:hover,
+#homepage #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .actionRequiredDocumentLink:hover,
+#homepage #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .documentListHeader:hover,
+#homepage #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .document-list-item:hover,
+#homepage #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .document-list-item__container .documentListHeader .folder:hover,
+#homepage #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .document-list-item__container .document-list-item .folder:hover,
+#homepage #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .folderFloatButton:hover,
+#homepage #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .actionRequiredDocumentLink:hover,
+#homepage #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .documentListHeader:hover,
+#homepage #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .document-list-item:hover,
+#homepage #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .document-list-item__container .documentListHeader .folder:hover,
+#homepage #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .document-list-item__container .document-list-item .folder:hover,
+#homepage #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .folderFloatButton:hover,
+#homepage #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #document-sidebar__link:hover,
+#homepage #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #document-sidebar__link--sign_up:hover,
+#homepage #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #hide-walkthrough-link-button:hover,
+#homepage #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .DocumentSidebarSmall #viewDocuments:hover,
+#homepage #main #content .DocumentSidebarSmall #document-sidebar #document-sidebar__buttons-menu__buttons #viewDocuments:hover,
+#leech-card #leech-card__fixes #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .LeechAction:hover,
+#leech-card #leech-card__fixes #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .LeechAction:hover,
+#main #content #document-sidebar #DocumentationList #document-sidebar__buttons-menu__buttons .actionRequiredDocumentLink:hover,
+#main #content #document-sidebar #DocumentationList #document-sidebar__buttons-menu__buttons .documentListHeader:hover,
+#main #content #document-sidebar #DocumentationList #document-sidebar__buttons-menu__buttons .document-list-item:hover,
+#main #content #document-sidebar #DocumentationList #document-sidebar__buttons-menu__buttons .folderFloatButton:hover,
+#main #content #document-sidebar #DocumentationList .document-list-item__container .documentListHeader #document-sidebar__buttons-menu__buttons .folder:hover,
+#main #content #document-sidebar #DocumentationList .document-list-item__container .document-list-item #document-sidebar__buttons-menu__buttons .folder:hover,
+#main #content #document-sidebar #documentList #document-sidebar__buttons-menu__buttons .actionRequiredDocumentLink:hover,
+#main #content #document-sidebar #documentList #document-sidebar__buttons-menu__buttons .documentListHeader:hover,
+#main #content #document-sidebar #documentList #document-sidebar__buttons-menu__buttons .document-list-item:hover,
+#main #content #document-sidebar #documentList #document-sidebar__buttons-menu__buttons .folderFloatButton:hover,
+#main #content #document-sidebar #documentList .document-list-item__container .documentListHeader #document-sidebar__buttons-menu__buttons .folder:hover,
+#main #content #document-sidebar #documentList .document-list-item__container .document-list-item #document-sidebar__buttons-menu__buttons .folder:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #ActionQueueDefaultDocumentContainer #ActionQueueDefaultDocument ul li:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #ArticleDocumentButton:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #ArticleViewer #ArticleViewerStartTakingNotes #ArticleViewerStartTakingNotesButton:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #connectionStatus #HidePrivateRemButton:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #connectionStatus .signUpLink:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #document #AddNewDocumentButtonLarge:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #document #AddNewDocumentButtonSmall:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #document .documentMenu #selectFolder:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #document .documentMenu .documentOptions:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .actionRequiredDocumentLink:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .documentListHeader:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .document-list-item:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .document-list-item__container .documentListHeader .folder:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .document-list-item__container .document-list-item .folder:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .folderFloatButton:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #document-hover-preview #RemReferencePreview:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .actionRequiredDocumentLink:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .documentListHeader:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .document-list-item:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .document-list-item__container .documentListHeader .folder:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .document-list-item__container .document-list-item .folder:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .folderFloatButton:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #document-parents .parent-link:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #document-sidebar__hiden-link__container:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #document-sidebar__link:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #document-sidebar__link--sign_up:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentTable .DocumentLink:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #EmbeddedSearchRefresh:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #GlobalNameHierarchyViewer #collapsedButton:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #hide-walkthrough-link-button:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #hierarchy-editor#hierarchy-editor__add-button:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #hierarchy-editor#hierarchy-editor__embedded-queue-mode-toggle:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #hierarchy-editor .rem-container--article-link:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #hierarchy-editor .remContainer .rem-hamburger:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #HierarchyEditor .remContainer .portal-remHamburgerEmbeddedSearch span:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #HierarchyEditor .remContainer .portal-remHamburger span:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #hierarchy-editor .remContainer .toggleCollapseButton:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #hierarchy-editor .remListNumber:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #HierarchyEditor .remPotentialProperties .potentialProperty:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #hierarchy-editor .HierarchyEditorChildrenList:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #HierarchyEditor .notIncludedInDocumentScope .notIncludedAncestorClickable:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #HierarchyEditorCtrlF .icon:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #hierarchyEditorGlobalInsertContainer #HierarchyEditorGlobalInsertToggleVisibility:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #hierarchy_editor__tag-bar #hierarchy-editor__tag-bar__tag #hierarchy-editor__tag-bar__tag__delete:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #homepage #callToActionButtons a:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #ImportEntireArticle:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #leech-card #leech-card__fixes .LeechAction:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #mobile-queue__shortcuts #mobile-queue__shortcuts__button:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #MobileSearchRemButton:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #multiple-windows .multiple-windows__document #multiple-windows__close-pane:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #OtherRemStack #OtherRemBlock #other-rem-block__title #close-other-rem-block-button:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #OtherRemStack #OtherRemBlock #other-rem-block__title #open-as-doc-button:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #OtherRemStack #other-rem-stack__close:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #PluginNode #PluginHamburgerMenu:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #Popup #popup-close-button:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #PrivateRemBlocker:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #rem-reference__exclude-type-parent:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #RemSelector #RemSelectorOption:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #RabbitQueueTopRightButton:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #SearchPopup #PinnedResults .PinnedResult:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #SearchPopup .SearchPopupResults #SearchResultsResult:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #show-embedded-search-button:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #thinking-trail-history .thinking-trail-history__document-dot:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #UpdateIndicator:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons #zoomIntoRemBackDocument:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .queue__response-button:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .Queue #ActionQueueOfflineIndicator:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .Queue #ActionQueueOnlyActionRequiredSwitcher:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .Queue #queue__title #QueueBackButton:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .addListItemButton:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .AnnotationNode:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .thumbnail--big:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .thumbnail--big:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .blackOut:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .button:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .color-button-container:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .DocumentSidebarSmall #viewDocuments:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .rem-container--not-in-article .rem-bullet__container:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .rem-container--not-in-article .rem-bulletIcon:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .hierarchyEditorGlobalInsertContainerOpened #HierarchyEditorToolbar #NoFocusedRemToolbarNotice #NoFocusedRemToolbarNoticeClose:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .hierarchyEditorGlobalInsertContainerOpened #HierarchyEditorToolbar .ToolbarDuplicateKeyButton:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .hierarchyEditorGlobalInsertContainerOpened .HierarchyEditorToolbarButton:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .ImportAllContentsButton:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .LinkNode:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .popup #BulletFormatIcons .icon:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .popup .color-button:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .react-contextmenu--visible .hierarchy-editor__rem-menu:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .rich-text-editor__selected-text-menu .selected-text-menu__button:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .rich-text-editor__selected-text-menu .selected-text-menu__button--color-container:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .SearchResults #search-results__list #SearchResultsResult:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .sortSidebarOption:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .spacedRepetition .spaced-repetition__reveal:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .tumbnail--no-width:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .thumbnail--popup:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .tumbnail--small:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .tumbnail--with-width:hover,
+#main #content #document-sidebar #document-sidebar__buttons-menu__buttons .whiteButton:hover,
+#main #content .DocumentSidebarSmall #document-sidebar #document-sidebar__buttons-menu__buttons #viewDocuments:hover,
+#main #homepage #content #document-sidebar #DocumentationList #document-sidebar__buttons-menu__buttons .actionRequiredDocumentLink:hover,
+#main #homepage #content #document-sidebar #DocumentationList #document-sidebar__buttons-menu__buttons .documentListHeader:hover,
+#main #homepage #content #document-sidebar #DocumentationList #document-sidebar__buttons-menu__buttons .document-list-item:hover,
+#main #homepage #content #document-sidebar #DocumentationList #document-sidebar__buttons-menu__buttons .folderFloatButton:hover,
+#main #homepage #content #document-sidebar #DocumentationList .document-list-item__container .documentListHeader #document-sidebar__buttons-menu__buttons .folder:hover,
+#main #homepage #content #document-sidebar #DocumentationList .document-list-item__container .document-list-item #document-sidebar__buttons-menu__buttons .folder:hover,
+#main #homepage #content #document-sidebar #documentList #document-sidebar__buttons-menu__buttons .actionRequiredDocumentLink:hover,
+#main #homepage #content #document-sidebar #documentList #document-sidebar__buttons-menu__buttons .documentListHeader:hover,
+#main #homepage #content #document-sidebar #documentList #document-sidebar__buttons-menu__buttons .document-list-item:hover,
+#main #homepage #content #document-sidebar #documentList #document-sidebar__buttons-menu__buttons .folderFloatButton:hover,
+#main #homepage #content #document-sidebar #documentList .document-list-item__container .documentListHeader #document-sidebar__buttons-menu__buttons .folder:hover,
+#main #homepage #content #document-sidebar #documentList .document-list-item__container .document-list-item #document-sidebar__buttons-menu__buttons .folder:hover,
+#main #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .actionRequiredDocumentLink:hover,
+#main #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .documentListHeader:hover,
+#main #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .document-list-item:hover,
+#main #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .document-list-item__container .documentListHeader .folder:hover,
+#main #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .document-list-item__container .document-list-item .folder:hover,
+#main #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #DocumentationList .folderFloatButton:hover,
+#main #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .actionRequiredDocumentLink:hover,
+#main #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .documentListHeader:hover,
+#main #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .document-list-item:hover,
+#main #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .document-list-item__container .documentListHeader .folder:hover,
+#main #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .document-list-item__container .document-list-item .folder:hover,
+#main #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #documentList .folderFloatButton:hover,
+#main #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #document-sidebar__link:hover,
+#main #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #document-sidebar__link--sign_up:hover,
+#main #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #hide-walkthrough-link-button:hover,
+#main #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .DocumentSidebarSmall #viewDocuments:hover,
+#main #homepage #content .DocumentSidebarSmall #document-sidebar #document-sidebar__buttons-menu__buttons #viewDocuments:hover,
+#mobile-queue__shortcuts #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #mobile-queue__shortcuts__button:hover,
+#mobile-queue__shortcuts #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #mobile-queue__shortcuts__button:hover,
+#multiple-windows .multiple-windows__document #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #multiple-windows__close-pane:hover,
+#multiple-windows .multiple-windows__document #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #multiple-windows__close-pane:hover,
+#OtherRemStack #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #other-rem-stack__close:hover,
+#OtherRemStack #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #other-rem-stack__close:hover,
+#OtherRemStack #OtherRemBlock #other-rem-block__title #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #close-other-rem-block-button:hover,
+#OtherRemStack #OtherRemBlock #other-rem-block__title #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #open-as-doc-button:hover,
+#OtherRemStack #OtherRemBlock #other-rem-block__title #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #close-other-rem-block-button:hover,
+#OtherRemStack #OtherRemBlock #other-rem-block__title #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #open-as-doc-button:hover,
+#PluginNode #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #PluginHamburgerMenu:hover,
+#PluginNode #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #PluginHamburgerMenu:hover,
+#Popup #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #popup-close-button:hover,
+#Popup #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #popup-close-button:hover,
+#RemSelector #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #RemSelectorOption:hover,
+#RemSelector #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #RemSelectorOption:hover,
+#SearchPopup #PinnedResults #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .PinnedResult:hover,
+#SearchPopup #PinnedResults #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .PinnedResult:hover,
+#SearchPopup .SearchPopupResults #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #SearchResultsResult:hover,
+#SearchPopup .SearchPopupResults #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #SearchResultsResult:hover,
+#thinking-trail-history #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .thinking-trail-history__document-dot:hover,
+#thinking-trail-history #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .thinking-trail-history__document-dot:hover,
+.Queue #queue__title #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #QueueBackButton:hover,
+.Queue #queue__title #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #QueueBackButton:hover,
+.Queue #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #ActionQueueOfflineIndicator:hover,
+.Queue #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #ActionQueueOnlyActionRequiredSwitcher:hover,
+.Queue #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #ActionQueueOfflineIndicator:hover,
+.Queue #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #ActionQueueOnlyActionRequiredSwitcher:hover,
+.rem-container--not-in-article #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .rem-bullet__container:hover,
+.rem-container--not-in-article #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .rem-bulletIcon:hover,
+.rem-container--not-in-article #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .rem-bullet__container:hover,
+.rem-container--not-in-article #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .rem-bulletIcon:hover,
+.hierarchyEditorGlobalInsertContainerOpened #HierarchyEditorToolbar #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .ToolbarDuplicateKeyButton:hover,
+.hierarchyEditorGlobalInsertContainerOpened #HierarchyEditorToolbar #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .ToolbarDuplicateKeyButton:hover,
+.hierarchyEditorGlobalInsertContainerOpened #HierarchyEditorToolbar #NoFocusedRemToolbarNotice #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #NoFocusedRemToolbarNoticeClose:hover,
+.hierarchyEditorGlobalInsertContainerOpened #HierarchyEditorToolbar #NoFocusedRemToolbarNotice #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #NoFocusedRemToolbarNoticeClose:hover,
+.hierarchyEditorGlobalInsertContainerOpened #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .HierarchyEditorToolbarButton:hover,
+.hierarchyEditorGlobalInsertContainerOpened #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .HierarchyEditorToolbarButton:hover,
+.popup #BulletFormatIcons #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .icon:hover,
+.popup #BulletFormatIcons #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .icon:hover,
+.popup #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .color-button:hover,
+.popup #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .color-button:hover,
+.react-contextmenu--visible #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .hierarchy-editor__rem-menu:hover,
+.react-contextmenu--visible #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .hierarchy-editor__rem-menu:hover,
+.rich-text-editor__selected-text-menu #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .selected-text-menu__button:hover,
+.rich-text-editor__selected-text-menu #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .selected-text-menu__button--color-container:hover,
+.rich-text-editor__selected-text-menu #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .selected-text-menu__button:hover,
+.rich-text-editor__selected-text-menu #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .selected-text-menu__button--color-container:hover,
+.SearchResults #search-results__list #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons #SearchResultsResult:hover,
+.SearchResults #search-results__list #main #content #document-sidebar #document-sidebar__buttons-menu__buttons #SearchResultsResult:hover,
+.spacedRepetition #homepage #content #document-sidebar #document-sidebar__buttons-menu__buttons .spaced-repetition__reveal:hover,
+.spacedRepetition #main #content #document-sidebar #document-sidebar__buttons-menu__buttons .spaced-repetition__reveal:hover,
+#GlobalNameHierarchyViewer #GlobalNameHierarchyViewerSelf:hover
+{
+    color: var(--elevated-background-c);
+
+}
+    
+}

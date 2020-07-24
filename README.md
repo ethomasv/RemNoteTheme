@@ -11,6 +11,7 @@ Custom Themes for [RemNote](remnote.io)
 * Links Style 
 * Highlight Colors
 * Bullets Style
+* LaTeX Input Style
 * Portals
 * References & Search 
 * Flashcards Style 

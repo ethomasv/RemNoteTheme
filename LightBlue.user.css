@@ -23,6 +23,7 @@
 @var       checkbox     stronger-bold-font      "Stronger Bold Font"                        0
 
 @var       color        main-link-c             "Linked Rems Color"                         #8ca7b0
+
 @var       color        quote-background-c      "Quote Background Color"                         #eee
 
 @advanced  select       font-body               "Font" {
@@ -143,6 +144,25 @@
         .treeNodeContainer {
         margin-top: 0.2em;
         }
+        .rem-bullet, .rem-bullet--in-list {   
+            margin-top: 0.2em;
+        }
+
+        .rem-bullet__container .rem-bullet--all-children-visible {  
+            margin-top: 0.45em;
+        }
+    }
+        
+    if not roomy-spacing {   
+ 
+        .rem-bullet, .rem-bullet--in-list {  
+            margin-bottom: 0.415em;
+        }
+
+        .rem-bullet__container .rem-bullet--all-children-visible { 
+            margin-bottom: 0.35em;
+        }
+
     }
     
     if not stronger-bold-font {
@@ -413,7 +433,7 @@
 
     #hierarchyEditorToolbarContainer #hierarchyEditorGlobalInsert .rich-text-editor {
         background-color: var(--secondary-background-c);
-        border: thin solid var(--border-c);
+        border: 0px solid var(--border-c);
         border-radius: 7px;
         padding-left: 10px;
         width: 220px;
@@ -682,7 +702,6 @@
         background-color: #bbb;
         display: inline-block;
         border: 5px solid #fefefe; 
-        margin-top: 0.2em;
         opacity: 1;
         box-shadow: 0px 0px 0px 1.25px #bbb;
     }
@@ -698,7 +717,6 @@
         background-color: #bbb;
         display: inline-block;
         border: none; 
-        margin-top: 0.45em;
         box-shadow: none;
     }
 
@@ -737,7 +755,7 @@
     }
 
     #hierarchy-editor .portalRem .portalRemTop {
-        border-top: 1px solid transparent;
+        border-top: 2px solid transparent;
         background-color:transparent;
     }
 
@@ -1217,12 +1235,12 @@
     }
 
     .spacedRepetition .spaced-repetition__prompt .indented-rem .rem-bulletDocument {
-    color: var(--font-blue-c);
-    font-size: 13px;
-    letter-spacing: var(--bold-font-spacing);
-    margin-bottom: 5px;
-    font-weight: var(--focus-font-weight);
-    background-color: var(--elevated-background-c);
+        color: var(--font-blue-c);
+        font-size: 13px;
+        letter-spacing: var(--bold-font-spacing);
+        margin-bottom: 5px;
+        font-weight: var(--focus-font-weight);
+        background-color: var(--elevated-background-c);
     }
 
     .spacedRepetition .fill-in-the-blank {

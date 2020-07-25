@@ -140,6 +140,9 @@
         div {
             line-height: 1.5em;
         }
+        .treeNodeContainer {
+        margin-top: 0.2em;
+        }
     }
     
     if not stronger-bold-font {
@@ -709,15 +712,7 @@
     #hierarchy-editor .rem-container--default .rem-bullet__container, #hierarchy-editor .rem-container--default .rem-hamburgerGeneric, #hierarchy-editor .rem-container--default .toggleCollapseButton {
         margin-top: 0.4em;
     }
-
-    #hierarchy-editor #hierarchy-editor-list__inner {
-        line-height: 1.3;
-    }
-
-    .treeNodeContainer {
-        margin-top: 0.2em;
-    }
-
+        
     #hierarchy-editor .isToolbarPreviousFocusRem {
         border: thin solid rgba(93, 161, 180, .4);
         box-shadow: none;

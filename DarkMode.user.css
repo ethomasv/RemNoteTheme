@@ -48,8 +48,6 @@
     --elevated-background-c: #3f4447;     /* Queue Cards, Popups */
     --hover-background-c: #474c50;     /* Hover */
     --border-c: #555;
-        
-        
 
     --font-c: #E0E0DF;
     --font-dark-c: rgba(240, 240, 239, .6);
@@ -145,6 +143,25 @@
         .treeNodeContainer {
         margin-top: 0.2em;
         }
+        .rem-bullet, .rem-bullet--in-list {   
+            margin-top: 0.2em;
+        }
+
+        .rem-bullet__container .rem-bullet--all-children-visible {  
+            margin-top: 0.45em;
+        }
+    }
+        
+    if not roomy-spacing {   
+ 
+        .rem-bullet, .rem-bullet--in-list {  
+            margin-bottom: 0.415em;
+        }
+
+        .rem-bullet__container .rem-bullet--all-children-visible { 
+            margin-bottom: 0.35em;
+        }
+
     }
     
     if not stronger-bold-font {
@@ -411,6 +428,7 @@
 
     .hierarchyEditorToolbarContainerOpened {
         background-color: var(--main-background-c);
+        height: 37px;
     }
 
     #hierarchyEditorToolbarContainer #hierarchyEditorGlobalInsert .rich-text-editor {
@@ -599,8 +617,8 @@
     }
 
     #hierarchy-editor .rem-header--2 {
-    font-weight: var(--focus-font-weight);
-    font-size: 17px;
+        font-weight: var(--focus-font-weight);
+        font-size: 17px;
     }
 
     #hierarchy-editor .TreeNode {
@@ -610,7 +628,6 @@
     #hierarchy-editor .indented-hierarchy-editor-rem {
         border-color: var(--border-c);
     }
-
 
     /* Document Window */
 
@@ -685,7 +702,6 @@
         background-color: #999;
         display: inline-block;
         border: 5px solid #444; 
-        margin-top: 0.2em;
         opacity: 1;
         box-shadow: 0px 0px 0px 1.25px #777;
     }
@@ -701,7 +717,6 @@
         background-color: #999;
         display: inline-block;
         border: none; 
-        margin-top: 0.45em;
         box-shadow: none;
     }
 
@@ -725,10 +740,12 @@
 
     .selectedRem {
         background-color: #5da1b44d;
+        box-shadow: none;
     }
 
     #hierarchy-editor .rem-container--focused {
         background-color: transparent;
+        box-shadow: none;
     }
 
     /* References */
@@ -1195,8 +1212,8 @@
     }
 
     .Queue #queue__title #QueueStreakIndicator {
-    color: var(--font-blue-c);
-    letter-spacing: var(--bold-font-spacing);
+         color: var(--font-blue-c);
+         letter-spacing: var(--bold-font-spacing);
     }
 
     .Queue #queue__progress-bar[style*="background-color: darkgrey;"],
@@ -1233,12 +1250,12 @@
     }
 
     .spacedRepetition .spaced-repetition__prompt .indented-rem .rem-bulletDocument {
-    color: var(--font-blue-c);
-    font-size: 13px;
-    letter-spacing: var(--bold-font-spacing);
-    margin-bottom: 5px;
-    font-weight: var(--focus-font-weight);
-    background-color: var(--elevated-background-c);
+        color: var(--font-blue-c);
+        font-size: 13px;
+        letter-spacing: var(--bold-font-spacing);
+        margin-bottom: 5px;
+        font-weight: var(--focus-font-weight);
+        background-color: var(--elevated-background-c);
     }
 
     .spacedRepetition .fill-in-the-blank {

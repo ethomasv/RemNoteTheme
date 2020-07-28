@@ -984,7 +984,8 @@
         text-align: right;
     }
         
-    #hierarchy-editor .hierarchy-editor__after-portal {
+    #hierarchy-editor .hierarchy-editor__after-portal,
+    #hierarchy-editor .indented-hierarchy-editor-rem--after-portal-embedded-search {
             border: none;
     }
 

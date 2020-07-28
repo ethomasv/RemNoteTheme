@@ -918,7 +918,7 @@
         background-color: var(--hover-background-c);
         padding: 5px 5px 5px 0px;
         border-radius: 5px;
-        margin: 0px 7px 7px 0px; 
+        margin: 5px; 
     }
 
     .isSearchResult .rem-bullet__container { 

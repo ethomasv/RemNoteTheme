@@ -980,6 +980,10 @@
         float: none;
         text-align: right;
     }
+        
+    #hierarchy-editor .hierarchy-editor__after-portal {
+            border: none;
+    }
 
     /* List Item */
 

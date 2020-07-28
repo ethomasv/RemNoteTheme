@@ -2,7 +2,7 @@
 
 @name           LightBlue
 @namespace      https://github.com/ethomasv/
-@version        1.0.4
+@version        1.0.6
 @description    Light Blue Custom CSS Theme
 @author         Eva Thomas 
 @homepageURL    https://github.com/ethomasv/RemNoteTheme
@@ -170,6 +170,13 @@
             font-weight: var(--bold-font-weight);
         }    
     }
+        
+    .rem-reference.button.rem-reference-link.searchKeywordHighlight {
+        padding: 0px 4px;
+        border: none;
+        border-radius: 4px;
+        background-color: var(--hover-background-c);
+    }    
         
     /* Custom colors for highlighting:  */
 
@@ -360,11 +367,15 @@
     #homepage #content #document-sidebar #document-sidebar__bottom-menu,
     #main #content #document-sidebar #document-sidebar__bottom-menu {
         padding-top: 8px;
-        font-size: 11px;
+        font-size: 0.82em;
         font-weight: var(--normal-font-weight);
         border-top: 1px solid var(--border-c);
         box-shadow: none;
-        padding-bottom: 5px;
+    }
+        
+    #homepage #content #document-sidebar #document-sidebar__bottom-menu #document-sidebar__bottom-menu--buttons, 
+    #main #content #document-sidebar #document-sidebar__bottom-menu #document-sidebar__bottom-menu--buttons {
+        white-space: normal;
     }
 
     #homepage #content #document-sidebar #document-sidebar__bottom-menu .document-sidebar__current-route,
@@ -457,7 +468,18 @@
 
     /* Documents List */
     
-    .ReactVirtualized__Table__headerRow {
+    #DocumentTable .ReactVirtualized__Table {
+        height: auto;
+        min-height: 100% !important;        
+        flex: 1 1 65%;
+    }
+    
+    .ReactVirtualized__Table__headerRow {    
+        display: flex;
+        flex: 0 0 auto;
+        height: auto;
+        min-height: 100% !important;  
+        margin-left: 15px;
         text-align: center;
         color: var(--font-background-c);
         font-weight: var(--normal-font-weight);
@@ -465,36 +487,63 @@
         font-size: 12px;
         padding-bottom: 5px;
     }
-
-
-    .ReactVirtualized__Table__headerTruncatedText:hover {
-        font-weight: var(--focus-font-weight);
+        
+    .ReactVirtualized__Grid__innerScrollContainer  {
+        height: auto !important;
+        min-height: 100% !important;    
+        overflow-y: scroll!important;
+        margin-left: 15px;
     }
-
-    .ReactVirtualized__Grid__innerScrollContainer .ReactVirtualized__Table__row[style*="background-color: rgba(1\, 1\, 1\, 0.1)"] { 
-        background-color: var(--main-background-c) !important;
-    }
-
-    .ReactVirtualized__Grid__innerScrollContainer .ReactVirtualized__Table__row {
+    
+    .ReactVirtualized__Table__row[style*="background-color: rgba(1\, 1\, 1\, 0.1);"],   
+    .ReactVirtualized__Table__row {
+        color: var(--font-c)!important;
+        background-color: transparent!important;
         border-top: 1px solid var(--border-c);
-        opacity: 0.75;
+        height: auto !important;
+        min-height: 100% !important;
     }
-
-    #DocumentTable .DocumentLink:hover {
+    
+    .ReactVirtualized__Grid__innerScrollContainer > * {
+        display: flex;
+        flex: 0 0 auto;
+        top: 0px!important;
+        margin-top: 0px;
+        position: relative!important;
+        padding: 5px;
+        height: auto;
+        min-height: 100% !important;  
+    }
+    
+    #DocumentTable .ReactVirtualized__Table__rowColumn {
+        height: auto!important;
+        min-height: 100% !important;    
+        display: flex!important;
+    }
+    
+     #DocumentTable .DocumentLink:hover {
         background-color: transparent;
         color: var(--font-c)!important;
     }
 
     #DocumentTable .DocumentLink {
-        padding: 8px;
-        color: var(--font-c)!important;
+        color: var(--font-background-c)!important;
     }
 
     #DocumentTable a:hover,
     #DocumentTable .blackLinks a:hover {
         font-weight: var(--focus-font-weight);
-        letter-spacing: var(--bold-font-spacing);
-    }  
+        letter-spacing: -0.01em;
+    }
+    
+    .ReactVirtualized__Table__rowColumn[style*="flex: 0 1 690px;"]:hover {
+        background-color: #5da1b44d!important;
+    }
+    
+    #DocumentTable .Cell {
+        margin-left: auto;
+        margin-right: auto;
+    }
     
     /* Sticky Top */
 
@@ -574,7 +623,7 @@
     }
 
     #document-parents.documenParentsLinksDisabled {
-    padding-bottom: 0.5em;
+        padding-bottom: 0.5em;
     }
 
     #ArticleViewer #ArticleContent #ArticleViewerSource {
@@ -731,12 +780,12 @@
         margin-top: 0.4em;
     }
         
-    #hierarchy-editor .isToolbarPreviousFocusRem {
+    #hierarchy-editor .is-toolbar-previous-focus-rem {
         border: thin solid rgba(93, 161, 180, .4);
         box-shadow: none;
     }
-
-    .selectedRem {
+   
+    .selected-rem {
         background-color: rgba(93, 161, 180, .2);
         box-shadow: none;
     }
@@ -744,6 +793,11 @@
     #hierarchy-editor .rem-container--focused {
         background-color: transparent;
         box-shadow: none;
+    }
+        
+    .work-in-progress-rem {       
+        background-color: transparent;
+        padding: 0px;
     }
 
     /* References */
@@ -754,26 +808,19 @@
         box-shadow: none!important;
     }
 
-    #hierarchy-editor .portalRem .portalRemTop {
+    #hierarchy-editor .portalRem .portalRemTop#hierarchy-editor .portal-rem .portal-rem-top {
         border-top: 2px solid transparent;
         background-color:transparent;
     }
 
-    #hierarchy-editor .portalRem .portalRemTop:hover {
+    #hierarchy-editor .portal-rem .portal-rem-top:hover {
         cursor: pointer;
     }
 
-    #hierarchy-editor .portalRemSelected .portalRemTop {
+    #hierarchy-editor .portal-rem--selected, 
+    #hierarchy-editor .portal-rem--selected .portal-rem-top {
         border-color: transparent!important;
         box-shadow: -0.5px 9px 0px 0.5px var(--secondary-background-c);
-    }
-
-    .HierarchyEditorAfterPortalBlue.HierarchyEditorAfterPortal {
-        visibility: hidden;
-    }
-
-    #hierarchy-editor .indented-hierarchy-editor-rem--after-portal-embedded-search {
-        visibility: hidden;
     }
 
     #show-embedded-search-button {
@@ -788,16 +835,14 @@
     #show-embedded-search-button i.caret.down.icon {
         opacity: 0.5;
     }
-
-    #hierarchy-editor .portal-rem {
-        background-color: var(--secondary-background-c);
-        border-top-color: var(--secondary-background-c);
-        border-right-color: var(--secondary-background-c);
-        border-bottom-color: var(--secondary-background-c);
-        border-left: 1px solid transparent !important;
-        box-shadow: 0px 0px 3px 1px rgba(140, 167, 176, .25);
-        border-radius: 3px;
+        
+    #hierarchy-editor .portal-rem {  
+        border: none;
     }
+        
+    #hierarchy-editor .portal-rem--blue {  
+        border-color: transparent;
+    }  
 
     #hierarchy-editor .portal-rem-top--embedded-search-top {
         border-top-style: none !important;
@@ -835,7 +880,6 @@
         background-color: transparent;
         margin-left: 5px;
         margin-right: 25px;
-
     }
 
     #hierarchy-editor .rem-container__top-level-spacer .rem-container__top-level-spacer__inner {
@@ -853,121 +897,71 @@
         background-color: var(--main-background-c);
     }
 
-    #hierarchy-editor .indented-hierarchy-editor-rem--after-portal-embedded-search {
-        border: 1px solid var(--border-c) !important;
-        box-shadow: none;
-        border-radius: 5px;
-        background-color: var(--main-background-c);
-    }
-
     #hierarchy-editor .portal-rem--embedded-search {
         background-color: transparent!important;
         border: none!important;
         box-shadow: none!important;
     }
 
+    #hierarchy-editor .rem-container--not-included-in-document-scope, 
     #hierarchy-editor .notIncludedInDocumentScope .notIncludedAncestorClickable {
         text-decoration: none;
-    }
-
-    .notIncludedInDocumentScope.rem-container--default.remContainer.rem-container--not-in-article.rem-container--not-importable .join-arrow {
-        font-size: 11px;
         color: #bbb;
     }
 
-    .notIncludedInDocumentScope.rem-container--default.remContainer.rem-container--not-in-article.rem-container--not-importable i.file.text.small.icon {
-        display: none;
+    #hierarchy-editor .rem-container--not-included-in-document-scope .join-arrow { 
+        font-size: 17px;
+        color: grey;
     }
 
     #hierarchy-editor .isSearchResult {
         background-color: var(--hover-background-c);
-        padding: 5px 0px;
+        padding: 5px 5px 5px 0px;
         border-radius: 5px;
+        margin: 0px 7px 7px 0px; 
     }
 
-    .search-portal-tree-node  > .treeNodeContainer { /* custom */
-        background-color: var(--secondary-background-c);
-        border-top-color: var(--secondary-background-c);
-        border-right-color: var(--secondary-background-c);
-        border-bottom-color: var(--secondary-background-c);
-        border-left: 1px solid transparent !important;
-        box-shadow: 0px 0px 3px 1px rgba(140, 167, 176, .25);
-        border-radius: 4px;
-        padding: 10px;
-        margin-bottom: 10px;
+    .isSearchResult .rem-bullet__container { 
+        margin-left: 4px;
+        padding-top: 0.35em;
+    }
+    
+    .isSearchResult .rem-bullet__container i { 
+        margin-left: 3px;
+        padding-top: 0.6em;
     }
 
-    .searchKeywordHighlight {
-        background-color: transparent;
-    }
-
-    .remInPortalBlue { 
-        background-color: var(--secondary-background-c);
-        border-top-color: var(--secondary-background-c);
-        border-right-color: var(--secondary-background-c);
-        border-bottom-color: var(--secondary-background-c);
-    }
-
-    #hierarchy-editor .portal-remBlue {
-        background-color: var(--secondary-background-c);
-        border-top-color: var(--secondary-background-c);
-        border-right-color: var(--secondary-background-c);
-        border-bottom-color: var(--secondary-background-c);
-        border-left: 1px solid transparent !important;
-        box-shadow: 0px 0px 3px 1px rgba(140, 167, 176, .25);
-        border-radius: 3px;
-    }
-
-    .rem.portal-remBlue.portal-rem .portal-remTop {
-        border: none !important;
-    }
-
-    .portal-tree-node {
-        background-color: var(--secondary-background-c);
-        letter-spacing: var(--semiwide-font-spacing);
-        border-top-color: var(--secondary-background-c) !important;
-        border-right-color: var(--secondary-background-c) !important;
-        border-bottom-color: var(--secondary-background-c) !important;
-        border-left: 1px solid transparent !important;
-        box-shadow: 0px 0px 3px 1px rgba(140, 167, 176, .25);
-        border-radius: 3px;
-    }
-
-    #hierarchy-editor .portalRem {
-        background-color: var(--secondary-background-c);
-        border-top-color: var(--secondary-background-c);
-        border-right-color: var(--secondary-background-c);
-        border-bottom-color: var(--secondary-background-c);
-        border-left: 1px solid transparent !important;
-        box-shadow: 0px 0px 3px 1px rgba(140, 167, 176, .25);
-        border-radius: 3px;
-    }
-
-    .remInPortalBlue .remInPortal {
-        background-color: var(--secondary-background-c);
-        border: none;
-    }
-
-    .indented-hierarchy-editor-remPortal {
-        background-color: var(--secondary-background-c);
-        border-top-color: var(--secondary-background-c) !important;
-        border-right-color: var(--secondary-background-c) !important;
-        border-bottom-color: var(--secondary-background-c) !important;
-        border-left: 1px solid transparent !important;
-        box-shadow: 0px 0px 3px 1px rgba(140, 167, 176, .25);
-        border-radius: 3px;
-    }
-
-    #hierarchy-editor .HierarchyEditorAfterPortalBlue {
+    .search-portal-tree-node  > .tree-node-container { 
         background-color: var(--secondary-background-c);
         border-top-color: var(--secondary-background-c);
         border-right-color: var(--secondary-background-c);
         border-bottom-color: var(--secondary-background-c);
         border-left: 1px solid transparent !important;
         box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, .5);
-        border-radius: 3px;
+        border-radius: 4px;
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+    
+    .tree-node-container {
+        margin-top: 5px;
     }
 
+    .searchKeywordHighlight {
+        background-color: transparent;
+    }
+
+    #hierarchy-editor .portal-tree-node {
+        background-color: var(--secondary-background-c);
+        letter-spacing: var(--semiwide-font-spacing);
+        border-top-color: var(--secondary-background-c) !important;
+        border-right-color: var(--secondary-background-c) !important;
+        border-bottom-color: var(--secondary-background-c) !important;
+        border-left: 1px solid transparent !important;
+        box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, .5);
+        border-radius: 3px;
+    }
+ 
     .import-all-contents-button__container {
         margin-top: 8px;
     }
@@ -1472,23 +1466,36 @@
 
     .search-results {
         color: var(--font-dark-c);
-        font-size: 13px;
         font-weight: var(--normal-font-weight);
         max-width: 500px;
-        background-color: var(--main-background-c);
-        border: 1px solid var(--elevated-background-c);
-        border-radius: 3px;
+        background-color: var(--elevated-background-c);
+        border: none; 
         padding: 5px;
+    }
+    
+    .rich-text-editor__search-results .search-results {
+        border-radius: 5px;
         box-shadow: 
-            rgba(200, 200, 200, 0.1) 0px 0px 0px 1px,
-            rgba(200, 200, 200, 0.2) 0px 0px 6px,
-            rgba(200, 200, 200, 0.5) 0px 0px 12px;
+            rgba(15, 15, 15, 0.2) 0px 0px 0px 1px,
+            rgba(15, 15, 15, 0.4) 0px 0px 6px,
+            rgba(15, 15, 15, 0.6) 0px 0px 24px;
+        border: 1px solid var(--elevated-background-c); 
+    }
+    
+    .rich-text-editor__search-results .search-results #search-results__result:first-child,
+    .rich-text-editor__search-results .search-results #search-results__result:last-child {
+        border-radius: 0px;
+    }
+    
+    #search-results__result:hover{
+        border-radius: 0px;
     }
 
     .selectedResult {
         font-weight: var(--focus-font-weight);
         background-color: var(--hover-background-c);
         letter-spacing: -0.004em;
+        border-radius: 0px;
     }
 
     #search-results__list #SearchResultsResult div span#quote {
@@ -1496,8 +1503,8 @@
         display: none;
     }
 
-    .search-results #search-results__list #SearchResultsResult {
-        padding: 5px;
+    .search-results #search-results__list #search-results__result:not(:last-child) {
+        border-bottom: 1px solid var(--border-c);
     }
 
     #search-results__controls {
@@ -1785,6 +1792,12 @@
         background-image: none;
         color: rgba(0, 0, 0, .8);
     }
+        
+    .react-datepicker__day:hover {
+        background-color: main-link-c;
+        color: var(--main-background-c)!important;
+        opacity: 0.85;
+    }
 
     /* Ctrl+f Menu */
 
@@ -1817,28 +1830,39 @@
         color: var(--font-c);
     }
         
+    #SearchPopup .search-results.search-popup__results {
+        box-shadow: none;
+    }
+    
+    #SearchPopup {
+        width: min(calc(100vw - 200px),600px)
+    }
+        
+    #hierarchy-editor-toolbar-container #hierarchy-editor__add-to-portal .search-results {
+        border-radius: 4px;
+    }
+        
     /* "::" Bottom Menu */
 
-    .ui.upward.dropdown > .menu {
+    .hierarchy-editor-toolbar-container--opened {
         background-color: var(--main-background-c);
-        border: 1px solid var(--elevated-background-c);
-        border-radius: 3px;
-        box-shadow: 
-            rgba(200, 200, 200, 0.1) 0px 0px 0px 1px,
-            rgba(200, 200, 200, 0.2) 0px 0px 6px,
-            rgba(200, 200, 200, 0.5) 0px 0px 12px;
+        border-top: 0px solid var(--elevated-background-c);
+        border-bottom: 1px solid var(--main-background-c);
+        padding: 3px;
     }
-
-    /* Bottom Bar Doc Window */
-
-    .hierarchyEditorToolbarContainerOpened #HierarchyEditorToolbar #hierarchy-editor-toolbar__view_as_card {
-        background-color: var(--main-background-c);
-        border: 1px solid var(--elevated-background-c);
-        border-radius: 3px;
-        box-shadow: 
-            rgba(200, 200, 200, 0.1) 0px 0px 0px 1px,
-            rgba(200, 200, 200, 0.2) 0px 0px 6px,
-            rgba(200, 200, 200, 0.5) 0px 0px 12px;
+    
+    #hierarchy-editor-toolbar-container #hierarchy-editor__add-to-portal .rich-text-editor {
+        background-color: var(--elevated-background-c);
+        border: 1px solid var(--border-c);
+        border-radius: 5px;
+    }
+    
+    .hierarchy-editor-toolbar-container--opened #hierarchy-editor-toolbar {
+        border: none;
+    }
+    
+    .hierarchy-editor-toolbar-container--opened #hierarchy-editor-toolbar .hierarchy-editor-toolbar-item {
+        color: var(--font-background-c);
     }
 
     .red {

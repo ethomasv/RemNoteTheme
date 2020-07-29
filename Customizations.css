@@ -1,0 +1,118 @@
+/* 1 --------------------------------------------------- */
+
+/* Colors Customization Dark Mode Theme */
+:root {
+    --quote-background-c: #474c50; /* Color of Quotes */
+
+    --main-link-c: #f4bf61; /* Color of Referenced Rems */
+
+
+	/* Highlighters */
+    --highlight-red-c: rgba(255, 115, 105, 0.5);
+    --highlight-orange-c: rgba(255, 163, 68, 0.5);
+    --highlight-yellow-c: rgba(255, 220, 73, 0.5);
+    --highlight-green-c: rgba(77, 171, 110, .5);
+    --highlight-purple-c: rgba(194, 111, 177, .5);
+
+}
+
+/* 2 --------------------------------------------------- */
+
+/* Colors Customization Light Blue Theme */
+:root {
+	--quote-background-c: #eee; /* Color of Quotes */
+
+     
+    
+    --main-link-c: #8ca7b0; /* Color of Referenced Rems */
+
+
+	/* Highlighters */    
+    --highlight-red-c: #ffadab80;
+    --highlight-orange-c: #ffda9680;
+    --highlight-yellow-c: #fcff8f80;
+    --highlight-green-c: #b5e9a680;
+    --highlight-purple-c: #e7b7ff80;
+}
+
+/* 3 --------------------------------------------------- */
+
+/* Customize Fonts: */
+:root {
+	/*
+	--font-body: Open Sans, sans-serif;
+	--font-body: Courier New, Courier, monospace;
+	--font-body: Century Gothic, sans-serif;
+	--font-body: Comic Sans MS, Comic Sans, cursive;
+	--font-body: Inter, sans-serif;
+	--font-body: Times, Times New Roman, serif;
+	--font-body: Arial, sans-serif;        
+	*/
+}
+
+/* 4 --------------------------------------------------- */
+
+/* Hide Indented Rems Indicator  " | " */
+.rem-indented-indicator {
+    display: none; 
+}
+
+/* 5 --------------------------------------------------- */
+        
+/* Show Cloze Menu Arrow only while editing  */
+i.icon.caret.square.down.icon:before {
+    display: none;
+}
+
+i.icon.caret.square.down.icon:after {
+    content: '+';
+}
+
+/* 6 --------------------------------------------------- */
+        
+/* Hide Scrollers */
+div::-webkit-scrollbar {
+    width: 6px !important;
+    height: 2px !important;
+}
+div::-webkit-scrollbar-track {
+    background-color: transparent !important;     
+}
+div::-webkit-scrollbar-thumb {
+    background-color: transparent!important;
+    border-radius: 10px!important;
+}
+div::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(17, 17, 17, .35) !important;
+    cursor: pointer !important;
+}
+
+/* 7 --------------------------------------------------- */
+
+/* Thin Multi Rem Sidebar */
+#hierarchy-editor .TreeNodeListItems {
+    border-width: 1px!important;
+}
+
+/* 8 --------------------------------------------------- */
+        
+/* Roomy Spacing */
+div {
+    line-height: 1.5em;
+}
+.treeNodeContainer {
+margin-top: 0.2em !important;
+}
+.rem-bullet, .rem-bullet--in-list {   
+    margin-top: 0.2em !important;
+}
+.rem-bullet__container .rem-bullet--all-children-visible {  
+    margin-top: 0.45em !important;
+}
+
+/* 9 --------------------------------------------------- */
+
+/* Less Strong Bold Font: */
+.bold {
+    font-weight: 600;
+}   

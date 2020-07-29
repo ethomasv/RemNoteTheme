@@ -43,6 +43,9 @@ Custom Themes for [RemNote](remnote.io)
 
 [![Install directly with Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-00adad.svg)](https://raw.githubusercontent.com/ethomasv/RemNoteTheme/master/DarkMode.user.css) Dark Mode Theme
 
+* If you want to install the theme directly in Remnote so that you can enojoy in the custom style across all your devices, you can find detailed tutorial here: 
+[Styling Remnote with Custom CSS Tutorial](https://www.youtube.com/watch?v=d4VqpNyDfqc)
+
 ---
 ## How to Customize
 

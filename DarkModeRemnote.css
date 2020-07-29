@@ -36,6 +36,20 @@
     --bold-font-weight: 600;
 }
 
+    div::-webkit-scrollbar {
+            width: 6px !important;
+            height: 2px !important;
+        }
+        div::-webkit-scrollbar-track {
+            background-color: transparent !important;     
+        }
+        div::-webkit-scrollbar-thumb {
+            background-color: rgba(17, 17, 17, .35) !important;
+            border-radius: 10px!important;
+        }
+        div::-webkit-scrollbar-thumb:hover {
+            box-shadow: 0px 0px 4px 1px rgba(17, 17, 17, .5) inset;  
+        }
  
     .rem-reference.button.rem-reference-link.searchKeywordHighlight {
         padding: 0px 4px;

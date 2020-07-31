@@ -403,9 +403,9 @@
     .ReactVirtualized__Grid__innerScrollContainer > * {
         display: flex;
         flex: 0 0 auto;
-        top: 0px!important;
+        top: 0!important;
         margin-top: 0px;
-        position: relative!important;
+        position: sticky!important;
         padding: 5px;
         height: auto;
         min-height: 100% !important;  

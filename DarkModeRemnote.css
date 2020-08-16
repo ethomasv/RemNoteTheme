@@ -147,6 +147,14 @@
         background-color: transparent;
         letter-spacing: var(--bold-font-spacing);
     }
+
+    /* Set proper gray text color to match with dark background */
+    /* This color is used for breadcrumbs and Rem content of each item inside */
+    /* 'Search Results Window', 'Rem reference preview or tooltip' etc. */
+
+    .gray {
+        color: var(--font-dark-c);
+    }
     
     /* Logo */
 

@@ -951,7 +951,12 @@
         padding: 1px 5px;
         background-color: #50565c;
     }
-    
+
+    /* Set dark background highlight color to the search text when searching for a tag using '##' */    
+   .work-in-progress-tag { 
+        background-color: var(--hover-background-c); 
+    }
+
     /* Links */
 
     .rem-reference-link {

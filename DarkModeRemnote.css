@@ -701,9 +701,9 @@
         box-shadow: none;
     }
     
+    /* Set dark highlight color to the search text when searching for a reference using '[[' */
     .work-in-progress-rem {       
-        background-color: transparent;
-        padding: 0px;
+        background-color: var(--hover-background-c); 
     }
 
     /* References */

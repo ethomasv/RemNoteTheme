@@ -63,26 +63,31 @@
     .highlight-color--red {
         background-color: var(--highlight-red-c)!important;
         padding: 0px 5px;
+        color: var(--font-c);
     }
 
     .highlight-color--orange {
         background-color: var(--highlight-orange-c)!important;
         padding: 0px 5px;
+        color: var(--font-c);
     }
 
     .highlight-color--yellow {
         background-color: var(--highlight-yellow-c)!important;
         padding: 0px 5px;
+        color: var(--font-c);
     }
 
     .highlight-color--green {
         background-color: var(--highlight-green-c)!important;
         padding: 0px 5px;
+        color: var(--font-c);
     }
 
     .highlight-color--purple {
         background-color: var(--highlight-purple-c)!important;
         padding: 0px 5px;
+        color: var(--font-c);
     }
     
     /* Main */
@@ -586,26 +591,71 @@
     }
     
     /* Trail History */
-    /* Set dark background for the container */
+    
     #thinking-trail-history:hover #thinking-trail-history__container {
         background-color: var(--elevated-background-c); 
+        box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, .5);
+        border-bottom-right-radius: 4px;
+        border-top-right-radius: 4px;
+        margin: 0px;
     }
-
-    /* Set blue theme color for the horizontal lines in the history tree */
+    
+    #thinking-trail-history {
+        margin: 2px;
+    }
+    
+    #thinking-trail-history .thinking-trail-history__document .thinking-trail-history__document-dot {
+        background-color: var(--hover-background-c);
+        border: 1px solid gray;
+        border-radius: 5px;
+        width: 5px;
+        height: 5px;
+        margin-left: -1px;
+    }
+        
+    #thinking-trail-history .thinking-trail-history__document .thinking-trail-history__document-dot:hover,
+    #thinking-trail-history .thinking-trail-history__document-dot--active {
+        background-color: gray!important;
+        border: 1px solid gray!important;
+        border-radius: 5px!important;
+        width: 7px!important;
+        height: 7px!important;
+        box-shadow: none!important;
+        margin-left: -2px!important;
+    }
+       
     #thinking-trail-history .thinking-trail-history__document .thinking-trail-history__children-bar {
-        color: var(--font-blue-c);
+        color: gray;
     }
-
-    /* Set blue theme color for the vertical lines in the history tree */
-    #thinking-trail-history .thinking-trail-history__document .thinking-trail-history__document-height-offset{        
-        background-color: var(--font-blue-c);
+    
+    #thinking-trail-history #thinking-trail-history__container {
+        padding-top: 25px;
     }
-
-    /* Set a dark font color when an item in the document list is hovered */
-    /* Ideally this should be light font on dark background, but */
-    /* no luck in changing hover background to dark */
+    
+    #thinking-trail-history .thinking-trail-history__document-height-offset {
+        padding-top: 3.8px;
+    }
+    
+    #thinking-trail-history .thinking-trail-history__document .thinking-trail-history__document-height-offset {    
+        background-color: gray;
+    }
+        
+    #thinking-trail-history .thinking-trail-history__document .thinking-trail-history__document-dot__preview {
+        padding: 2px 7px 0px 5px;
+    }    
+    
     #thinking-trail-history__document-list .thinking-trail-history__document-dot__preview:hover {
         color: var(--main-background-c);         
+    }
+    
+    #thinking-trail-history #thinking-trail-history__document-list .thinking-trail-history__document-dot__preview {
+        padding: 1.75px 5px;
+        color: var(--font-dark-c);
+    }
+    
+    #thinking-trail-history #thinking-trail-history__document-list .thinking-trail-history__document-dot__preview:hover {
+        background-color: var(--secondary-background-c);
+        color: var(--font-c);
     }
 
     /* Title */
@@ -927,7 +977,7 @@
         color: var(--font-background-c);
     }
 
-    .workInProgressTag {
+    .work-in-progress-tag {
         border-radius: 4px;
         color: var(--font-background-c);
         padding: 1px 5px;
@@ -1188,7 +1238,7 @@
         content: '😊';
     }
 
-    .spacedRepetition .queue__response-button--big[data-tip="Accidentally pressed 'Show Answer' too early - try again in an hour. (press H)"]:after {
+    .spacedRepetition .queue__response-button--big[data-tip="Accidentally pressed 'Show Answer' too early - try again in an hour.(press H)"]:after {
         content: '😶';
     }
 
@@ -1765,11 +1815,9 @@
         box-shadow: 
             rgba(15, 15, 15, 0.2) 0px 0px 0px 1px,
             rgba(15, 15, 15, 0.4) 0px 0px 6px,
-            rgba(15, 15, 15, 0.6) 0px 0px 24px;    }
-
+            rgba(15, 15, 15, 0.6) 0px 0px 24px;    
+    }
     
-    /* Bottom Bar Doc Window */
-
     .hierarchy-editor-toolbar-container--opened {
         background-color: var(--main-background-c);
         border-top: 0px solid var(--elevated-background-c);
@@ -1781,6 +1829,12 @@
         background-color: var(--elevated-background-c);
         border: 1px solid var(--border-c);
         border-radius: 5px;
+    }
+
+    #QueueExample, #view-as-card #view-as-card__cards #view-as-card__card .spacedRepetition {
+        border: 1px solid var(--border-c); 
+        border-radius: 2px;
+        box-shadow: none;
     }
     
     .hierarchy-editor-toolbar-container--opened #hierarchy-editor-toolbar {

@@ -187,21 +187,25 @@
     .highlight-color--orange {
         background-color: highlight-orange-c!important;
         padding: 0px 5px;
+        color: var(--font-c);
     }
 
     .highlight-color--yellow {
         background-color: highlight-yellow-c!important;
         padding: 0px 5px;
+        color: var(--font-c);
     }
 
     .highlight-color--green {
         background-color: highlight-green-c!important;
         padding: 0px 5px;
+        color: var(--font-c);
     }
 
     .highlight-color--purple {
         background-color: highlight-purple-c!important;
         padding: 0px 5px;
+        color: var(--font-c);
     }
     
     /* Main */
@@ -710,30 +714,57 @@
     }
     
     #thinking-trail-history .thinking-trail-history__document .thinking-trail-history__document-dot {
-        background-color: var(--font-background-c);
-        border: thin solid var(--font-background-c);
-        border-radius: 2.5px;
-        width: 8px;
-        height: 8px;
+        background-color: var(--hover-background-c);
+        border: 1px solid gray;
+        border-radius: 5px;
+        width: 5px;
+        height: 5px;
+        margin-left: -1px;
+    }
+        
+    #thinking-trail-history .thinking-trail-history__document .thinking-trail-history__document-dot:hover,
+    #thinking-trail-history .thinking-trail-history__document-dot--active {
+        background-color: gray!important;
+        border: 1px solid gray!important;
+        border-radius: 5px!important;
+        width: 7px!important;
+        height: 7px!important;
+        box-shadow: none!important;
+        margin-left: -2px!important;
+    }
+       
+    #thinking-trail-history .thinking-trail-history__document .thinking-trail-history__children-bar {
+        color: gray;
     }
     
-    #thinking-trail-history .thinking-trail-history__document--active .thinking-trail-history__document-dot,
-    #thinking-trail-history .thinking-trail-history__document--active .thinking-trail-history__document-dot:hover {
-        background-color: var(--font-background-c)!important;
-        border: thin solid var(--font-background-c);
-        border-radius: 2.5px;
-        width: 8px;
-        height: 8px;
-        box-shadow: 0px 0px 4px 0px rgba(254, 254, 254, .5);
-        opacity: 0.5   
+    #thinking-trail-history #thinking-trail-history__container {
+        padding-top: 25px;
     }
     
-    #thinking-trail-history .thinking-trail-history__document {
-        height: 2em;
+    #thinking-trail-history .thinking-trail-history__document-height-offset {
+        padding-top: 3.8px;
     }
     
+    #thinking-trail-history .thinking-trail-history__document .thinking-trail-history__document-height-offset {    
+        background-color: gray;
+    }
+        
     #thinking-trail-history .thinking-trail-history__document .thinking-trail-history__document-dot__preview {
         padding: 2px 7px 0px 5px;
+    }    
+    
+    #thinking-trail-history__document-list .thinking-trail-history__document-dot__preview:hover {
+        color: var(--main-background-c);         
+    }
+    
+    #thinking-trail-history #thinking-trail-history__document-list .thinking-trail-history__document-dot__preview {
+        padding: 1.75px 5px;
+        color: var(--font-dark-c);
+    }
+    
+    #thinking-trail-history #thinking-trail-history__document-list .thinking-trail-history__document-dot__preview:hover {
+        background-color: var(--secondary-background-c);
+        color: var(--font-c);
     }
     
     /* Title */
@@ -1050,8 +1081,8 @@
     #hierarchy_editor__tag-bar #hierarchy-editor__tag-bar__tag #hierarchy-editor__tag-bar__tag__delete:hover {
         color: var(--font-background-c);
     }
-
-    .workInProgressTag {
+        
+    .work-in-progress-tag {
         border-radius: 4px;
         color: var(--font-background-c);
         padding: 1px 5px;
@@ -1307,7 +1338,7 @@
         content: '😊';
     }
 
-    .spacedRepetition .queue__response-button--big[data-tip="Accidentally pressed 'Show Answer' too early - try again in an hour. (press H)"]:after {
+    .spacedRepetition .queue__response-button--big[data-tip="Accidentally pressed 'Show Answer' too early - try again in an hour.(press H)"]:after { 
         content: '😶';
     }
 
@@ -1884,10 +1915,27 @@
         padding: 3px;
     }
     
-    #hierarchy-editor-toolbar-container #hierarchy-editor__add-to-portal .rich-text-editor {
+    .hierarchy-editor-toolbar-container--opened #hierarchy-editor-toolbar #hierarchy-editor-toolbar__view_as_card {
+        background-color: var(--elevated-background-c);
+        border: 1px solid var(--elevated-background-c);
+        border: none;
+        border-radius: 5px;
+        box-shadow: 
+            rgba(15, 15, 15, 0.2) 0px 0px 0px 1px,
+            rgba(15, 15, 15, 0.4) 0px 0px 6px,
+            rgba(15, 15, 15, 0.6) 0px 0px 24px;
+    }
+    
+     #hierarchy-editor-toolbar-container #hierarchy-editor__add-to-portal .rich-text-editor {
         background-color: var(--elevated-background-c);
         border: 1px solid var(--border-c);
         border-radius: 5px;
+     }
+    
+    #QueueExample, #view-as-card #view-as-card__cards #view-as-card__card .spacedRepetition {
+        border: 1px solid var(--border-c); 
+        border-radius: 2px;
+        box-shadow: none;
     }
     
     .hierarchy-editor-toolbar-container--opened #hierarchy-editor-toolbar {

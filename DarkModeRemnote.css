@@ -147,6 +147,14 @@
         background-color: transparent;
         letter-spacing: var(--bold-font-spacing);
     }
+
+    /* Set proper gray text color to match with dark background */
+    /* This color is used for breadcrumbs and Rem content of each item inside */
+    /* 'Search Results Window', 'Rem reference preview or tooltip' etc. */
+
+    .gray {
+        color: var(--font-dark-c);
+    }
     
     /* Logo */
 
@@ -578,46 +586,28 @@
     }
     
     /* Trail History */
-
+    /* Set dark background for the container */
     #thinking-trail-history:hover #thinking-trail-history__container {
         background-color: var(--elevated-background-c); 
-        box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, .5);
-        border-bottom-right-radius: 4px;
-        border-top-right-radius: 4px;
-        margin: 0px;
     }
-    
-    #thinking-trail-history {
-        margin: 2px;
+
+    /* Set blue theme color for the horizontal lines in the history tree */
+    #thinking-trail-history .thinking-trail-history__document .thinking-trail-history__children-bar {
+        color: var(--font-blue-c);
     }
-    
-    #thinking-trail-history .thinking-trail-history__document .thinking-trail-history__document-dot {
-        background-color: var(--font-background-c);
-        border: thin solid var(--font-background-c);
-        border-radius: 2.5px;
-        width: 8px;
-        height: 8px;
+
+    /* Set blue theme color for the vertical lines in the history tree */
+    #thinking-trail-history .thinking-trail-history__document .thinking-trail-history__document-height-offset{        
+        background-color: var(--font-blue-c);
     }
-    
-    #thinking-trail-history .thinking-trail-history__document--active .thinking-trail-history__document-dot,
-    #thinking-trail-history .thinking-trail-history__document--active .thinking-trail-history__document-dot:hover {
-        background-color: var(--font-background-c)!important;
-        border: thin solid var(--font-background-c);
-        border-radius: 2.5px;
-        width: 8px;
-        height: 8px;
-        box-shadow: 0px 0px 4px 0px rgba(254, 254, 254, .5);
-        opacity: 0.5   
+
+    /* Set a dark font color when an item in the document list is hovered */
+    /* Ideally this should be light font on dark background, but */
+    /* no luck in changing hover background to dark */
+    #thinking-trail-history__document-list .thinking-trail-history__document-dot__preview:hover {
+        color: var(--main-background-c);         
     }
-    
-    #thinking-trail-history .thinking-trail-history__document {
-        height: 2em;
-    }
-    
-    #thinking-trail-history .thinking-trail-history__document .thinking-trail-history__document-dot__preview {
-        padding: 2px 7px 0px 5px;
-    }
-    
+
     /* Title */
 
     #document #DocumentTopRow {
@@ -693,9 +683,9 @@
         box-shadow: none;
     }
     
+    /* Set dark highlight color to the search text when searching for a reference using '[[' */
     .work-in-progress-rem {       
-        background-color: transparent;
-        padding: 0px;
+        background-color: var(--hover-background-c); 
     }
 
     /* References */
@@ -943,7 +933,12 @@
         padding: 1px 5px;
         background-color: #50565c;
     }
-    
+
+    /* Set dark background highlight color to the search text when searching for a tag using '##' */    
+   .work-in-progress-tag { 
+        background-color: var(--hover-background-c); 
+    }
+
     /* Links */
 
     .rem-reference-link {

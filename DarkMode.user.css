@@ -742,7 +742,7 @@
     }
     
     #thinking-trail-history .thinking-trail-history__document-height-offset {
-        padding-top: 3.8px;
+        padding-top: 0.9px;
     }
     
     #thinking-trail-history .thinking-trail-history__document .thinking-trail-history__document-height-offset {    
@@ -758,7 +758,7 @@
     }
     
     #thinking-trail-history #thinking-trail-history__document-list .thinking-trail-history__document-dot__preview {
-        padding: 1.75px 5px;
+        padding: 1px 5px;
         color: var(--font-dark-c);
     }
     

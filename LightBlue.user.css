@@ -2,7 +2,7 @@
 
 @name           LightBlue
 @namespace      https://github.com/ethomasv/
-@version        1.0.6
+@version        1.0.9
 @description    Light Blue Custom CSS Theme
 @author         Eva Thomas 
 @homepageURL    https://github.com/ethomasv/RemNoteTheme
@@ -712,38 +712,61 @@
     }
     
     #thinking-trail-history .thinking-trail-history__document .thinking-trail-history__document-dot {
-        background-color: var(--blue-c);
-        border: thin solid var(--blue-c);
-        border-radius: 2.5px;
-        width: 8px;
-        height: 8px;
-        opacity: 0.6;   
+        background-color: var(--elevated-background-c);
+        border: 1px solid var(--blue-c);
+        border-radius: 5px;
+        width: 5px;
+        height: 5px;
+        margin-left: -1px;
     }
-    
-    #thinking-trail-history .thinking-trail-history__document .thinking-trail-history__document-dot:hover {
-       box-shadow: 0px 0px 4px 0px var(--blue-c);    
-    }
-    
-    #thinking-trail-history .thinking-trail-history__document--active .thinking-trail-history__document-dot,
-    #thinking-trail-history .thinking-trail-history__document--active .thinking-trail-history__document-dot:hover {
+        
+    #thinking-trail-history .thinking-trail-history__document .thinking-trail-history__document-dot:hover,
+    #thinking-trail-history .thinking-trail-history__document-dot--active {
         background-color: var(--blue-c)!important;
-        border: thin solid var(--blue-c);
-        border-radius: 2.5px;
-        width: 8px;
-        height: 8px;
-        opacity: 1;   
+        border: 1px solid var(--blue-c)!important;
+        border-radius: 5px!important;
+        width: 7px!important;
+        height: 7px!important;
+        box-shadow: none!important;
+        margin-left: -2px!important;
+    }
+       
+    #thinking-trail-history .thinking-trail-history__document .thinking-trail-history__children-bar {
+        color: var(--blue-c);
     }
     
-    #thinking-trail-history .closeButton i.grey.icon {
-        opacity: 0.4;   
+    #thinking-trail-history #thinking-trail-history__container {
+        padding-top: 25px;
     }
     
-    #thinking-trail-history .thinking-trail-history__document {
-        height: 2em;
+    #thinking-trail-history .thinking-trail-history__document-height-offset {
+        padding-top: 0.9px;
     }
     
+    #thinking-trail-history .thinking-trail-history__document .thinking-trail-history__document-height-offset {    
+        background-color: var(--blue-c);
+    }
+        
     #thinking-trail-history .thinking-trail-history__document .thinking-trail-history__document-dot__preview {
         padding: 2px 7px 0px 5px;
+    }    
+    
+    #thinking-trail-history__document-list .thinking-trail-history__document-dot__preview:hover {
+        color: var(--main-background-c);         
+    }
+    
+    #thinking-trail-history #thinking-trail-history__document-list .thinking-trail-history__document-dot__preview {
+        padding: 1px 5px;
+        color: var(--font-dark-c);
+    }
+    
+    #thinking-trail-history #thinking-trail-history__document-list .thinking-trail-history__document-dot__preview:hover {
+        background-color: var(--secondary-background-c);
+        color: var(--font-c);
+    }
+    
+    #thinking-trail-history__container .grey.close.icon {
+        color: var(--blue-c)!important;
     }
 
     /* Title */
@@ -1058,7 +1081,7 @@
         color: var(--font-background-c);
     }
 
-    .workInProgressTag {
+    .work-in-progress-tag {
         border-radius: 4px;
         color: var(--font-background-c);
         padding: 1px 5px;
@@ -1302,7 +1325,7 @@
         content: '😊';
     }
 
-    .spacedRepetition .queue__response-button--big[data-tip="Accidentally pressed 'Show Answer' too early - try again in an hour. (press H)"]:after {
+    .spacedRepetition .queue__response-button--big[data-tip="Accidentally pressed 'Show Answer' too early - try again in an hour.(press H)"]:after { 
         content: '😶';
     }
 

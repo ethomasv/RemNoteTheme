@@ -657,7 +657,7 @@
     }
     
     #thinking-trail-history #thinking-trail-history__document-list .thinking-trail-history__document-dot__preview:hover {
-        background-color: var(--secondary-background-c);
+        background-color: var(--hover-background-c);
         color: var(--font-c);
     }
     

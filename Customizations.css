@@ -11,9 +11,10 @@
     --highlight-red-c: rgba(255, 115, 105, 0.5);
     --highlight-orange-c: rgba(255, 163, 68, 0.5);
     --highlight-yellow-c: rgba(255, 220, 73, 0.5);
-    --highlight-green-c: rgba(77, 171, 110, .5);
-    --highlight-purple-c: rgba(194, 111, 177, .5);
-
+    --highlight-green-c: rgba(77, 171, 110, 0.5);
+    --highlight-blue-c: rgba(91, 174, 223, 0.5);
+    --highlight-purple-c: rgba(194, 111, 177, 0.5);
+	
 }
 
 /* 2 --------------------------------------------------- */

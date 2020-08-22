@@ -78,6 +78,12 @@
         color: var(--font-c);
     }
 
+    .highlight-color--blue {
+        background-color: var(--highlight-blue-c)!important;
+        padding: 0px 5px;
+        color: var(--font-c);
+    }
+
     .highlight-color--green {
         background-color: var(--highlight-green-c)!important;
         padding: 0px 5px;

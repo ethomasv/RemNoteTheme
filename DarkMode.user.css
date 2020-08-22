@@ -14,6 +14,7 @@
 @var       color        highlight-yellow-c      "Yellow Highlight"                          #ffdc4980
 @var       color        highlight-green-c       "Green Highlight"                           #4dab6e80
 @var       color        highlight-purple-c      "Purple Highlight"                          #c26fb180
+@var       color        highlight-blue-c        "Blue Highlight"                            #5baedf80
 
 @var       checkbox     hide-indented-rems      "Hide Indented Rem Indicator: |"            1
 @var       checkbox     hide-cloze-menu-arrow   "Show Cloze Menu Button while editing"      1
@@ -182,6 +183,7 @@
     .highlight-color--red {
         background-color: highlight-red-c!important;
         padding: 0px 5px;
+        color: var(--font-c);
     }
 
     .highlight-color--orange {
@@ -192,6 +194,12 @@
 
     .highlight-color--yellow {
         background-color: highlight-yellow-c!important;
+        padding: 0px 5px;
+        color: var(--font-c);
+    }
+        
+    .highlight-color--blue {
+        background-color: highlight-blue-c!important;
         padding: 0px 5px;
         color: var(--font-c);
     }

@@ -96,6 +96,11 @@
         padding: 0px 5px;
     }
 
+    .highlight-color--blue {
+        background-color: var(--highlight-blue-c)!important;
+        padding: 0px 5px;
+    }
+
     .highlight-color--purple {
         background-color: var(--highlight-purple-c)!important;
         padding: 0px 5px;

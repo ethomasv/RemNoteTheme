@@ -215,6 +215,10 @@
         padding: 0px 5px;
         color: var(--font-c);
     }
+        
+    .rem-text {
+        padding-left: 20px!important;
+    }
     
     /* Main */
 

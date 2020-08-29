@@ -166,6 +166,10 @@
     .gray {
         color: var(--font-dark-c);
     }
+    /* Set dark background for the new inner document container */
+    #ExamplesPageContainer #ExamplesPageContent, #export-container #export, #HelpPage #HelpPageContent, #SettingsPage #SettingsPageContent, #sign-up-page-container #sign-up-page, #StatsPage #StatsPageContent, .centered-page, .document--narrow {
+       background-color: var(--main-background-c);
+    }
     
     /* Logo */
 

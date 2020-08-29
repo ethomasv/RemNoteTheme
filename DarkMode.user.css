@@ -698,7 +698,7 @@
     #SettingsPage #SettingsPageContent,
     #StatsPage #StatsPageContent,
     .centered-page,
-    .narrow-document {
+    .document--narrow {
         background-color: var(--main-background-c);
     }
     

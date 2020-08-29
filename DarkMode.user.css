@@ -479,58 +479,26 @@
     }
 
     /* Documents List */
-    
-    #DocumentTable .ReactVirtualized__Table {
-        height: auto;
-        min-height: 100% !important;        
-        flex: 1 1 65%;
-    }
-    
-    .ReactVirtualized__Table__headerRow {    
-        display: flex;
-        flex: 0 0 auto;
-        height: auto;
-        min-height: 100% !important;  
-        margin-left: 15px;
+   
+    .ReactVirtualized__Table__headerRow {  
         text-align: center;
         color: var(--font-background-c);
         font-weight: var(--normal-font-weight);
         letter-spacing: var(--wide-font-spacing);
-        font-size: 12px;
+        font-size: 13px;
         padding-bottom: 5px;
+        margin-top: 25px;
     }
         
-    .ReactVirtualized__Grid__innerScrollContainer  {
-        height: auto !important;
-        min-height: 100% !important;    
-        overflow-y: scroll!important;
-        margin-left: 15px;
-    }
-    
     .ReactVirtualized__Table__row[style*="background-color: rgba(1\, 1\, 1\, 0.1);"],   
     .ReactVirtualized__Table__row {
         color: var(--font-c)!important;
         background-color: transparent!important;
         border-top: 1px solid var(--border-c);
-        height: auto !important;
-        min-height: 100% !important;
     }
     
     .ReactVirtualized__Grid__innerScrollContainer > * {
-        display: flex;
-        flex: 0 0 auto;
-        top: 0!important;
         margin-top: 0px;
-        position: sticky!important;
-        padding: 5px;
-        height: auto;
-        min-height: 100% !important;  
-    }
-    
-    #DocumentTable .ReactVirtualized__Table__rowColumn {
-        height: auto!important;
-        min-height: 100% !important;    
-        display: flex!important;
     }
     
      #DocumentTable .DocumentLink:hover {

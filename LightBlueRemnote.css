@@ -105,6 +105,10 @@
         background-color: var(--highlight-purple-c)!important;
         padding: 0px 5px;
     }
+
+    .rem-text {
+        padding-left: 20px!important;
+    }
     
     /* Main */
 

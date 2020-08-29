@@ -159,16 +159,8 @@
         letter-spacing: var(--bold-font-spacing);
     }
 
-    /* Set proper gray text color to match with dark background */
-    /* This color is used for breadcrumbs and Rem content of each item inside */
-    /* 'Search Results Window', 'Rem reference preview or tooltip' etc. */
-
     .gray {
         color: var(--font-dark-c);
-    }
-    /* Set dark background for the new inner document container */
-    #ExamplesPageContainer #ExamplesPageContent, #export-container #export, #HelpPage #HelpPageContent, #SettingsPage #SettingsPageContent, #sign-up-page-container #sign-up-page, #StatsPage #StatsPageContent, .centered-page, .document--narrow {
-       background-color: var(--main-background-c);
     }
     
     /* Logo */
@@ -591,7 +583,7 @@
     #SettingsPage #SettingsPageContent,
     #StatsPage #StatsPageContent,
     .centered-page,
-    .narrow-document {
+    .document--narrow {
         background-color: var(--main-background-c);
     }
     

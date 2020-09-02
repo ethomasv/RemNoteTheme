@@ -227,7 +227,8 @@
     }
 
     #homepage #content #document-sidebar #document-sidebar__link:hover,
-    #main #content #document-sidebar #document-sidebar__link:hover {
+    #main #content #document-sidebar #document-sidebar__link:hover,
+    #document-sidebar__hidden-link__container:hover {
         font-weight: var(--focus-font-weight);
         background: var(--hover-background-c);
     }

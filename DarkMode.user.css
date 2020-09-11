@@ -265,6 +265,11 @@
         color: #bbb;
         text-shadow: none !important;
     }
+        
+    .rem-reference a,
+    .rich-text-editor a{
+        color: #66a5bb!important;
+    }
 
     .bold {
         letter-spacing: var(--bold-font-spacing);

@@ -279,11 +279,27 @@
         white-space: normal;
     }
 
+    #help-button{
+        background: #474c50;
+    }
+
+    #help-button:hover{
+        color: black;
+    }
+
     #homepage #content #document-sidebar #document-sidebar__bottom-menu .document-sidebar__current-route,
     #main #content #document-sidebar #document-sidebar__bottom-menu .document-sidebar__current-route {
         border: 1px solid var(--hover-background-c) !important;
         background: var(--hover-background-c) !important;
         color: var(--font-dark-c) !important;
+    }
+
+    #document-sidebar__account-capsule{
+        background-color: transparent!important; 
+        }
+    #document-sidebar__account-capsule:hover {
+        background-color: rgba(17, 17, 17, .35) !important;
+        cursor: pointer !important;
     }
 
     #DocumentationList #documentation-list__section__title {

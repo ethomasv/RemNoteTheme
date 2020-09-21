@@ -2,7 +2,7 @@
 
 @name           DarkMode
 @namespace      https://github.com/ethomasv/
-@version        1.0.8
+@version        1.0.9
 @description    Dark Mode Custom CSS Theme
 @author         Eva Thomas 
 @homepageURL    https://github.com/ethomasv/RemNoteTheme
@@ -184,36 +184,42 @@
         background-color: highlight-red-c!important;
         padding: 0px 5px;
         color: var(--font-c);
+        border-radius: 2px;
     }
 
     .highlight-color--orange {
         background-color: highlight-orange-c!important;
         padding: 0px 5px;
         color: var(--font-c);
+        border-radius: 2px;
     }
 
     .highlight-color--yellow {
         background-color: highlight-yellow-c!important;
         padding: 0px 5px;
         color: var(--font-c);
+        border-radius: 2px;
     }
         
     .highlight-color--blue {
         background-color: highlight-blue-c!important;
         padding: 0px 5px;
         color: var(--font-c);
+        border-radius: 2px;
     }
 
     .highlight-color--green {
         background-color: highlight-green-c!important;
         padding: 0px 5px;
         color: var(--font-c);
+        border-radius: 2px;
     }
 
     .highlight-color--purple {
         background-color: highlight-purple-c!important;
         padding: 0px 5px;
         color: var(--font-c);
+        border-radius: 2px;
     }
         
     .rem-text {
@@ -259,6 +265,11 @@
         color: #bbb;
         text-shadow: none !important;
     }
+        
+    .rem-reference a,
+    .rich-text-editor a{
+        color: #66a5bb!important;
+    }
 
     .bold {
         letter-spacing: var(--bold-font-spacing);
@@ -294,6 +305,22 @@
         opacity: 0.55;
         filter: grayscale(100%) invert(70%) contrast(180%) brightness(150%);
     }
+        
+    /* User capsule */ 
+
+    #document-sidebar__account-capsule {
+        background-color: var(--main-background-c);
+        box-shadow: rgb(45, 45, 45, 0.1) 0px 0px 2px 1px inset;
+    }
+    
+    #document-sidebar__account-capsule:hover {
+        background-color: var(--elevated-background-c);
+        box-shadow: rgb(45, 45, 45, 0.1) 0px 0px 2px 1px;
+    }
+    
+    #document-sidebar__account-capsule:hover #document-sidebar__account-capsule__text {
+        background-color: #3b7cc8;
+    }
 
     /* Icons */
 
@@ -312,7 +339,66 @@
             -1px 1px 0 var(--secondary-background-c),
             1px 1px 0 var(--secondary-background-c);
     }
+        
+    /* IMG Icons */ 
+    
+    img.flashcards-icon {
+         filter: grayscale(100%) invert(100%);
+         opacity: 0.65;
+    }
+    
+    img.flashcards-icon:hover {
+         filter: grayscale(100%) invert(100%);
+         opacity: 0.9;
+    }
+    
+    #document-sidebar__document-buttons div img,
+    #document-sidebar__bottom-buttons img {
+         filter: grayscale(100%) invert(100%);
+         opacity: 0.35;
+    }
+    
+    #document-sidebar__document-buttons div img:hover,
+    #document-sidebar__bottom-buttons img:hover {
+         filter: grayscale(100%) invert(100%);
+         opacity: 0.6;
+    }
+    
+    #DocumentationList .document-list-item .document-list-item__folder-icon-container img, 
+    #documentList .document-list-item .document-list-item__folder-icon-container img {
+         filter: grayscale(100%) invert(100%);
+         opacity: 0.6;    
+    }
+    
+    .hierarchy-editor-toolbar-item {
+         filter: grayscale(100%) ;
+         opacity: 0.8;    
+     }
+     
+     .hierarchy-editor-toolbar-item:first-child {
+         opacity: 0.4;    
+     }
+    
+     .hierarchy-editor-toolbar__menu .hierarchy-editor-toolbar__menu__item .hierarchy-editor-toolbar__menu__item__icon { 
+         filter: grayscale(100%) invert(35%);
+         opacity: 1;
+     }
 
+    /* Float Buttons */ 
+    
+    #DocumentationList .folder-float-buttons, #documentList .folder-float-buttons {
+        background-color: transparent;
+    }
+    
+    /* Help Button */ 
+
+    #help-button {
+        background-color: var(--elevated-background-c);
+    }
+
+    #help-button:hover {
+        background-color: var(--hover-background-c);
+    }
 
     /* Left Sidebar */
 
@@ -782,6 +868,17 @@
         opacity: 1;
         box-shadow: 0px 0px 0px 1.25px #777;
     }
+        
+    .rem-bullet__icon.rem-bullet--hidden-children { 
+        background-color: #444;
+        border: 3px solid #444; 
+        box-shadow: 0px 0px 0px 1.25px #777;
+    }
+    
+    .rem-bullet__container .rem-bullet__icon.rem-bullet--all-children-visible { 
+        background-color: transparent;
+        border: none; 
+    }
 
     .rem-bullet[style*="border-width: 3px;"] {
         border-width: 3.5px!important;
@@ -810,7 +907,7 @@
         margin-top: 0.4em;
     }
 
-    #hierarchy-editor .is-toolbar-previous-focus-rem { /* FIX NEW */
+    #hierarchy-editor .is-toolbar-previous-focus-rem { 
         box-shadow: 0px 0px 3px 1px hsla(193, 37%, 54%, .5);
     }
 
@@ -910,7 +1007,6 @@
         background-color: transparent;
         margin-left: 5px;
         margin-right: 25px;
-
     }
 
     #hierarchy-editor .rem-container__top-level-spacer .rem-container__top-level-spacer__inner {
@@ -1068,6 +1164,16 @@
         color: var(--font-background-c);
         padding: 1px 5px;
         background-color: #50565c;
+    }
+        
+    .hierarchy-editor__tag-bar__tag { 
+        border-radius: 4px;
+        color: var(--font-background-c);
+        padding: 1px 5px;
+        letter-spacing: var(--bold-font-spacing);
+        opacity: 1;
+        margin-top: 5px;
+        background-color: #50565c;    
     }
     
     /* Links */
@@ -1238,6 +1344,14 @@
     .Queue #queue__title #QueueStreakIndicator {
          color: var(--font-blue-c);
          letter-spacing: var(--bold-font-spacing);
+    }
+        
+    .queue__streak-indicator {
+        display: inline;
+    }
+    
+    .queue__streak-indicator:after { 
+        content: '| ';
     }
 
     .Queue #queue__progress-bar[style*="background-color: darkgrey;"],
@@ -1426,6 +1540,9 @@
 
     #document-sidebar__link__queue-indicator {
         font-size: 12px;
+        border-radius: 4px;
+        padding: 6px 13px;
+        background-color: var(--hover-background-c);
     }
 
     .black-out--enable {
@@ -1643,7 +1760,8 @@
 
     /* Hidden Rems Popup */
 
-    #hierarchy-editor .HierarchyEditorChildrenList .children-list-content {
+    #hierarchy-editor .HierarchyEditorChildrenList .children-list-content,
+    .hierarchy-editor__hidden-children {
         background-color: var(--elevated-background-c);
         border: 1px solid var(--elevated-background-c);
         border-radius: 3px;
@@ -1766,9 +1884,19 @@
         font-size: 15px;
         max-width: 600px;
     }
+        
+    .rich-text-editor__selected-text-menu .search-results {
+        max-width: 600px;
+        width: 450px;
+        min-width: 300px;
+    }
 
     .search-results #search-results__list #search-results__result:hover {
         background-color: var(--hover-background-c);
+    }
+        
+    .rich-text-editor__selected-text-menu .search-results #search-results__list {
+        background-color: var(--elevated-background-c);
     }
 
     .search-results #search-results__list #SearchResultsResult {
@@ -1889,12 +2017,41 @@
         
     /* "::" Bottom Menu */
 
+    .hierarchy-editor-toolbar__menu .hierarchy-editor-toolbar__menu__item:not(:last-child) { 
+         border-top: px solid var(--border-c); 
+         border-bottom: none;
+     }
+     
+     .hierarchy-editor-toolbar__menu .hierarchy-editor-toolbar__menu__item--selected { 
+         background-color: var(--hover-background-c);
+         border-left: 4px solid #3b7cc8 !important;
+     }    
+        
     .hierarchy-editor-toolbar-container--opened {
         background-color: var(--main-background-c);
         border-top: 0px solid var(--elevated-background-c);
         border-bottom: 1px solid var(--main-background-c);
         padding: 3px;
     }
+        
+    .hierarchy-editor-toolbar__menu .hierarchy-editor-toolbar__card-menu__view-as-card--on-right { 
+        background-color: var(--elevated-background-c);
+        border: 1px solid var(--elevated-background-c);
+        border: none;
+        border-radius: 5px;
+        box-shadow: 
+            rgba(15, 15, 15, 0.2) 0px 0px 0px 1px,
+            rgba(15, 15, 15, 0.4) 0px 0px 6px,
+            rgba(15, 15, 15, 0.6) 0px 0px 24px;    
+     }
+     
+     .hierarchy-editor-toolbar-container--opened #hierarchy-editor-toolbar .hierarchy-editor-toolbar__vertical-divider { 
+         border-color: var(--border-c);
+     }
+    
+     .hierarchy-editor-toolbar__menu .hierarchy-editor-toolbar__card-menu__view-as-card #view-as-card__cards #view-as-card__card .spacedRepetition {  
+         background-color: var(--elevated-background-c);
+     }
     
     .hierarchy-editor-toolbar-container--opened #hierarchy-editor-toolbar #hierarchy-editor-toolbar__view_as_card {
         background-color: var(--elevated-background-c);
@@ -2101,28 +2258,88 @@
 
     .ui.checkbox .box:before,
     .ui.checkbox label:before {
-        background-color: var(--main-background-c);
-        border: 1px solid var(--font-background-c);
-        box-shadow: none;
+        border: 1px solid #393f43;
+        box-shadow: rgb(35, 35, 35, 1) 0px 0px 2px 1px inset;
+        border-radius: 4px;
+        background: #292d30;
     }
 
-    ui.checkbox input:checked ~ .box:after,
+    .ui.checkbox input:checked ~ .box:after,
     .ui.checkbox input:checked ~ label:after {
         font-size: 12px;
-        padding: 1px 1px;
         color: var(--main-background-c);
-        background: var(--font-blue-c);
+        background-color: #8ca7b0;
+        transition-duration: 0.1s;
+        transition-delay: 0.05s;
+        border: 2px solid #8ca7b0;
+        box-shadow: rgb(40, 40, 40, 1) 0px 0px 2px 1px;
+        content: "✔";
         border-radius: 3px;
-        box-shadow: none;
+        transform: scale(0.8);
+        visibility: visible;
+    }
+    
+    .ui.checkbox .box:hover:before, .ui.checkbox label:hover:before {
+        border: 1px solid #393f43;
+        box-shadow: rgb(30, 30, 30, 1) 0px 0px 2px 1px inset;
+        border-radius: 4px;
+        background: #292d30;
+    }
+    
+    .ui.checkbox input:checked ~ .box:before,
+    .ui.checkbox input:checked ~ label:before {
+        opacity: 0;
     }
 
-    .remCheckbox {
-        opacity: 0.65;
-    }
-
-    #hierarchy-editor .remTodoFinished {
+    .rem-todo--finished {
         text-decoration: none;
-        color: var(--hover-background-c);
+        transition-duration: 0.1s;
+    }
+    
+    .rem-todo--finished, .rem-todo--finished .bold  {
+        color: #999!important;
+    }
+    
+    input[type=checkbox] {
+      transform: scale(0.5);
+    }
+
+    input[type=checkbox] {
+      width: 15px;
+      height: 0px;
+      margin-top: 4px;
+      margin-right: 15px;
+      cursor: pointer;
+      font-size: 1em;
+      visibility: hidden;
+    }
+
+    input[type=checkbox]:after {
+      content: "";
+      text-align: center;
+      display: inline-block;
+      padding: 5px;
+      width: 1.4em;
+      height: 1.4em;
+      visibility: visible;
+      border: 2px solid rgb(100, 100, 100);
+      box-shadow: rgb(35, 35, 35, 1) 0px 0px 4px 1px inset;
+      border-radius: 7px;
+      background: #292d30;
+      transition-duration: 0.2s;
+    }
+    
+    input[type=checkbox]:checked:after {
+      text-align: center;
+      color: var(--main-background-c);
+      padding: 5px;
+      font-weight: 800;
+      background-color: #8ca7b0;
+      transition-duration: 0.2s;
+      transition-delay: 0.05s;
+      border: 2px solid #8ca7b0;
+      box-shadow: rgb(30, 30, 30, 1) 0px 0px 4px 1px;
+      content: "✔";
     }
 
     #homepage #content #document-sidebar #DocumentationList .document-list-item__container .documentListHeader .folder:hover,

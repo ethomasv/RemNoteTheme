@@ -1331,11 +1331,11 @@
         background-color: var(--elevated-background-c);
     }
     
-    .spacedRepetition .queue__response-button--big[data-tip="I don't know this (press K)"]:after {
+    .spacedRepetition .queue__response-button--big[data-tip="Hard (2/4) - Recalled with significant effort.(press K)"]:after {
     content: '☹️';
     }
 
-    .spacedRepetition .queue__response-button--big[data-tip="I know this! (press L)"]:after {
+    .spacedRepetition .queue__response-button--big[data-tip="Easy (4/4) - Recalled immediately.(press L)"]:after {
         content: '😊';
     }
 
@@ -1343,9 +1343,12 @@
         content: '😶';
     }
 
-    .spacedRepetition .queue__response-button--big[data-tip="Knew it\, but not well. (press ,)"]:after {
+    .spacedRepetition .queue__response-button--big[data-tip="Good (3/4) - Recalled with minimal effort. (press ,)"]:after {
         content: '😕';
     }
+    .spacedRepetition .queue__response-button--big[data-tip="Again (1/4) - Unable to recall. (press M)"]:after {
+        content: '😐';
+    }    
 
     .spacedRepetition .queue__response-button--big i.icon {
         display: none;

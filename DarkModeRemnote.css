@@ -1318,11 +1318,7 @@
     .spacedRepetition .queue__response-button--big > img {
         display: none;
     }
-      
-    .spacedRepetition .queue__response-button--big[data-tip*="(press H)"]:after {
-    content: "😶";
-    }
-      
+        
     .spacedRepetition .queue__response-button--big[data-tip*="(1/4)"]:after {
     content: "☹️";
     }

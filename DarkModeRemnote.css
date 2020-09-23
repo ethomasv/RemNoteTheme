@@ -1315,23 +1315,25 @@
         background-color: var(--elevated-background-c);
     }
     
-    .spacedRepetition .queue__response-button--big[data-tip="Hard (2/4) - Recalled with significant effort.(press K)"]:after {
-    content: '☹️';
+    .spacedRepetition .queue__response-button--big > img {
+        display: none;
     }
-
-    .spacedRepetition .queue__response-button--big[data-tip="Easy (4/4) - Recalled immediately.(press L)"]:after {
-        content: '😊';
+      
+    .spacedRepetition .queue__response-button--big[data-tip*="(press H)"]:after {
+    content: "😶";
     }
-
-    .spacedRepetition .queue__response-button--big[data-tip="Accidentally pressed 'Show Answer' too early - try again in an hour.(press H)"]:after {
-        content: '😶';
+      
+    .spacedRepetition .queue__response-button--big[data-tip*="(1/4)"]:after {
+    content: "☹️";
     }
-
-    .spacedRepetition .queue__response-button--big[data-tip="Good (3/4) - Recalled with minimal effort. (press ,)"]:after {
-        content: '😕';
+    .spacedRepetition .queue__response-button--big[data-tip*="(2/4)"]:after {
+    content: "😐";
     }
-    .spacedRepetition .queue__response-button--big[data-tip="Again (1/4) - Unable to recall. (press M)"]:after {
-        content: '😐';
+    .spacedRepetition .queue__response-button--big[data-tip*="(3/4)"]:after {
+    content: "🙂";
+    }
+    .spacedRepetition .queue__response-button--big[data-tip*="(4/4)"]:after {
+    content: "😊";
     }    
 
     .spacedRepetition .queue__response-button--big i.icon {

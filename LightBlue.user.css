@@ -1296,21 +1296,22 @@
         background-color: var(--elevated-background-c);
     }
     
-    .spacedRepetition .queue__response-button--big[data-tip="I don't know this (press K)"]:after {
-    content: '☹️';
+    .spacedRepetition .queue__response-button--big > img {
+        display: none;
     }
-
-    .spacedRepetition .queue__response-button--big[data-tip="I know this! (press L)"]:after {
-        content: '😊';
+      
+    .spacedRepetition .queue__response-button--big[data-tip*="(1/4)"]:after {
+    content: "☹️";
     }
-
-    .spacedRepetition .queue__response-button--big[data-tip="Accidentally pressed 'Show Answer' too early - try again in an hour.(press H)"]:after { 
-        content: '😶';
+    .spacedRepetition .queue__response-button--big[data-tip*="(2/4)"]:after {
+    content: "😐";
     }
-
-    .spacedRepetition .queue__response-button--big[data-tip="Knew it\, but not well. (press ,)"]:after {
-        content: '😕';
+    .spacedRepetition .queue__response-button--big[data-tip*="(3/4)"]:after {
+    content: "🙂";
     }
+    .spacedRepetition .queue__response-button--big[data-tip*="(4/4)"]:after {
+    content: "😊";
+    } 
 
     .spacedRepetition .queue__response-button--big i.icon {
         display: none;
@@ -1323,7 +1324,7 @@
     #leech-card #leech-card__header i.frown.outline.icon:after {
         content: "☹️";
     }
-
+        
     #leech-card #leech-card__header {
         margin: 20px;
         font-weight: var(--focus-font-weight);

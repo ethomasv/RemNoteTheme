@@ -236,6 +236,16 @@
          opacity: 0.9;
     }
     
+    .document-sidebar__bottom-buttons__button {
+        background-color: #ffffff10;
+        margin: 0 10px;
+        border-radius: 5px;
+    }
+    
+    .document-sidebar__bottom-buttons__button:hover{
+         background-color: #00000030;
+    }
+
     #document-sidebar__document-buttons div img,
     #document-sidebar__bottom-buttons img {
          filter: grayscale(100%) invert(100%);
@@ -1319,6 +1329,10 @@
         display: none;
     }
         
+    .spacedRepetition .queue__response-button--big {
+        justify-content: unset;
+     }
+
     .spacedRepetition .queue__response-button--big[data-tip*="(1/4)"]:after {
     content: "☹️";
     }
@@ -1332,8 +1346,12 @@
     content: "😊";
     }    
 
+    i.icon.question:before{
+        color: #ffc83d;
+    }
+
     .spacedRepetition .queue__response-button--big i.icon {
-        display: none;
+        display: unset;
     }
 
     #leech-card #leech-card__header i.frown.outline.icon:before {
@@ -1760,6 +1778,10 @@
         background: var(--elevated-background-c);
     }
 
+    .ui.message{
+        background: var(--quote-background-c);
+        color: unset;
+    }
     /* "/" Menu */
 
     .search-results {
@@ -1809,6 +1831,11 @@
         padding-bottom: 7px;
     }
     
+    .right-click-menu{
+        background-color: var(--elevated-background-c);
+        /*Opacity: 0.95;*/
+    }
+
     /* Date Picker */
 
     .react-datepicker__month, 
@@ -1929,6 +1956,12 @@
             rgba(15, 15, 15, 0.6) 0px 0px 24px;    
      }
      
+     .hierarchy-editor-toolbar__menu .hierarchy-editor-toolbar__card-menu__view-as-card{
+        /* this is for tooltip for the first bottom button, when there are no cards in REM - hierarchy-editor-toolbar*/
+            background-color: var(--elevated-background-c);
+            border: none;
+        }
+
      .hierarchy-editor-toolbar-container--opened #hierarchy-editor-toolbar .hierarchy-editor-toolbar__vertical-divider { 
          border-color: var(--border-c);
      }

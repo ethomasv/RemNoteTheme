@@ -26,11 +26,18 @@ Custom Themes for [RemNote](remnote.io)
 
 ![Screenshot 1](https://github.com/ethomasv/RemNoteTheme/blob/master/Screenshots/LightBlueRemnote.jpg)
 ![Screenshot 2](https://github.com/ethomasv/RemNoteTheme/blob/master/Screenshots/LightBlueRemnoteThemeFlashcards.jpg)
+
 ---
 ## Dark Mode Theme: 
 
 ![Screenshot 3](https://github.com/ethomasv/RemNoteTheme/blob/master/Screenshots/DarkModeRemnote.jpg)
 ![Screenshot 4](https://github.com/ethomasv/RemNoteTheme/blob/master/Screenshots/DarkModeRemnoteThemeFlashcards.jpg)
+
+---
+
+## tskn Design Theme: 
+
+![Screenshot 3](https://github.com/ethomasv/RemNoteTheme/blob/master/Screenshots/tsknTheme.jpg)
 ---
 
 ---
@@ -42,6 +49,9 @@ Custom Themes for [RemNote](remnote.io)
 [![Install directly with Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-00adad.svg)](https://raw.githubusercontent.com/ethomasv/RemNoteTheme/master/LightBlue.user.css) Light Blue Theme
 
 [![Install directly with Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-00adad.svg)](https://raw.githubusercontent.com/ethomasv/RemNoteTheme/master/DarkMode.user.css) Dark Mode Theme
+
+[![Install directly with Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-00adad.svg)](https://raw.githubusercontent.com/ethomasv/RemNoteTheme/master/tsknDesignTheme.user.css) RemNote Theme designed by tskn
+
 
 * If you want to install the theme directly in Remnote so that you can enojoy in the custom style across all your devices, you can find detailed tutorial here: 
 [Styling Remnote with Custom CSS Tutorial](https://www.youtube.com/watch?v=d4VqpNyDfqc)

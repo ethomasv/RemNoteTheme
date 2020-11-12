@@ -2,7 +2,7 @@
 
 @name           tsknDesignTheme
 @namespace      https://github.com/ethomasv/
-@version        1.0.2
+@version        1.0.3
 @description    RemNote Theme Designed by tskn > https://dribbble.com/shots/14178356-RemNote-Concept
 @author         Code by Eva Thomas 
 @homepageURL    https://github.com/ethomasv/RemNoteTheme
@@ -704,6 +704,12 @@
         margin-top: -10px;
         margin-right: -2px;
     }
+        
+    #DocumentationList .documentListNoDocuments, #documentList .documentListNoDocuments 
+    {
+        color: white;
+        opacity: 0.9;
+    }
 
     /* Thinking trail */
     #thinking-trail-history
@@ -714,6 +720,11 @@
         width: 40px;
     }
 
+    .small-window-page #thinking-trail-history
+    {
+        margin-left: 0px;
+    }    
+        
     #thinking-trail-history__container
     {
         padding-bottom: 0px;
@@ -745,6 +756,7 @@
         background-color: var(--hover-blue-c);
         box-shadow: none;
         margin: 0px;
+        border-right: 7px solid var(--hover-blue-c);
         height: 100vh;
         max-width: 500px;
     }
@@ -1233,6 +1245,17 @@
         right: 12vw;
         width: 250px;
     }
+        
+    .small-window-page .multiple-windows--one-pane .hierarchy-editor-toolbar-container--opened #hierarchy-editor-toolbar {
+        margin-left: 5vw;
+    }
+    
+    .small-window-page .multiple-windows--one-pane #hierarchy-editor-toolbar-container #hierarchy-editor__add-to-portal #hierarchy-editor__add-to-portal__inner { 
+        bottom: 0px;
+        top: 2px;
+        right: 1vw;
+        width: 200px;
+    }
 
     .multiple-windows--one-pane #hierarchy-editor-toolbar-container #hierarchy-editor__add-to-portal .rich-text-editor
     {
@@ -1287,12 +1310,24 @@
         background-color: var(--soft-background-c);
         font-size: 11px;
     }
+        
+    .search-results #search-results__list, #hierarchy-editor-toolbar-container #hierarchy-editor__add-to-portal .search-results {
+        position: absolute;
+        bottom: 0px!important;
+        z-index: 3;
+        background-color: white;
+        border: 1px solid var(--border-c)!important;
+        border-radius: 5px;
+        box-shadow: rgba(200, 200, 200, 0.1) 0px 0px 0px 1px,
+            rgba(200, 200, 200, 0.2) 0px 0px 6px,
+            rgba(200, 200, 200, 0.5) 0px 0px 12px !important;
+   }
 
     #help-button,
     #help-button:hover
     {
         bottom: 60px;
-        background-color: #1d89e4;
+        background-color: var(--main-blue-c);
         color: white;
         opacity: 0.85;
     }
@@ -1732,6 +1767,21 @@
         box-shadow: rgba(200, 200, 200, 0.1) 0px 0px 0px 1px,
         rgba(200, 200, 200, 0.2) 0px 0px 6px,
         rgba(200, 200, 200, 0.5) 0px 0px 12px !important;
+    }
+        
+    /* Ctrl + f popup */ 
+
+    #hierarchy-editor__ctrl-f {
+        margin-top: 5px;
+        border-radius: 5px;
+        border: 1px solid var(--border-c)!important;
+        box-shadow: rgba(200, 200, 200, 0.1) 0px 0px 0px 1px,
+        rgba(200, 200, 200, 0.2) 0px 0px 6px,
+        rgba(200, 200, 200, 0.5) 0px 0px 12px !important;
+    }
+    
+    #hierarchy-editor #hierarchy-editor-list__sticky-top__container {
+        z-index: 5;
     }
 
     /* Latex */
